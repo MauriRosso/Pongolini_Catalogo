@@ -1,0 +1,8 @@
+- En el detalle de la aplicacion dejar solamente: MARCA, modelo, motor,
+Tipo aplicacion, alimentacion, cilindrada.
+- Modificar en atributos del producto, poner ADM / ESC. (admision o escape)
+- Agregar en atributos del producto, un combobox de sobremedidas(estandar, 0.1.. VER CUANTAS SON)
+- CONTACTO: Poder llamar pulsando en el teléfono y enviar un mail por consultas. Ademas, enviar msj de texto, poner mapa del lugar con direccion debajo y los perfiles de redes sociales.
+
+EXTRA: Cuando llego al detalle de un producto, poder pedirlo a través de un mail,
+con todos los datos que figuran en ese detalle.

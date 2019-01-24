@@ -1,0 +1,70 @@
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.deps.json
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePage.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageDetail.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageMaster.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csproj.CoreCompileInputs.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfoInputs.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfo.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Aplicaciones.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Inicio.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Dimensiones.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Intercambios.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\NuevosDesarrollos.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleIntercambios.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.deps.json
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Aplicaciones.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleIntercambios.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Dimensiones.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePage.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageDetail.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageMaster.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Inicio.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Intercambios.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\NuevosDesarrollos.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Pongolini.xaml.g.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csproj.CoreCompileInputs.cache
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfoInputs.cache
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfo.cs
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Bujes.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Contacto.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\No300Indy.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.deps.json
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Aplicaciones.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Bujes.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Contacto.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleIntercambios.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Dimensiones.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePage.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageDetail.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePageMaster.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Inicio.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Intercambios.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\No300Indy.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\NuevosDesarrollos.xaml.g.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csproj.CoreCompileInputs.cache
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfoInputs.cache
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.AssemblyInfo.cs
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.dll
+C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp

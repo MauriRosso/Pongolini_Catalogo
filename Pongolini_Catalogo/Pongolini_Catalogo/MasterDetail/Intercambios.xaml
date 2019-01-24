@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.Intercambios"
+             Title="Intercambios">
+    <ContentPage.Content>
+        <StackLayout x:Name="slGeneral" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    x:Name="lblFabricante"
+                    Text="Fabricante"  
+                    Margin="13,10"
+                />
+                <Picker 
+                    x:Name="pckFabricante"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="8,0"
+                    Title="Seleccione fabricante"
+                    
+                />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    x:Name="lblIntercambio"
+                    Text="Intercambio"  
+                    Margin="8,10"
+                    HorizontalTextAlignment="Start"
+                />
+                <Entry x:Name="txtIntercambio"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="8,0"
+                     Placeholder="[ Todos ]"
+                     
+                    />
+            </StackLayout>
+            <Button x:Name="btnBuscar"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    Clicked="btnBuscar_Clicked"
+                Margin="8,0">
+            </Button>
+            <BoxView Margin="0,0,8,8" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>
+                    <Label  Grid.Column="0" Grid.Row="0" Text="FABRICANTE" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
+                    <Label  Grid.Column="1" Grid.Row="0" Text="PRODUCTO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="INTERCAMBIO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
+                </Grid>
+
+                <ListView x:Name="ListViewDatos"
+                          RowHeight="36">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid x:Name="GrillaDatos">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="30*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Fabricante}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding Producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding Intercambio}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

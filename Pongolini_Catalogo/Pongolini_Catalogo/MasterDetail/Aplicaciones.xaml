@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.Aplicaciones"
+             Title="Aplicaciones">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout x:Name="StackCamposBusqueda">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblNOriginal"
+                    Text="N° Original"  
+                    Margin="13,10,47,0"
+                />
+                    <Entry x:Name="txtNOriginal"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                    />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblMotor"
+                    Text="Motor"  
+                    Margin="13,0,73,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtMotor"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="18,0,13,0"                     
+                    />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblProducto"
+                    Text="Producto"  
+                    Margin="13,0,71,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckProducto"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"
+                    Title="Seleccione producto"                  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblMarca"
+                    Text="Marca"  
+                    Margin="13,0,89,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckMarca"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"                 
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblModelo"
+                    Text="Modelo"  
+                    Margin="13,0,81,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtModelo"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="0,0,13,0"                     
+                    />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblTipoAplicacion"
+                    Text="Tipo aplicación"  
+                    Margin="13,0,33,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckTipoAplicacion"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,11,0"                 
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblCilindrada"
+                    Text="Cil.cm³(±50cm³)"  
+                    Margin="13,0,24,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtCilindrada"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="0,0,13,0"
+                     Keyboard="Numeric"
+                    />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnBuscarAplicaciones"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                    Clicked="btnBuscarAplicaciones_Clicked">
+                    </Button>
+                    <Button x:Name="btnLimpiarAplicaciones"
+                    Text="LIMPIAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+            
+            <Button x:Name="btnNuevaBusqueda"
+                    Text="NUEVA BUSQUEDA"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                    Clicked="btnNuevaBusqueda_Clicked">
+            </Button>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="ListViewAplicaciones"
+                          RowHeight="250"
+                          VerticalOptions="FillAndExpand"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.ColumnSpan="2" Text="{Binding Marca}" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

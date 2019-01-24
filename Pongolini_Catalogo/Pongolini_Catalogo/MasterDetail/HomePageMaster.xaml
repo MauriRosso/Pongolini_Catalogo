@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.HomePageMaster"
+             Title="Master">
+    <ScrollView>
+
+
+        <StackLayout BackgroundColor="White">
+            <Image x:Name="imgPongolini" 
+                       Source="Pongolini_Logo.jpg"
+                       Aspect="AspectFit"
+                       >
+
+            </Image>
+            <StackLayout BackgroundColor="White">
+                <StackLayout x:Name="StackInicio" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackInicio_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgInicio" Source="ic_Inicio.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblInicio" Text="Inicio"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
+                <Label x:Name="lblBuscarPorGuiasAsientos" Text="Búsqueda de guías y asientos por"
+                                    Margin="20,8"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Gray"
+                                />
+                <StackLayout x:Name="StackAplicaciones" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackAplicaciones_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgAplicaciones" Source="ic_Aplicaciones.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblAplicaciones" Text="Aplicaciones"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="StackIntercambios" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackIntercambios_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgIntercambios" Source="ic_Intercambios.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblIntercambios" Text="Intercambios"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="Stack300Indy" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStack300Indy_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="img300Indy" Source="ic_300Indy.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lbl300Indy" Text="#300Indy"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="StackDimensiones" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackDimensiones_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgDimensiones" Source="ic_Dimensiones.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblDimensiones" Text="Dimensiones"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="StackNuevosDesarrollos" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackNuevosDesarrollos_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgNuevosDesarrollos" Source="ic_NuevosDesarrollos.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblNuevosDesarrollos" Text="Nuevos Desarrollos"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
+                <StackLayout x:Name="StackBujes" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackBujes_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgBujes" Source="ic_Bujes.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblBujes" Text="Bujes de Fundición"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
+                <StackLayout x:Name="StackIrAlSitio" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackIrAlSitio_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgIrAlSitio" Source="ic_IrAlSitio.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblIrAlSitio" Text="Ir al sitio institucional"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="StackContacto" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackContacto_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgContacto" Source="ic_Contacto.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblContacto" Text="Contacto"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
+                <StackLayout x:Name="StackSalir" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStackSalir_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgSalir" Source="ic_Salir.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblSalir" Text="Salir"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="IndianRed"
+                                />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

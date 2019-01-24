@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.No300Indy">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    x:Name="lblProducto"
+                    Text="Producto"  
+                    Margin="8,10,8,0"
+                />
+                <Entry x:Name="txtNO300Indy"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start" 
+                     Placeholder="Ingrese N° 300 Indy"
+                     Margin="0,0,8,0"
+                    />
+            </StackLayout>
+            <Button x:Name="btnBuscar300Indy"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                   >
+            </Button>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

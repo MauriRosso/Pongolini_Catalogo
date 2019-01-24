@@ -1,0 +1,12 @@
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\Pongolini_Catalogo.Negocio.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\Pongolini_Catalogo.Negocio.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\Pongolini_Catalogo.Datos.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\EntityFramework.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\Pongolini_Catalogo.Datos.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\Pongolini_Catalogo.Datos.dll.config
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\bin\Debug\EntityFramework.xml
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\obj\Debug\Pongolini_Catalogo.Negocio.csprojAssemblyReference.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\obj\Debug\Pongolini_Catalogo.Negocio.csproj.CoreCompileInputs.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\obj\Debug\Pongolini_Catalogo.Negocio.csproj.CopyComplete
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\obj\Debug\Pongolini_Catalogo.Negocio.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo.Negocio\obj\Debug\Pongolini_Catalogo.Negocio.pdb

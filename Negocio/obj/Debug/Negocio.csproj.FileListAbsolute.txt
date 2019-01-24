@@ -1,0 +1,6 @@
+C:\Pongolini_Catalogo\Negocio\bin\Debug\Negocio.dll
+C:\Pongolini_Catalogo\Negocio\bin\Debug\Negocio.pdb
+C:\Pongolini_Catalogo\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Pongolini_Catalogo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Pongolini_Catalogo\Negocio\obj\Debug\Negocio.dll
+C:\Pongolini_Catalogo\Negocio\obj\Debug\Negocio.pdb
