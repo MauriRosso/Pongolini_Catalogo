@@ -1,3 +1,7 @@
+FFImageLoading
+FFImageLoading.Forms
+FFImageLoading.Forms.Droid
+FFImageLoading.Platform
 FormsViewGroup
 Newtonsoft.Json
 Plugin.Messaging.Abstractions
@@ -32,3 +36,4 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
+System.Resources.ResourceManager

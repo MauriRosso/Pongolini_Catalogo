@@ -20,7 +20,6 @@ namespace Pongolini_Catalogo.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
             LoadApplication(new Pongolini_Catalogo.App());
         }
     }

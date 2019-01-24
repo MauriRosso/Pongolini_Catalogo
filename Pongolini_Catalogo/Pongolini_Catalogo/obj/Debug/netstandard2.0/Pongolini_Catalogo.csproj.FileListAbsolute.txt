@@ -16,7 +16,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandar
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Dimensiones.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Intercambios.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\NuevosDesarrollos.xaml.g.cs
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleIntercambios.xaml.g.cs
 C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.deps.json
 C:\Users\mauri\Desktop\MAURI\Backup Pongolini\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
@@ -68,3 +67,5 @@ C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalog
 C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.dll
 C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\SplashPage.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache

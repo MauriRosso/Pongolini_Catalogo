@@ -2363,20 +2363,20 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F010004
-			public const int Icon = 2130771972;
-			
 			// aapt resource value: 0x7F010005
-			public const int ic_300Indy = 2130771973;
+			public const int Icon = 2130771973;
 			
 			// aapt resource value: 0x7F010006
-			public const int ic_300Indy_blanco = 2130771974;
+			public const int ic_300Indy = 2130771974;
 			
 			// aapt resource value: 0x7F010007
-			public const int ic_Aplicaciones = 2130771975;
+			public const int ic_300Indy_blanco = 2130771975;
 			
 			// aapt resource value: 0x7F010008
-			public const int ic_Aplicaciones_blanco = 2130771976;
+			public const int ic_Aplicaciones = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int ic_Aplicaciones_blanco = 2130771977;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -2384,14 +2384,14 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090055
 			public const int ic_audiotrack_light = 2131296341;
 			
-			// aapt resource value: 0x7F010009
-			public const int ic_Bujes = 2130771977;
-			
 			// aapt resource value: 0x7F010010
-			public const int ic_Bujes_blanco = 2130771984;
+			public const int ic_Bujes = 2130771984;
 			
 			// aapt resource value: 0x7F010011
-			public const int ic_Contacto = 2130771985;
+			public const int ic_Bujes_blanco = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int ic_Contacto = 2130771986;
 			
 			// aapt resource value: 0x7F090056
 			public const int ic_dialog_close_dark = 2131296342;
@@ -2399,11 +2399,11 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090057
 			public const int ic_dialog_close_light = 2131296343;
 			
-			// aapt resource value: 0x7F010012
-			public const int ic_Dimensiones = 2130771986;
-			
 			// aapt resource value: 0x7F010013
-			public const int ic_Dimensiones_blanco = 2130771987;
+			public const int ic_Dimensiones = 2130771987;
+			
+			// aapt resource value: 0x7F010014
+			public const int ic_Dimensiones_blanco = 2130771988;
 			
 			// aapt resource value: 0x7F090058
 			public const int ic_group_collapse_00 = 2131296344;
@@ -2501,23 +2501,23 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090077
 			public const int ic_group_expand_15 = 2131296375;
 			
-			// aapt resource value: 0x7F010014
-			public const int ic_home_1 = 2130771988;
-			
 			// aapt resource value: 0x7F010015
-			public const int ic_home_2 = 2130771989;
+			public const int ic_home_1 = 2130771989;
 			
 			// aapt resource value: 0x7F010016
-			public const int ic_Inicio = 2130771990;
+			public const int ic_home_2 = 2130771990;
 			
 			// aapt resource value: 0x7F010017
-			public const int ic_Intercambios = 2130771991;
+			public const int ic_Inicio = 2130771991;
 			
 			// aapt resource value: 0x7F010018
-			public const int ic_Intercambios_blanco = 2130771992;
+			public const int ic_Intercambios = 2130771992;
 			
 			// aapt resource value: 0x7F010019
-			public const int ic_IrAlSitio = 2130771993;
+			public const int ic_Intercambios_blanco = 2130771993;
+			
+			// aapt resource value: 0x7F010020
+			public const int ic_IrAlSitio = 2130772000;
 			
 			// aapt resource value: 0x7F090078
 			public const int ic_media_pause_dark = 2131296376;
@@ -2537,8 +2537,8 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F09007D
 			public const int ic_media_stop_light = 2131296381;
 			
-			// aapt resource value: 0x7F010020
-			public const int ic_menu = 2130772000;
+			// aapt resource value: 0x7F010021
+			public const int ic_menu = 2130772001;
 			
 			// aapt resource value: 0x7F09007E
 			public const int ic_mr_button_connected_00_dark = 2131296382;
@@ -2927,14 +2927,14 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F0900FE
 			public const int ic_mr_button_grey = 2131296510;
 			
-			// aapt resource value: 0x7F010021
-			public const int ic_NuevosDesarrollos = 2130772001;
-			
 			// aapt resource value: 0x7F010022
-			public const int ic_NuevosDesarrollos_blanco = 2130772002;
+			public const int ic_NuevosDesarrollos = 2130772002;
 			
 			// aapt resource value: 0x7F010023
-			public const int ic_Salir = 2130772003;
+			public const int ic_NuevosDesarrollos_blanco = 2130772003;
+			
+			// aapt resource value: 0x7F010024
+			public const int ic_Salir = 2130772004;
 			
 			// aapt resource value: 0x7F0900FF
 			public const int ic_vol_type_speaker_dark = 2131296511;
@@ -3057,7 +3057,10 @@ namespace Pongolini_Catalogo.Droid
 			public const int Pongolini_Empresa = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int Pongolini_Logo = 2130771971;
+			public const int Pongolini_Final = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int Pongolini_Logo = 2130771972;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;

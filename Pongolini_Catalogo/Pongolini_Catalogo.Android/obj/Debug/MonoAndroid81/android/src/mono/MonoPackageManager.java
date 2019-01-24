@@ -107,6 +107,10 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "Pongolini_Catalogo.Android.dll" comes first in this list. */
 		"Pongolini_Catalogo.Android.dll",
+		"FFImageLoading.dll",
+		"FFImageLoading.Forms.dll",
+		"FFImageLoading.Forms.Droid.dll",
+		"FFImageLoading.Platform.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.Messaging.Abstractions.dll",

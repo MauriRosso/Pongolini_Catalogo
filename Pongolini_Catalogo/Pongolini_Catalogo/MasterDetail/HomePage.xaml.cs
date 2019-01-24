@@ -18,7 +18,7 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             InitializeComponent();
             App.MasterD = this;
-            //MasterPage.ListView.ItemSelected += ListView_ItemSelected;           
+            //MasterPage.ListView.ItemSelected += ListView_ItemSelected;         
         }
 
 

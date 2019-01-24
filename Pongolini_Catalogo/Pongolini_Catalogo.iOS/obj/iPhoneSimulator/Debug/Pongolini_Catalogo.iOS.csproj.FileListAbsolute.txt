@@ -64,7 +64,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimula
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.csproj.CopyComplete
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.exe
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.pdb
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Pongolini_Catalogo.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\System.Configuration.ConfigurationManager.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\System.Security.AccessControl.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\System.Security.Permissions.dll
@@ -142,3 +141,14 @@ C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalog
 C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.csproj.CopyComplete
 C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.exe
 C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalogo\Pongolini_Catalogo.iOS\obj\iPhoneSimulator\Debug\Pongolini_Catalogo.iOS.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\WebP.Touch.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Platform.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Platform.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.Touch.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.Touch.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.pdb

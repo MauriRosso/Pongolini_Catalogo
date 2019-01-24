@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.UWP\bin\x86\Debug\Pongolini_Catalogo.UWP.exe">
       <PackagePath>entrypoint\Pongolini_Catalogo.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>
@@ -540,6 +543,18 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xam.plugins.messaging\5.2.0\lib\UAP10\Plugin.Messaging.dll">
       <PackagePath>Plugin.Messaging.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xamarin.ffimageloading\2.4.4.859\lib\uap\FFImageLoading.Platform.dll">
+      <PackagePath>FFImageLoading.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xamarin.ffimageloading\2.4.4.859\lib\uap\FFImageLoading.dll">
+      <PackagePath>FFImageLoading.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xamarin.ffimageloading.forms\2.3.6\lib\uap\FFImageLoading.Forms.WinUWP.dll">
+      <PackagePath>FFImageLoading.Forms.WinUWP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xamarin.ffimageloading.forms\2.3.6\lib\uap\FFImageLoading.Forms.dll">
+      <PackagePath>FFImageLoading.Forms.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mauri\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>

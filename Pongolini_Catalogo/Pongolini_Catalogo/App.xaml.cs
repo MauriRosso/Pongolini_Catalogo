@@ -24,13 +24,13 @@ namespace Pongolini_Catalogo
                 ListaGlobal = await client.Get<Guias_Asientos>("http://serviciowebpongolini.apphb.com/api/Guias_AsientosApi");//URL de la api.
             });
 
-            MainPage = new HomePage();
+            MainPage = new NavigationPage(new SplashPage());
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-            
+
         }
 
         protected override void OnSleep()
