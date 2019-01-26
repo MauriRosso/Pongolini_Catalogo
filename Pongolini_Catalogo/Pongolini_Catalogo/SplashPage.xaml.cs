@@ -20,6 +20,8 @@ namespace Pongolini_Catalogo
             this.BackgroundColor = Color.DarkBlue;
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
+
+            
 		}
 
         protected override async void OnAppearing()
@@ -31,10 +33,12 @@ namespace Pongolini_Catalogo
 
             SplashImage.FadeTo(1, 1000);
             SplashName.FadeTo(1, 1000);
-            SplashImage.TranslateTo(0, -50, 1500);
-            await SplashName.TranslateTo(0, 50, 1500);
+            SplashImage.TranslateTo(0, -25, 2000);
+            await SplashName.TranslateTo(0, 25, 2000);
 
-            //await Navigation.PushAsync(new HomePage());
+            System.Threading.Thread.Sleep(1500);
+            //Loading.Progress = ((App.ListaGlobal.Count() * 100) / 1406) / 100;
+
             Application.Current.MainPage = new HomePage();
         }
     }

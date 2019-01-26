@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.SplashPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
+        <StackLayout x:Name="sl" VerticalOptions="Center">
             <Image x:Name="SplashImage"
                    Source="Pongolini_Final.png"
                    HorizontalOptions="Center"
@@ -12,9 +12,11 @@
             <Label x:Name="SplashName"
                    Text="Pongolini Catálogo"
                    FontSize="Large"
+                   FontAttributes="Bold"
                    TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"></Label>
+                        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

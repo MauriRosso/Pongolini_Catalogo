@@ -15,6 +15,14 @@ namespace Pongolini_Catalogo.MasterDetail
 		public Dimensiones ()
 		{
 			InitializeComponent ();
+            CargarPickerProducto();
 		}
-	}
+
+        public void CargarPickerProducto()
+        {
+            pckProductoDim.Items.Add("Guías");
+            pckProductoDim.Items.Add("Asientos");
+            pckProductoDim.SelectedIndex = 0;
+        }
+    }
 }

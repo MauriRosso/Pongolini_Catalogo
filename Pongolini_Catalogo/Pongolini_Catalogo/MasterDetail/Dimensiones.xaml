@@ -4,10 +4,102 @@
              x:Class="Pongolini_Catalogo.MasterDetail.Dimensiones"
              Title="Dimensiones">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Estas en dimensiones."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <StackLayout x:Name="StackCamposBusqueda">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblProductoDim"
+                    Text="Producto"  
+                    Margin="13,8,71,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckProductoDim"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"
+                    Title="Seleccione producto"                  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblMarca"
+                    Text="Marca"  
+                    Margin="13,0,89,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckMarca"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"                 
+                />
+                    <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnBuscarAplicaciones"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                    Clicked="btnBuscarAplicaciones_Clicked">
+                    </Button>
+                    <Button x:Name="btnLimpiarAplicaciones"
+                    Text="LIMPIAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+
+            <Button x:Name="btnNuevaBusqueda"
+                    Text="NUEVA BUSQUEDA"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                    Clicked="btnNuevaBusqueda_Clicked">
+            </Button>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="ListViewAplicaciones"
+                          RowHeight="250"
+                          VerticalOptions="FillAndExpand"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.ColumnSpan="2" Text="{Binding Marca}" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

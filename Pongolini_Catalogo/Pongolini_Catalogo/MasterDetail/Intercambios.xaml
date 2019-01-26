@@ -57,7 +57,10 @@
                     <Label  Grid.Column="1" Grid.Row="0" Text="PRODUCTO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
                     <Label Grid.Column="2" Grid.Row="0" Text="INTERCAMBIO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
                 </Grid>
-
+                <ActivityIndicator
+                x:Name="indicador_principal"
+                Color="DarkBlue"
+                ></ActivityIndicator>
                 <ListView x:Name="ListViewDatos"
                           RowHeight="36">
                     <ListView.ItemTemplate>

@@ -23,10 +23,12 @@ namespace Pongolini_Catalogo.MasterDetail
         public Intercambios () //Solamente pasa la primera vez que se abre la pag.
 		{
 			InitializeComponent ();
+            indicador_principal.SetBinding(ActivityIndicator.IsRunningProperty, "IsLoading");
+            indicador_principal.BindingContext = ListViewDatos;
+            indicador_principal.IsRunning = false;
             CargarPicker();
             CargarListaFabricantes();
             ListViewDatos.ItemTapped += ListViewDatos_ItemTapped;
-            ListaAux = App.ListaGlobal;
             //BindingContext = new IntercambiosViewModel();
         }
 
@@ -58,8 +60,17 @@ namespace Pongolini_Catalogo.MasterDetail
             pckFabricante.SelectedIndex = 0;
         }
 
+
         private void btnBuscar_Clicked(object sender, EventArgs e)
         {
+            indicador_principal.IsRunning = true;
+            while (ListaAux.Count() == 0)
+            {
+                ListaAux = App.ListaGlobal;
+            }
+            indicador_principal.IsRunning = false;
+            indicador_principal.IsVisible = false;
+
             bool HayIntercambio = false;
             bool HayIntercambio_Fabricante = false;
             ListaDatos.Clear();
@@ -279,6 +290,8 @@ namespace Pongolini_Catalogo.MasterDetail
             //Se actualiza el ListView
             ListViewDatos.ItemsSource = null;
             ListViewDatos.ItemsSource = ListaDatos_Final;
+ 
         }
+
     }
 }

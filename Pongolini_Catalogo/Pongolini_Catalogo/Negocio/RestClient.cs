@@ -16,6 +16,7 @@ namespace Pongolini_Catalogo.Negocio
                 var response = await client.GetAsync(url); //Le pasamos la URL del JSON 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
+                    
                     var jsonstring = await response.Content.ReadAsStringAsync();
                     return Newtonsoft.Json.JsonConvert.DeserializeObject<List<T>>(jsonstring);
                 }

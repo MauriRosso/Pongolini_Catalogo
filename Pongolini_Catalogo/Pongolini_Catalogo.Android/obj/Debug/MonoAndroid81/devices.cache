@@ -4,4 +4,12 @@
     <ResultingAbi></ResultingAbi>
     <SdkVersion>24</SdkVersion>
   </Device>
+  <Device id="f512da8a">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>21</SdkVersion>
+  </Device>
+  <Device id="ZH33P26FD5">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>25</SdkVersion>
+  </Device>
 </Devices>
