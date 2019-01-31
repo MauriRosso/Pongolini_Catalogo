@@ -4,10 +4,23 @@
              x:Class="Pongolini_Catalogo.MasterDetail.Contacto"
              Title="Contacto">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Estas en contacto."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+            <Button x:Name="btnLlamar"
+                    Margin="8,40,8,40"
+                    Text="Llamar a Aberaldo Pongolini S.R.L"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="btnLlamar_Clicked">
+                
+            </Button>
+            <Button x:Name="btnEnviarMail"
+                    Margin="8,40,8,40"
+                    Text="Enviar Email"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="btnEnviarMail_Clicked">
+
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,10 +4,84 @@
              x:Class="Pongolini_Catalogo.MasterDetail.Bujes"
              Title="Bujes de Fundición">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Estas en bujes."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <StackLayout x:Name="StackCamposBusqueda">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblTipo"
+                    Text="Tipo de buje"  
+                    Margin="13,8,71,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckTipoBujes"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"
+                    Title="Seleccione tipo de buje"                  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblDiametroExterior"
+                    Text="Ø Exterior"  
+                    Margin="13,0,75,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtDiamExt"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblDiametroInterior"
+                    Text="Ø Interior"  
+                    Margin="13,0,78,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtDiamInt"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblLargo"
+                    Text="Largo"  
+                    Margin="13,0,97,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtLargo"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnBuscarBujes"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0"
+                   >
+                    </Button>
+                    <Button x:Name="btnLimpiarBujes"
+                    Text="LIMPIAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

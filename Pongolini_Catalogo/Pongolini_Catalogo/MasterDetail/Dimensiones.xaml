@@ -34,16 +34,17 @@
                     VerticalOptions="Start"
                     Margin="0,0,13,0"                 
                 />
+                </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                    <Button x:Name="btnBuscarAplicaciones"
+                    <Button x:Name="btnBuscarDimensiones"
                     Text="BUSCAR"
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
-                    Clicked="btnBuscarAplicaciones_Clicked">
+                   >
                     </Button>
-                    <Button x:Name="btnLimpiarAplicaciones"
+                    <Button x:Name="btnLimpiarDimensiones"
                     Text="LIMPIAR"
                     FontAttributes="Bold"
                     TextColor="Black"
@@ -58,8 +59,7 @@
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
-                    Margin="8,0"
-                    Clicked="btnNuevaBusqueda_Clicked">
+                    Margin="8,0">
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout VerticalOptions="FillAndExpand">

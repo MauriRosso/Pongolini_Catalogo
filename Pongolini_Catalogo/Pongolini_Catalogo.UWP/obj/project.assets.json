@@ -424,6 +424,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -1026,6 +1027,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -1629,6 +1631,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -2056,6 +2059,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -2658,6 +2662,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -3261,6 +3266,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -3863,6 +3869,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -4466,6 +4473,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {

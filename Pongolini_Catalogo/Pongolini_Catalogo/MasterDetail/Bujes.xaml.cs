@@ -15,6 +15,14 @@ namespace Pongolini_Catalogo.MasterDetail
 		public Bujes ()
 		{
 			InitializeComponent ();
+            CargarTipoBujes();
 		}
+
+        public void CargarTipoBujes()
+        {
+            pckTipoBujes.Items.Add("Gris");
+            pckTipoBujes.Items.Add("Templado");
+            pckTipoBujes.SelectedIndex = 0;
+        }
 	}
 }

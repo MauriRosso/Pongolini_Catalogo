@@ -24,5 +24,6 @@ namespace Pongolini_Catalogo.MasterDetail
             pckProductoDim.Items.Add("Asientos");
             pckProductoDim.SelectedIndex = 0;
         }
+
     }
 }
