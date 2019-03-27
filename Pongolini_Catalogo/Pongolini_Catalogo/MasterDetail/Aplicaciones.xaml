@@ -63,19 +63,6 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
-                    x:Name="lblModelo"
-                    Text="Modelo"  
-                    Margin="13,0,81,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtModelo"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Margin="0,0,13,0"                     
-                    />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label
                     x:Name="lblTipoAplicacion"
                     Text="Tipo aplicación"  
                     Margin="13,0,33,0"
@@ -91,8 +78,8 @@
                 <StackLayout Orientation="Horizontal">
                     <Label
                     x:Name="lblCilindrada"
-                    Text="Cil.cm³(±50cm³)"  
-                    Margin="13,0,24,0"
+                    Text="Cilindros"  
+                    Margin="13,0,75,0"
                     HorizontalTextAlignment="Start"
                 />
                     <Entry x:Name="txtCilindrada"

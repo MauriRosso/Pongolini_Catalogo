@@ -15,6 +15,19 @@ namespace Pongolini_Catalogo.MasterDetail
 		public NuevosDesarrollos ()
 		{
 			InitializeComponent ();
+            CargarPickerNuevosDesarrollos();
 		}
-	}
+
+        public void CargarPickerNuevosDesarrollos()
+        {
+            pckTipoProductoNuevDes.Title = "Seleccione producto";
+            pckTipoProductoNuevDes.Items.Add("Guías");
+            pckTipoProductoNuevDes.Items.Add("Asientos");
+        }
+
+        private void btnBuscarNuevDes_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

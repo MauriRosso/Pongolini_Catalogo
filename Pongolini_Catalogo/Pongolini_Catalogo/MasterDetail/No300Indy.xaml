@@ -27,6 +27,42 @@
                    >
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="ListView300indy"
+                          RowHeight="190"
+                          VerticalOptions="FillAndExpand"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

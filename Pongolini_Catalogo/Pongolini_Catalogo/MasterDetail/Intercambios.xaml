@@ -7,6 +7,21 @@
         <StackLayout x:Name="slGeneral" Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
                 <Label
+                    x:Name="lblTipoProducto"
+                    Text="Tipo producto"  
+                    Margin="13,10"
+                />
+                <Picker 
+                    x:Name="pckTipoProducto"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="8,0,8,0"
+                    Title="Seleccione fabricante"
+                    
+                />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
                     x:Name="lblFabricante"
                     Text="Fabricante"  
                     Margin="13,10"
@@ -15,7 +30,7 @@
                     x:Name="pckFabricante"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
-                    Margin="8,0"
+                    Margin="29,0,8,0"
                     Title="Seleccione fabricante"
                     
                 />
@@ -24,13 +39,13 @@
                 <Label
                     x:Name="lblIntercambio"
                     Text="Intercambio"  
-                    Margin="8,10"
+                    Margin="13,10"
                     HorizontalTextAlignment="Start"
                 />
                 <Entry x:Name="txtIntercambio"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="8,0"
+                     Margin="18,0,8,0"
                      Placeholder="[ Todos ]"
                      
                     />
@@ -42,7 +57,7 @@
                     Clicked="btnBuscar_Clicked"
                 Margin="8,0">
             </Button>
-            <BoxView Margin="0,0,8,8" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <BoxView Margin="8,0,8,8" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -57,12 +72,21 @@
                     <Label  Grid.Column="1" Grid.Row="0" Text="PRODUCTO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
                     <Label Grid.Column="2" Grid.Row="0" Text="INTERCAMBIO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
                 </Grid>
-                <ActivityIndicator
-                x:Name="indicador_principal"
-                Color="DarkBlue"
-                ></ActivityIndicator>
+                <StackLayout x:Name="slLoad" Orientation="Vertical">
+                    <ActivityIndicator x:Name="Cargando"
+                                   Color="DarkBlue">
+                    </ActivityIndicator>
+                    <Label x:Name="lblCargando"
+                       Text="Obteniendo datos.."
+                       FontAttributes="Bold"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center"></Label>
+                </StackLayout>
                 <ListView x:Name="ListViewDatos"
-                          RowHeight="36">
+                          RowHeight="36"
+                          VerticalOptions="FillAndExpand"
+                          Margin="8,0,8,0"
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -84,7 +108,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -54,7 +54,7 @@ namespace Pongolini_Catalogo.MasterDetail
         }
         private void OnStackBujes_Tapped(object sender, EventArgs e)
         {
-            App.MasterD.Detail = new NavigationPage(new Bujes());
+            App.MasterD.Detail = new NavigationPage(new BujesPage());
             App.MasterD.IsPresented = false;
         }
         private void OnStackContacto_Tapped(object sender, EventArgs e)

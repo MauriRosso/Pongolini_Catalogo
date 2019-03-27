@@ -10,7 +10,7 @@
                     <Label
                     x:Name="lblProductoDim"
                     Text="Producto"  
-                    Margin="13,8,71,0"
+                    Margin="13,8,105,0"
                     HorizontalTextAlignment="Start"
                 />
                     <Picker 
@@ -18,24 +18,95 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
                     Margin="0,0,13,0"
-                    Title="Seleccione producto"                  
+                    Title="Seleccione producto"
+                    SelectedIndexChanged="pckProductoDim_SelectedIndexChanged"
                 />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
-                    x:Name="lblMarca"
-                    Text="Marca"  
+                    x:Name="lblDiamExtDim"
+                    Text="Ø Exterior"  
                     Margin="13,0,89,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Picker 
-                    x:Name="pckMarca"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Start"
-                    Margin="0,0,13,0"                 
+                    <Entry x:Name="txtDiamExtDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
                 />
                 </StackLayout>
-                    <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblDiamIntDim"
+                    Text="Ø Interior"  
+                    Margin="13,0,93,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtDiamIntDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout x:Name="StackAngulo" Orientation="Horizontal">
+                    <Label
+                    x:Name="lblAnguloDim"
+                    Text="Angulo"  
+                    Margin="13,0,105,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtAnguloDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout x:Name="StackForma" Orientation="Horizontal">
+                    <Label
+                    x:Name="lblFormaDim"
+                    Text="Forma"  
+                    Margin="13,0,107,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtFormaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout x:Name="StackAlto" Orientation="Horizontal">
+                    <Label
+                    x:Name="lblAltoDim"
+                    Text="Alto"  
+                    Margin="13,0,121,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtAltoDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout x:Name="StackLargo" Orientation="Horizontal">
+                    <Label
+                    x:Name="lblLargoDim"
+                    Text="Largo"  
+                    Margin="13,0,110,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtLargoDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="12,0,13,0"
+                     Keyboard="Numeric"  
+                />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
                     <Button x:Name="btnBuscarDimensiones"
                     Text="BUSCAR"
                     FontAttributes="Bold"

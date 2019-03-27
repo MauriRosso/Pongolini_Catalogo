@@ -16,7 +16,8 @@
                    TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"></Label>
-                        
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Pongolini_Catalogo.Negocio;
 using System.Collections.Generic;
+using Negocio;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Pongolini_Catalogo
@@ -11,19 +12,16 @@ namespace Pongolini_Catalogo
     public partial class App : Application
     {
         public static MasterDetailPage MasterD { get; set; }
-
-        public static List<Guias_Asientos> ListaGlobal = new List<Guias_Asientos>();
+        public static List<Guias> ListaGlobalGuias = new List<Guias>();
+        public static List<Asientos> ListaGlobalAsientos = new List<Asientos>();
+        public static List<Bujes> ListaGlobalBujes = new List<Bujes>();
 
         public App()
         {
             InitializeComponent();
 
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                RestClient client = new RestClient();
-                ListaGlobal = await client.Get<Guias_Asientos>("http://serviciowebpongolini.apphb.com/api/Guias_AsientosApi");//URL de la api.
-            });
-
+            
+           
             MainPage = new NavigationPage(new SplashPage());
         }
 

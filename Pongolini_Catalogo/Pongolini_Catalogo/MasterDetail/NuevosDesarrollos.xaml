@@ -5,9 +5,29 @@
              Title="Nuevos Desarrollos">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    x:Name="lblTipoProductoNuevDes"
+                    Text="Tipo producto"  
+                    Margin="13,10"
+                />
+                <Picker 
+                    x:Name="pckTipoProductoNuevDes"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="8,0"
+                    Title="Seleccione producto"
+                    
+                />
+            </StackLayout>
+            <Button x:Name="btnBuscarNuevDes"
+                    Text="BUSCAR"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    Clicked="btnBuscarNuevDes_Clicked"
+                Margin="8,0">
+            </Button>
+            <BoxView Margin="8,0,8,8" HeightRequest="1" BackgroundColor="DarkBlue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

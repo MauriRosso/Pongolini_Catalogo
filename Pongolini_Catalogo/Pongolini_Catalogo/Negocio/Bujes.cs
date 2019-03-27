@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Pongolini_Catalogo.Negocio
+namespace Negocio
 {
     public class Bujes
     {
-        public string Codigo { get; set; }
-        public Nullable<double> Diam_Ext { get; set; }
-        public Nullable<double> Diam_Int { get; set; }
-        public Nullable<double> Largo { get; set; }
+        public string codigo { get; set; }
+        public string marca_modelo { get; set; }
+        public decimal diametro_exterior { get; set; }
+        public decimal diametro_interior { get; set; }
+        public decimal largo { get; set; }
     }
 }

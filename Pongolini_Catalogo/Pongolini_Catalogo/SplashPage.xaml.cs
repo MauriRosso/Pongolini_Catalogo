@@ -7,22 +7,25 @@ using Pongolini_Catalogo.MasterDetail;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Pongolini_Catalogo.Negocio;
+using Negocio;
 
 namespace Pongolini_Catalogo
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SplashPage : ContentPage
 	{
-        
+
+
         public SplashPage()
         {
             InitializeComponent();
             this.BackgroundColor = Color.DarkBlue;
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
-
             
-		}
+           
+        }
 
         protected override async void OnAppearing()
         {
@@ -36,8 +39,9 @@ namespace Pongolini_Catalogo
             SplashImage.TranslateTo(0, -25, 2000);
             await SplashName.TranslateTo(0, 25, 2000);
 
+            
+
             System.Threading.Thread.Sleep(1500);
-            //Loading.Progress = ((App.ListaGlobal.Count() * 100) / 1406) / 100;
 
             Application.Current.MainPage = new HomePage();
         }

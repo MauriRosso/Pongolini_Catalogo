@@ -23,13 +23,13 @@
     <EmbeddedResource Update="MasterDetail\Aplicaciones.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MasterDetail\Bujes.xaml">
+    <EmbeddedResource Update="MasterDetail\BujesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetail\Contacto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MasterDetail\DetalleIntercambios.xaml">
+    <EmbeddedResource Update="MasterDetail\DetalleProducto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetail\Dimensiones.xaml">

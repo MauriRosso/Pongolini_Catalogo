@@ -33,9 +33,9 @@ namespace Pongolini_Catalogo.MasterDetail
             if (emailMessenger.CanSendEmail)
             {
                 var email = new EmailMessageBuilder()
-                    .To("maurirosso@hotmail.com")
-                    .Subject("Probando mails Xamarin Forms")
-                    .Body("Hola estoy probando un cuerpo de mensaje.")
+                    .To("maurirosso@hotmail.com") //Colocar mail de pongolini.
+                    .Subject("Consulta")
+                    .Body("Este mensaje fue enviado desde la aplicación móvil de Pongolini.")
                     .Build();
 
                 emailMessenger.SendEmail(email);

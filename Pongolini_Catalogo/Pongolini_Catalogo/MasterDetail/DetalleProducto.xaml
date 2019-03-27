@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.DetalleProducto"
+             Title="Detalle Producto">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="DETALLE"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                <Label x:Name="lbl300indy"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <Label x:Name="lblTipoProducto"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <Label Text="ATRIBUTOS"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                <StackLayout x:Name="StackAdmEscProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="ADM/ESC" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lbladmesc" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackDiamExtProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Ø Exterior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamext"  Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackDiamIntProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamint" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackLargoProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lbllargo" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackMaterialProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Material" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblmaterial" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackFormaProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Forma" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Image Grid.Column="1" Grid.Row="0" x:Name="imgforma" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout x:Name="StackSobremedidaProducto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="Sobremedida (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblsobremedida" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <Label Text="INTERCAMBIOS"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                <Label Text="APLICACIONES"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                <Button x:Name="btnRealizarPedido"
+                    Text="REALIZAR PEDIDO"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    Clicked="btnRealizarPedido_Clicked"
+                    Margin="8,0">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
