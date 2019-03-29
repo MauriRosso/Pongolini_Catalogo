@@ -103,11 +103,12 @@
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
-                    Margin="8,0">
+                    Margin="8,0"
+                    Clicked="btnLimpiarAplicaciones_Clicked">
                     </Button>
                 </StackLayout>
             </StackLayout>
-            
+
             <Button x:Name="btnNuevaBusqueda"
                     Text="NUEVA BUSQUEDA"
                     FontAttributes="Bold"
@@ -117,38 +118,46 @@
                     Clicked="btnNuevaBusqueda_Clicked">
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout x:Name="slLoad" Orientation="Vertical">
+                <ActivityIndicator x:Name="Cargando"
+                                   Color="DarkBlue">
+                </ActivityIndicator>
+                <Label x:Name="lblCargando"
+                       Text="Obteniendo datos.."
+                       FontAttributes="Bold"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center"></Label>
+            </StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
                 <ListView x:Name="ListViewAplicaciones"
-                          RowHeight="250"
+                          RowHeight="125"
                           VerticalOptions="FillAndExpand"
+                          ItemTapped="ListViewAplicaciones_ItemTapped"
                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.ColumnSpan="2" Text="{Binding Marca}" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
-                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.ColumnSpan="2" Text="{Binding marca_modelo}" Margin="0,0,0,0" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="Producto" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center"/>
                                     <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Text="Adm/Esc" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding admision_escape}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                     <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

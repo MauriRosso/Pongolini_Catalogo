@@ -69,3 +69,4 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandar
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleProducto.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\BujesPage.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleAplicacion.xaml.g.cs

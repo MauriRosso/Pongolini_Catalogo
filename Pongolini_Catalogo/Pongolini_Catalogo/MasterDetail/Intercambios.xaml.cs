@@ -14,8 +14,10 @@ namespace Pongolini_Catalogo.MasterDetail
     public partial class Intercambios : ContentPage
     {
         List<IntercambiosViewModel> ListaDatos_Final = new List<IntercambiosViewModel>(); //Se usa para mostrar los 3 campos necesarios
-        List<Guias> ListaDatos = new List<Guias>(); //Se usa para almacenar la informacion filtrada.
-        List<Guias> ListaAux = new List<Guias>(); //Me traigo TODOS los datos de apphb 
+        List<Guias> ListaDatosGuias = new List<Guias>(); //Se usa para almacenar la informacion filtrada (guias).
+        List<Guias> ListaAuxGuias = new List<Guias>(); //Me traigo TODAS las guias de apphb 
+        List<Asientos> ListaDatosAsientos = new List<Asientos>(); //Se usa para almacenar la informacion filtrada (asientos).
+        List<Asientos> ListaAuxAsientos = new List<Asientos>(); //Me traigo TODOS los asientos de apphb.
 
         string productoElegido = null;
 
@@ -91,33 +93,33 @@ namespace Pongolini_Catalogo.MasterDetail
                 Cargando.IsVisible = true;
                 lblCargando.IsVisible = true;
                 RestClient client = new RestClient();
-                ListaAux = await client.Get<Guias>("http://serviciowebpongolini.apphb.com/api/GuiasApi");//URL de la api.
-                App.ListaGlobalGuias = ListaAux;
+                ListaAuxGuias = await client.Get<Guias>("http://serviciowebpongolini.apphb.com/api/GuiasApi");//URL de la api.
+                App.ListaGlobalGuias = ListaAuxGuias;
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
             }
             else //Si alguna vez ya trajo los datos, simplemente se los asigno.
             {
-                ListaAux = App.ListaGlobalGuias;
+                ListaAuxGuias = App.ListaGlobalGuias;
             }
 
             bool HayIntercambio = false;
             bool HayIntercambio_Fabricante = false;
-            ListaDatos.Clear();
+            ListaDatosGuias.Clear();
             ListaDatos_Final.Clear();
 
             //Filtro por fabricante
             if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y no dejo en "[ Todos ]"..
             {
-                foreach (var item in ListaAux)
+                foreach (var item in ListaAuxGuias)
                 {
                     if (pckFabricante.SelectedItem.ToString() == "TRW")
                     {
                         if (item.codigo_trw.Contains(txtIntercambio.Text) == true || item.codigo_trw == txtIntercambio.Text)
                         {
-                            if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                            if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
-                                ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                 HayIntercambio_Fabricante = true;
                             }
                         }
@@ -128,9 +130,9 @@ namespace Pongolini_Catalogo.MasterDetail
                         {
                             if (item.codigo_metelli.Contains(txtIntercambio.Text) == true || item.codigo_metelli == txtIntercambio.Text)
                             {
-                                if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                     HayIntercambio_Fabricante = true;
                                 }
                             }
@@ -141,9 +143,9 @@ namespace Pongolini_Catalogo.MasterDetail
                             {
                                 if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true || item.codigo_riosulense == txtIntercambio.Text)
                                 {
-                                    if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                    if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
-                                        ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
+                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
                                         HayIntercambio_Fabricante = true;
                                     }
                                 }
@@ -154,9 +156,9 @@ namespace Pongolini_Catalogo.MasterDetail
                                 {
                                     if (item.codigo_sm.Contains(txtIntercambio.Text) == true || item.codigo_sm == txtIntercambio.Text)
                                     {
-                                        if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                         {
-                                            ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                             HayIntercambio_Fabricante = true;
                                         }
                                     }
@@ -174,40 +176,40 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 if (pckFabricante.SelectedIndex != 0) //Solo se eligio por fabricante
                 {
-                    foreach (var item in ListaAux)
+                    foreach (var item in ListaAuxGuias)
                     {
                         if (pckFabricante.SelectedItem.ToString() == "TRW")
                         {
-                            if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                            if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
-                                ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                             }
                         }
                         else
                         {
                             if (pckFabricante.SelectedItem.ToString() == "METELLI")
                             {
-                                if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                 }
                             }
                             else
                             {
                                 if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
                                 {
-                                    if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                    if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
-                                        ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
+                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
                                     }
                                 }
                                 else
                                 {
                                     if (pckFabricante.SelectedItem.ToString() == "SM")
                                     {
-                                        if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                         {
-                                            ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                         }
                                     }
                                 }
@@ -219,13 +221,13 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (txtIntercambio.Text != null) //Se eligio solo intercambio
                     {
-                        foreach (var item in ListaAux)
+                        foreach (var item in ListaAuxGuias)
                         {
                             if (item.codigo_trw.Contains(txtIntercambio.Text) == true || item.codigo_trw == txtIntercambio.Text)
                             {
-                                if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                     HayIntercambio = true;
                                 }
                             }
@@ -233,9 +235,9 @@ namespace Pongolini_Catalogo.MasterDetail
                             {
                                 if (item.codigo_metelli.Contains(txtIntercambio.Text) == true || item.codigo_metelli == txtIntercambio.Text)
                                 {
-                                    if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                    if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
-                                        ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                         HayIntercambio = true;
                                     }
                                 }
@@ -243,9 +245,9 @@ namespace Pongolini_Catalogo.MasterDetail
                                 {
                                     if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true || item.codigo_riosulense == txtIntercambio.Text)
                                     {
-                                        if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                         {
-                                            ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                             HayIntercambio = true;
                                         }
                                     }
@@ -253,9 +255,9 @@ namespace Pongolini_Catalogo.MasterDetail
                                     {
                                         if (item.codigo_sm.Contains(txtIntercambio.Text) == true || item.codigo_sm == txtIntercambio.Text)
                                         {
-                                            if (ListaDatos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                            if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                             {
-                                                ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                                                 HayIntercambio = true;
                                             }
                                         }
@@ -273,16 +275,16 @@ namespace Pongolini_Catalogo.MasterDetail
                         if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null)
                         {
                             //Muestro TODOS los datos.
-                            foreach (var item in ListaAux)
+                            foreach (var item in ListaAuxGuias)
                             {
-                                ListaDatos.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                             }
                         }
                     }
                 }
             }
             //////// Cargo la informacion filtrada para mostrar en la ListView
-            foreach (var item in ListaDatos)
+            foreach (var item in ListaDatosGuias)
             {
                 if (item.codigo_trw != null && item.codigo_trw.Contains("vip") == true)
                 {

@@ -10,20 +10,26 @@ using Negocio;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Aplicaciones : ContentPage
-	{
-        List<Guias> ListaDatos = new List<Guias>();
-        List<Guias> ListaAux = new List<Guias>();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Aplicaciones : ContentPage
+    {
+        List<AplicacionesViewModel> ListaDatos_Final = new List<AplicacionesViewModel>(); //Informacion que se muestra en la listview.
+        List<Guias> ListaDatosGuias = new List<Guias>(); //Almaceno info filtrada de guias
+        List<Guias> ListaAuxGuias = new List<Guias>(); //Traigo TODAS las guias de apphb
+        List<Asientos> ListaDatosAsientos = new List<Asientos>(); //Almaceno info filtrada de asientos
+        List<Asientos> ListaAuxAsientos = new List<Asientos>(); //Traigo TODAS los asientos de apphb
+        string productoElegido = string.Empty;
 
-        public Aplicaciones ()
-		{
-			InitializeComponent ();
+        public Aplicaciones()
+        {
+            InitializeComponent();
             CargarPickerProducto();
             CargarPickerMarca();
             CargarPickerTipoAplicacion();
-            CargarListaAux();
             btnNuevaBusqueda.IsVisible = false;
+            Cargando.IsRunning = true;
+            Cargando.IsVisible = false;
+            lblCargando.IsVisible = false;
         }
 
         public void CargarPickerMarca()
@@ -93,6 +99,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("PEGASO");
             pckMarca.Items.Add("PERKINS");
             pckMarca.Items.Add("PEUGEOT");
+            pckMarca.Items.Add("PONTIAC");
             pckMarca.Items.Add("PORSCHE");
             pckMarca.Items.Add("RASTROJERO");
             pckMarca.Items.Add("RENAULT");
@@ -106,6 +113,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("STEYR");
             pckMarca.Items.Add("SUBARU");
             pckMarca.Items.Add("SUZUKI");
+            pckMarca.Items.Add("TORNADO");
             pckMarca.Items.Add("TOYOTA");
             pckMarca.Items.Add("UAZ");
             pckMarca.Items.Add("UNIVERSAL");
@@ -138,11 +146,6 @@ namespace Pongolini_Catalogo.MasterDetail
             pckTipoAplicacion.SelectedIndex = 0;
         }
 
-        public void CargarListaAux()
-        {
-           
-        }
-
         public void OcultarCamposAplicaciones()
         {
             var stackBusqueda = this.FindByName<StackLayout>("StackCamposBusqueda");
@@ -152,18 +155,145 @@ namespace Pongolini_Catalogo.MasterDetail
 
         }
 
+        public async void ObtenerGuias()
+        {
+            if (App.ListaGlobalGuias.Count == 0) //Si es la primera vez que trae datos de guias..
+            {
+                Cargando.IsVisible = true;
+                lblCargando.IsVisible = true;
+                RestClient client = new RestClient();
+                ListaAuxGuias = await client.Get<Guias>("http://serviciowebpongolini.apphb.com/api/GuiasApi");//URL de la api.
+                App.ListaGlobalGuias = ListaAuxGuias;
+                Cargando.IsVisible = false;
+                lblCargando.IsVisible = false;
+            }
+            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
+            {
+                ListaAuxGuias = App.ListaGlobalGuias;
+            }
+            ListaDatosGuias.Clear();
+            ListaDatos_Final.Clear();
+            //filtros
+            if (txtNOriginal.Text != null)
+            {
+                BusquedaNOriginalGuias();
+            }
+            if (txtMotor.Text != null)
+            {
+                BusquedaMotorGuias();
+            }
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            {
+                BusquedaMarcaGuias();
+            }
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            {
+                BusquedaTipoAplicacionGuias();
+            }
+            if (txtCilindrada.Text != null)
+            {
+                BusquedaCilindrosGuias();
+            }
+
+            if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
+            {
+                //Mostrar TODOS los datos.
+                foreach (var item in App.ListaGlobalGuias)
+                {
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                }
+            }
+            else
+            {
+                CoincidenciasGuias();
+            }
+
+            if (ListaDatos_Final.Count() == 0)
+            {
+                DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+            }
+            ListViewAplicaciones.ItemsSource = null;
+            ListViewAplicaciones.ItemsSource = ListaDatos_Final;
+        }
+
+        public async void ObtenerAsientos()
+        {
+            if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de guias..
+            {
+                Cargando.IsVisible = true;
+                lblCargando.IsVisible = true;
+                RestClient client = new RestClient();
+                ListaAuxAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
+                App.ListaGlobalAsientos = ListaAuxAsientos;
+                Cargando.IsVisible = false;
+                lblCargando.IsVisible = false;
+            }
+            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
+            {
+                ListaAuxAsientos = App.ListaGlobalAsientos;
+            }
+            ListaDatosAsientos.Clear();
+            ListaDatos_Final.Clear();
+            //filtros
+            if (txtNOriginal.Text != null)
+            {
+                BusquedaNOriginalAsientos();
+            }
+            if (txtMotor.Text != null)
+            {
+                BusquedaMotorAsientos();
+            }
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            {
+                BusquedaMarcaAsientos();
+            }
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            {
+                BusquedaTipoAplicacionAsientos();
+            }
+            if (txtCilindrada.Text != null)
+            {
+                BusquedaCilindrosAsientos();
+            }
+
+            if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
+            {
+                //Mostrar TODOS los datos.
+                foreach (var item in App.ListaGlobalAsientos)
+                {
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                }
+            }
+            else
+            {
+                CoincidenciasAsientos();
+            }
+
+            if (ListaDatos_Final.Count() == 0)
+            {
+                DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+            }
+            ListViewAplicaciones.ItemsSource = null;
+            ListViewAplicaciones.ItemsSource = ListaDatos_Final;
+
+
+        }
+
         private void btnBuscarAplicaciones_Clicked(object sender, EventArgs e)
         {
             //Oculto la busqueda para mostrar con mas espacio la listview
             OcultarCamposAplicaciones();
 
-            ListaDatos.Clear();
-            //filtros
-           
-
-            ListViewAplicaciones.ItemsSource = null;
-            ListViewAplicaciones.ItemsSource = ListaDatos;
-
+            if (pckProducto.SelectedItem.ToString() == "Guías")
+            {
+                productoElegido = "Guías";
+                ObtenerGuias();
+            }
+            else
+            {
+                productoElegido = "Asientos";
+                ObtenerAsientos();
+            }
         }
 
         private void btnNuevaBusqueda_Clicked(object sender, EventArgs e)
@@ -171,6 +301,391 @@ namespace Pongolini_Catalogo.MasterDetail
             btnNuevaBusqueda.IsVisible = false;
             var stackBusqueda = this.FindByName<StackLayout>("StackCamposBusqueda");
             stackBusqueda.IsVisible = true;
+        }
+
+        public void BusquedaNOriginalGuias()
+        {
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (txtNOriginal.Text == item.numero_original)
+                {
+                    if (ListaDatosGuias.Contains(item) == false)
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaNOriginalAsientos()
+        {
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (txtNOriginal.Text == item.numero_original)
+                {
+                    if (ListaDatosAsientos.Contains(item) == false)
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaMotorGuias()
+        {
+
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                {
+                    if (ListaDatosGuias.Contains(item) == false)
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+
+        }
+
+        public void BusquedaMotorAsientos()
+        {
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.marca_modelo.Contains(txtMotor.Text) == true)
+                {
+                    if (ListaDatosAsientos.Contains(item) == false)
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaMarcaGuias()
+        {
+            string marca_final = string.Empty;
+            //Resuelvo conflictos de marcas mal escritas
+            switch (pckMarca.SelectedItem.ToString())
+            {
+                case "VOLKSWAGEN":
+                    marca_final = "VW";
+                    break;
+                case "MERCEDES BENZ":
+                    marca_final = "M. BENZ";
+                    break;
+                case "PEUGEOT":
+                    marca_final = "PEUG";
+                    break;
+                case "SCANIA VABIS":
+                    marca_final = "SCANIA";
+                    break;
+                case "CHEVROLET":
+                    marca_final = "CHEVROL";
+                    break;
+                case "BMW":
+                    marca_final = "B.M.W";
+                    break;
+                case "CONTINENTAL":
+                    marca_final = "CONTINEN";
+                    break;
+                default:
+                    marca_final = pckMarca.SelectedItem.ToString();
+                    break;
+            }
+
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.marca_modelo.Contains(marca_final) == true)
+                {
+                    if (ListaDatosGuias.Contains(item) == false)
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaMarcaAsientos()
+        {
+            string marca_final = string.Empty;
+            //Resuelvo conflictos de marcas mal escritas
+            switch (pckMarca.SelectedItem.ToString())
+            {
+                case "VOLKSWAGEN":
+                    marca_final = "VW";
+                    break;
+                case "MERCEDES BENZ":
+                    marca_final = "M. BENZ";
+                    break;
+                case "PEUGEOT":
+                    marca_final = "PEUG";
+                    break;
+                case "SCANIA VABIS":
+                    marca_final = "SCANIA";
+                    break;
+                case "CHEVROLET":
+                    marca_final = "CHEVROL";
+                    break;
+                case "BMW":
+                    marca_final = "B.M.W";
+                    break;
+                case "CONTINENTAL":
+                    marca_final = "CONTINEN";
+                    break;
+                default:
+                    marca_final = pckMarca.SelectedItem.ToString();
+                    break;
+            }
+
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.marca_modelo.Contains(marca_final) == true)
+                {
+                    if (ListaDatosAsientos.Contains(item) == false)
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaCilindrosGuias()
+        {
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.cilindros.Contains(txtCilindrada.Text) == true)
+                {
+                    if (ListaDatosGuias.Contains(item) == false)
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaCilindrosAsientos()
+        {
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.cilindros.Contains(txtCilindrada.Text) == true)
+                {
+                    if (ListaDatosAsientos.Contains(item) == false)
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaTipoAplicacionGuias()
+        {
+
+        }
+
+        public void BusquedaTipoAplicacionAsientos()
+        {
+
+        }
+
+        private int CantidadParametros()
+        {
+            int CP = 0;
+
+            if (txtNOriginal.Text != null)
+            {
+                CP += 1;
+            }
+            if (txtMotor.Text != null)
+            {
+                CP += 1;
+            }
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            {
+                CP += 1;
+            }
+            //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            //{
+            //    CP += 1;
+            //}
+            if (txtCilindrada.Text != null)
+            {
+                CP += 1;
+            }
+
+            return CP;
+        }
+
+        public void CoincidenciasGuias()
+        {
+            foreach (var item in ListaDatosGuias)
+            {
+                int coincidencias = 0;
+                if (txtNOriginal.Text != null)
+                {
+                    if (txtNOriginal.Text == item.numero_original)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtMotor.Text != null)
+                {
+                    if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+                {
+                    string marca_final = string.Empty;
+                    //Resuelvo conflictos de marcas mal escritas
+                    switch (pckMarca.SelectedItem.ToString())
+                    {
+                        case "VOLKSWAGEN":
+                            marca_final = "VW";
+                            break;
+                        case "MERCEDES BENZ":
+                            marca_final = "M. BENZ";
+                            break;
+                        case "PEUGEOT":
+                            marca_final = "PEUG";
+                            break;
+                        case "SCANIA VABIS":
+                            marca_final = "SCANIA";
+                            break;
+                        case "CHEVROLET":
+                            marca_final = "CHEVROL";
+                            break;
+                        case "BMW":
+                            marca_final = "B.M.W";
+                            break;
+                        case "CONTINENTAL":
+                            marca_final = "CONTINEN";
+                            break;
+                        default:
+                            marca_final = pckMarca.SelectedItem.ToString();
+                            break;
+                    }
+                    if (item.marca_modelo.Contains(marca_final) == true)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                //{
+
+                //}
+                if (txtCilindrada.Text != null)
+                {
+                    if (item.cilindros.Contains(txtCilindrada.Text) == true)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+
+                int cantPar = CantidadParametros();
+                if (cantPar == coincidencias)
+                {
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                }
+            }
+        }
+
+        public void CoincidenciasAsientos()
+        {
+            foreach (var item in ListaDatosAsientos)
+            {
+                int coincidencias = 0;
+                if (txtNOriginal.Text != null)
+                {
+                    if (txtNOriginal.Text == item.numero_original)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtMotor.Text != null)
+                {
+                    if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+                {
+                    string marca_final = string.Empty;
+                    //Resuelvo conflictos de marcas mal escritas
+                    switch (pckMarca.SelectedItem.ToString())
+                    {
+                        case "VOLKSWAGEN":
+                            marca_final = "VW";
+                            break;
+                        case "MERCEDES BENZ":
+                            marca_final = "M. BENZ";
+                            break;
+                        case "PEUGEOT":
+                            marca_final = "PEUG";
+                            break;
+                        case "SCANIA VABIS":
+                            marca_final = "SCANIA";
+                            break;
+                        case "CHEVROLET":
+                            marca_final = "CHEVROL";
+                            break;
+                        case "BMW":
+                            marca_final = "B.M.W";
+                            break;
+                        case "CONTINENTAL":
+                            marca_final = "CONTINEN";
+                            break;
+                        default:
+                            marca_final = pckMarca.SelectedItem.ToString();
+                            break;
+                    }
+                    if (item.marca_modelo.Contains(marca_final) == true)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                //{
+
+                //}
+                if (txtCilindrada.Text != null)
+                {
+                    if (item.cilindros.Contains(txtCilindrada.Text) == true)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+
+                int cantPar = CantidadParametros();
+                if (cantPar == coincidencias)
+                {
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                }
+            }
+        }
+
+        private void ListViewAplicaciones_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (productoElegido == "Guías")
+            {
+                var aplicacion_guia = e.Item as AplicacionesViewModel;
+                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.numero_300indy == aplicacion_guia.numero_300indy);
+                Navigation.PushAsync(new DetalleAplicacion(guia_encontrada, null));
+            }
+            else
+            {
+                var aplicacion_asiento = e.Item as AplicacionesViewModel;
+                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.numero_300indy == aplicacion_asiento.numero_300indy);
+                Navigation.PushAsync(new DetalleAplicacion(null, asiento_encontrado));
+            }
+        }
+
+        private void btnLimpiarAplicaciones_Clicked(object sender, EventArgs e)
+        {
+            ListaDatos_Final.Clear();
+            ListViewAplicaciones.ItemsSource = null;
+            ListViewAplicaciones.ItemsSource = ListaDatos_Final;
         }
     }
 }
