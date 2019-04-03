@@ -152,3 +152,4 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimula
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.Touch.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Pongolini_Catalogo.dll.mdb

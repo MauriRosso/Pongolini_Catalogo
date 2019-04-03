@@ -186,21 +186,13 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMarcaGuias();
             }
-            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
-            {
-                BusquedaTipoAplicacionGuias();
-            }
-            if (txtCilindrada.Text != null)
-            {
-                BusquedaCilindrosGuias();
-            }
 
             if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
                 }
             }
             else
@@ -247,21 +239,13 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMarcaAsientos();
             }
-            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
-            {
-                BusquedaTipoAplicacionAsientos();
-            }
-            if (txtCilindrada.Text != null)
-            {
-                BusquedaCilindrosAsientos();
-            }
 
             if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalAsientos)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
                 }
             }
             else
@@ -311,7 +295,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosGuias.Contains(item) == false)
                     {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
                     }
                 }
             }
@@ -325,7 +309,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosAsientos.Contains(item) == false)
                     {
-                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                     }
                 }
             }
@@ -340,7 +324,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosGuias.Contains(item) == false)
                     {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
                     }
                 }
             }
@@ -355,7 +339,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosAsientos.Contains(item) == false)
                     {
-                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                     }
                 }
             }
@@ -399,7 +383,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosGuias.Contains(item) == false)
                     {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
                     }
                 }
             }
@@ -443,48 +427,10 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (ListaDatosAsientos.Contains(item) == false)
                     {
-                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
                     }
                 }
             }
-        }
-
-        public void BusquedaCilindrosGuias()
-        {
-            foreach (var item in App.ListaGlobalGuias)
-            {
-                if (item.cilindros.Contains(txtCilindrada.Text) == true)
-                {
-                    if (ListaDatosGuias.Contains(item) == false)
-                    {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                    }
-                }
-            }
-        }
-
-        public void BusquedaCilindrosAsientos()
-        {
-            foreach (var item in App.ListaGlobalAsientos)
-            {
-                if (item.cilindros.Contains(txtCilindrada.Text) == true)
-                {
-                    if (ListaDatosAsientos.Contains(item) == false)
-                    {
-                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                    }
-                }
-            }
-        }
-
-        public void BusquedaTipoAplicacionGuias()
-        {
-
-        }
-
-        public void BusquedaTipoAplicacionAsientos()
-        {
-
         }
 
         private int CantidadParametros()
@@ -570,22 +516,11 @@ namespace Pongolini_Catalogo.MasterDetail
                         coincidencias += 1;
                     }
                 }
-                //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
-                //{
-
-                //}
-                if (txtCilindrada.Text != null)
-                {
-                    if (item.cilindros.Contains(txtCilindrada.Text) == true)
-                    {
-                        coincidencias += 1;
-                    }
-                }
 
                 int cantPar = CantidadParametros();
                 if (cantPar == coincidencias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
                 }
             }
         }
@@ -649,18 +584,11 @@ namespace Pongolini_Catalogo.MasterDetail
                 //{
 
                 //}
-                if (txtCilindrada.Text != null)
-                {
-                    if (item.cilindros.Contains(txtCilindrada.Text) == true)
-                    {
-                        coincidencias += 1;
-                    }
-                }
 
                 int cantPar = CantidadParametros();
                 if (cantPar == coincidencias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, cilindros = item.cilindros, marca_modelo = item.marca_modelo, motor = item.motor, tipo_alimentacion = item.tipo_alimentacion, tipo_aplicacion = item.tipo_aplicacion });
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
                 }
             }
         }

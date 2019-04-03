@@ -9,9 +9,8 @@ namespace Negocio
     public class Bujes
     {
         public string codigo { get; set; }
-        public string marca_modelo { get; set; }
-        public decimal diametro_exterior { get; set; }
-        public decimal diametro_interior { get; set; }
-        public decimal largo { get; set; }
+        public double? diametro_exterior { get; set; }
+        public double? diametro_interior { get; set; }
+        public double? largo { get; set; }
     }
 }

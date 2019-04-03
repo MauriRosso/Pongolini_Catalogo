@@ -11,6 +11,8 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Messaging.Abstractions.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Messaging.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Pongolini_Catalogo.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Rg.Plugins.Popup.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Rg.Plugins.Popup.Droid.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Configuration.ConfigurationManager.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Core.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Data.dll

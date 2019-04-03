@@ -9,13 +9,14 @@ using Plugin.Messaging;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Negocio;
+using Rg.Plugins.Popup.Services;
+using Rg.Plugins.Popup.Pages;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetalleProducto : ContentPage
 	{
-        string mensaje = "";
         public DetalleProducto (Guias guia, Asientos asiento)
 		{
 			InitializeComponent ();
@@ -28,7 +29,6 @@ namespace Pongolini_Catalogo.MasterDetail
                 this.FindByName<Label>("lbldiamint").Text = guia.diametro_interior.ToString();
                 this.FindByName<Label>("lbllargo").Text = guia.largo.ToString();
                 this.FindByName<Label>("lblmaterial").Text = guia.material;
-                this.FindByName<Label>("lblsobremedida").Text = guia.sobremedida.ToString();
                 
             }
             else
@@ -36,26 +36,26 @@ namespace Pongolini_Catalogo.MasterDetail
                 
             }
 
-            mensaje = "Producto: " + lblTipoProducto.Text + "\n" + "N° 300INDY: " + lbl300indy.Text + "\n";
         }
 
         private async void btnRealizarPedido_Clicked(object sender, EventArgs e)
         {
-            bool rta = await DisplayAlert("¿Confirmar pedido?", mensaje, "Confirmar", "Cancelar");
-            if (rta == true) //Confirmo pedido
-            {
-                var emailMessenger = CrossMessaging.Current.EmailMessenger;
-                if (emailMessenger.CanSendEmail)
-                {
-                    var email = new EmailMessageBuilder()
-                        .To("maurirosso@hotmail.com") //Colocar mail de pongolini.
-                        .Subject("PEDIDO REALIZADO - Pongolini catálogo app")
-                        .Body("Hola, deseo realizar el siguiente pedido: \n" + mensaje + "\n" + "Espero respuesta para confirmar la compra, saludos.")
-                        .Build();
+            await PopupNavigation.Instance.PushAsync(new PopupModal(lblTipoProducto.Text, lbl300indy.Text));
+            //bool rta = await DisplayAlert("¿Confirmar pedido?", mensaje, "Confirmar", "Cancelar");
+            //if (rta == true) //Confirmo pedido
+            //{
+            //    var emailMessenger = CrossMessaging.Current.EmailMessenger;
+            //    if (emailMessenger.CanSendEmail)
+            //    {
+            //        var email = new EmailMessageBuilder()
+            //            .To("maurirosso@hotmail.com") //Colocar mail de pongolini.
+            //            .Subject("PEDIDO REALIZADO - Pongolini catálogo app")
+            //            .Body("Hola, deseo realizar el siguiente pedido: \n" + mensaje + "\n" + "Espero respuesta para confirmar la compra, saludos.")
+            //            .Build();
 
-                    emailMessenger.SendEmail(email);
-                }
-            }
+            //        emailMessenger.SendEmail(email);
+            //    }
+            //}
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿<pages:PopupPage xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Pongolini_Catalogo.PopupModal">
+    <ContentPage.Content>
+        <StackLayout 
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+            <Label Text="Confirmar pedido" FontSize="25" FontAttributes="Bold" TextColor="DarkBlue" HorizontalOptions="Center"/>
+            <StackLayout>
+                <Label Text="Nombre" Margin="15,0,15,0"/>
+                <Entry x:Name="txtNombre" FontSize="20" Margin="15,0,15,0"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Apellido" Margin="15,0,15,0"/>
+                <Entry x:Name="txtApellido" FontSize="20" Margin="15,0,15,0"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Teléfono" Margin="15,0,15,0"/>
+                <Entry x:Name="txtTelefono" FontSize="20" Margin="15,0,15,0" Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Dirección" Margin="15,0,15,0"/>
+                <Entry x:Name="txtDireccion" FontSize="20" Margin="15,0,15,0"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Código postal" Margin="15,0,15,0"/>
+                <Entry x:Name="txtCodigoPostal" FontSize="20" Margin="15,0,15,0"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Cantidad de unidades" Margin="15,0,15,0"/>
+                <Entry x:Name="txtCantUni" FontSize="20" Margin="15,0,15,0" Keyboard="Numeric"/>
+            </StackLayout>
+            <Button BackgroundColor="DarkBlue"
+                FontSize="20"
+                Text="Realizar pedido"
+                TextColor="White"
+                FontAttributes="Bold"
+                Margin="15,0,15,10"
+                Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

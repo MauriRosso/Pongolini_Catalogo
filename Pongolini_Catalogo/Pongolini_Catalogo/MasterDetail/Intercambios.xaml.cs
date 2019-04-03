@@ -20,7 +20,9 @@ namespace Pongolini_Catalogo.MasterDetail
         List<Asientos> ListaAuxAsientos = new List<Asientos>(); //Me traigo TODOS los asientos de apphb.
 
         string productoElegido = null;
-
+        string fabricanteElegido = null;
+        bool encontre_intercambio = false;
+        bool encontre_fabricante = false;
         public List<string> ListaFabricantes = new List<string>();
 
         public Intercambios() //Solamente pasa la primera vez que se abre la pag.
@@ -39,10 +41,8 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public void CargarListaFabricantes()
         {
-            ListaFabricantes.Add("TRW");
-            ListaFabricantes.Add("METELLI");
             ListaFabricantes.Add("RIOSULENSE");
-            ListaFabricantes.Add("SM");
+            ListaFabricantes.Add("MAHLE");
         }
 
 
@@ -66,10 +66,8 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             pckFabricante.Title = "Seleccione fabricante";
             pckFabricante.Items.Add("[ Todos ]");
-            pckFabricante.Items.Add("TRW");
-            pckFabricante.Items.Add("METELLI");
             pckFabricante.Items.Add("RIOSULENSE");
-            pckFabricante.Items.Add("SM");
+            pckFabricante.Items.Add("MAHLE");
             pckFabricante.SelectedIndex = 0;
         }
 
@@ -83,7 +81,163 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public async void ObtenerAsientos()
         {
+            if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de guias..
+            {
+                Cargando.IsVisible = true;
+                lblCargando.IsVisible = true;
+                RestClient client = new RestClient();
+                ListaAuxAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
+                App.ListaGlobalAsientos = ListaAuxAsientos;
+                Cargando.IsVisible = false;
+                lblCargando.IsVisible = false;
+            }
+            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
+            {
+                ListaAuxAsientos = App.ListaGlobalAsientos;
+            }
 
+            ListaDatosAsientos.Clear();
+            ListaDatos_Final.Clear();
+            fabricanteElegido = null;
+            encontre_intercambio = false;
+            encontre_fabricante = false;
+
+            /////////-->FILTROS<--//////////
+
+            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y en intercambios..
+            {
+                foreach (var item in App.ListaGlobalAsientos)
+                {
+                    if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
+                    {
+                        if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                        {
+                            if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                            {
+                                ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                encontre_fabricante = true;
+                                fabricanteElegido = "RIOSULENSE";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (pckFabricante.SelectedItem.ToString() == "MAHLE")
+                        {
+                            if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                            {
+                                if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                {
+                                    ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    encontre_fabricante = true;
+                                    fabricanteElegido = "MAHLE";
+                                }
+                            }
+                        }
+                    }
+                }
+                if (encontre_fabricante == false)
+                {
+                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                }
+            }
+            else
+            {
+                if (pckFabricante.SelectedIndex != 0) //Solo se eligio por fabricante
+                {
+                    foreach (var item in App.ListaGlobalAsientos)
+                    {
+                        if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
+                        {
+                            if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                            {
+                                ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                fabricanteElegido = "RIOSULENSE";
+                            }
+                        }
+                        else
+                        {
+                            if (pckFabricante.SelectedItem.ToString() == "MAHLE")
+                            {
+                                if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                {
+                                    ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    fabricanteElegido = "MAHLE";
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (txtIntercambio.Text != null) //Se eligio solo intercambio
+                    {
+                        foreach (var item in App.ListaGlobalAsientos)
+                        {
+                            if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                            {
+                                if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                {
+                                    ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    encontre_intercambio = true;
+                                }
+                            }
+                            else
+                            {
+                                if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                                {
+                                    if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
+                                    {
+                                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                        encontre_intercambio = true;
+                                    }
+                                }
+                            }
+                        }
+                        if (encontre_intercambio == false)
+                        {
+                            DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                        }
+                    }
+                    else //No se eligio ninguno de los dos.
+                    {
+                        if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null)
+                        {
+                            //Muestro TODOS los datos.
+                            foreach (var item in App.ListaGlobalAsientos)
+                            {
+                                ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                            }
+                        }
+                    }
+                }
+            }
+            //////// Cargo la informacion filtrada para mostrar en la ListView
+            foreach (var item in ListaDatosAsientos)
+            {
+                if (fabricanteElegido != null)
+                {
+                    if (fabricanteElegido == "RIOSULENSE")
+                    {
+                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
+                    }
+                    else //Son todos mahle
+                    {
+                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "MAHLE", Producto = item.numero_300indy, Intercambio = item.codigo_mahle });
+                    }
+                }
+                else
+                {
+                    ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
+                    ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "MAHLE", Producto = item.numero_300indy, Intercambio = item.codigo_mahle });
+                }
+            }
+            ///
+            ////////////////
+
+            //Se actualiza el ListView
+            ListViewDatos.ItemsSource = null;
+            ListViewDatos.ItemsSource = ListaDatos_Final;
         }
 
         public async void ObtenerGuias()
@@ -103,71 +257,47 @@ namespace Pongolini_Catalogo.MasterDetail
                 ListaAuxGuias = App.ListaGlobalGuias;
             }
 
-            bool HayIntercambio = false;
-            bool HayIntercambio_Fabricante = false;
             ListaDatosGuias.Clear();
             ListaDatos_Final.Clear();
+            fabricanteElegido = null;
+            encontre_intercambio = false;
+            encontre_fabricante = false;
 
-            //Filtro por fabricante
-            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y no dejo en "[ Todos ]"..
+            /////////-->FILTROS<--//////////
+           
+            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y en intercambios..
             {
-                foreach (var item in ListaAuxGuias)
+                foreach (var item in App.ListaGlobalGuias)
                 {
-                    if (pckFabricante.SelectedItem.ToString() == "TRW")
+                    if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
                     {
-                        if (item.codigo_trw.Contains(txtIntercambio.Text) == true || item.codigo_trw == txtIntercambio.Text)
+                        if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                         {
                             if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
-                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                HayIntercambio_Fabricante = true;
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                encontre_fabricante = true;
+                                fabricanteElegido = "RIOSULENSE";
                             }
                         }
                     }
                     else
                     {
-                        if (pckFabricante.SelectedItem.ToString() == "METELLI")
+                        if (pckFabricante.SelectedItem.ToString() == "MAHLE")
                         {
-                            if (item.codigo_metelli.Contains(txtIntercambio.Text) == true || item.codigo_metelli == txtIntercambio.Text)
+                            if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                    HayIntercambio_Fabricante = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
-                            {
-                                if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true || item.codigo_riosulense == txtIntercambio.Text)
-                                {
-                                    if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                    {
-                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
-                                        HayIntercambio_Fabricante = true;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                if (pckFabricante.SelectedItem.ToString() == "SM")
-                                {
-                                    if (item.codigo_sm.Contains(txtIntercambio.Text) == true || item.codigo_sm == txtIntercambio.Text)
-                                    {
-                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                        {
-                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                            HayIntercambio_Fabricante = true;
-                                        }
-                                    }
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    encontre_fabricante = true;
+                                    fabricanteElegido = "MAHLE";
                                 }
                             }
                         }
                     }
                 }
-                if (HayIntercambio_Fabricante == false)
+                if (encontre_fabricante == false)
                 {
                     DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                 }
@@ -176,42 +306,24 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 if (pckFabricante.SelectedIndex != 0) //Solo se eligio por fabricante
                 {
-                    foreach (var item in ListaAuxGuias)
+                    foreach (var item in App.ListaGlobalGuias)
                     {
-                        if (pckFabricante.SelectedItem.ToString() == "TRW")
+                        if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
                         {
                             if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
-                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = "vip" + item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                fabricanteElegido = "RIOSULENSE";
                             }
                         }
                         else
                         {
-                            if (pckFabricante.SelectedItem.ToString() == "METELLI")
+                            if (pckFabricante.SelectedItem.ToString() == "MAHLE")
                             {
                                 if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = "vip" + item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                }
-                            }
-                            else
-                            {
-                                if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
-                                {
-                                    if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                    {
-                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = "vip" + item.codigo_riosulense });
-                                    }
-                                }
-                                else
-                                {
-                                    if (pckFabricante.SelectedItem.ToString() == "SM")
-                                    {
-                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                        {
-                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = "vip" + item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                        }
-                                    }
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    fabricanteElegido = "MAHLE";
                                 }
                             }
                         }
@@ -221,51 +333,29 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (txtIntercambio.Text != null) //Se eligio solo intercambio
                     {
-                        foreach (var item in ListaAuxGuias)
+                        foreach (var item in App.ListaGlobalGuias)
                         {
-                            if (item.codigo_trw.Contains(txtIntercambio.Text) == true || item.codigo_trw == txtIntercambio.Text)
+                            if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
-                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                    HayIntercambio = true;
+                                    ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                    encontre_intercambio = true;
                                 }
                             }
                             else
                             {
-                                if (item.codigo_metelli.Contains(txtIntercambio.Text) == true || item.codigo_metelli == txtIntercambio.Text)
+                                if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                                 {
                                     if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
-                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                        HayIntercambio = true;
-                                    }
-                                }
-                                else
-                                {
-                                    if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true || item.codigo_riosulense == txtIntercambio.Text)
-                                    {
-                                        if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                        {
-                                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                            HayIntercambio = true;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (item.codigo_sm.Contains(txtIntercambio.Text) == true || item.codigo_sm == txtIntercambio.Text)
-                                        {
-                                            if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
-                                            {
-                                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
-                                                HayIntercambio = true;
-                                            }
-                                        }
+                                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                                        encontre_intercambio = true;
                                     }
                                 }
                             }
                         }
-                        if (HayIntercambio == false)
+                        if (encontre_intercambio == false)
                         {
                             DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                         }
@@ -275,9 +365,9 @@ namespace Pongolini_Catalogo.MasterDetail
                         if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null)
                         {
                             //Muestro TODOS los datos.
-                            foreach (var item in ListaAuxGuias)
+                            foreach (var item in App.ListaGlobalGuias)
                             {
-                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                                ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
                             }
                         }
                     }
@@ -286,40 +376,26 @@ namespace Pongolini_Catalogo.MasterDetail
             //////// Cargo la informacion filtrada para mostrar en la ListView
             foreach (var item in ListaDatosGuias)
             {
-                if (item.codigo_trw != null && item.codigo_trw.Contains("vip") == true)
+                if (fabricanteElegido != null)
                 {
-                    //En este paso deberia quitarle la palabra VIP asi no se ve en la listview.
-                    ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "TRW", Producto = item.numero_300indy, Intercambio = item.codigo_trw });
+                    if (fabricanteElegido == "RIOSULENSE")
+                    {
+                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
+                    }
+                    else //Son todos mahle
+                    {
+                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "MAHLE", Producto = item.numero_300indy, Intercambio = item.codigo_mahle });
+                    }
                 }
                 else
                 {
-                    if (item.codigo_metelli != null && item.codigo_metelli.Contains("vip") == true)
-                    {
-                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "METELLI", Producto = item.numero_300indy, Intercambio = item.codigo_metelli });
-                    }
-                    else
-                    {
-                        if (item.codigo_riosulense != null && item.codigo_riosulense.Contains("vip") == true)
-                        {
-                            ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
-                        }
-                        else
-                        {
-                            if (item.codigo_sm != null && item.codigo_sm.Contains("vip") == true)
-                            {
-                                ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "SM", Producto = item.numero_300indy, Intercambio = item.codigo_sm });
-                            }
-                            else //Ninguno es vip.. muestro todos
-                            {
-                                ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "TRW", Producto = item.numero_300indy, Intercambio = item.codigo_trw });
-                                ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "METELLI", Producto = item.numero_300indy, Intercambio = item.codigo_metelli });
-                                ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
-                                ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "SM", Producto = item.numero_300indy, Intercambio = item.codigo_sm });
-                            }
-                        }
-                    }
-                }
+                    ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense });
+                    ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "MAHLE", Producto = item.numero_300indy, Intercambio = item.codigo_mahle });
+                }           
             }
+            ///
+            ////////////////
+
             //Se actualiza el ListView
             ListViewDatos.ItemsSource = null;
             ListViewDatos.ItemsSource = ListaDatos_Final;

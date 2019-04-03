@@ -116,6 +116,8 @@ class MonoPackageManager_Resources {
 		"Plugin.Messaging.Abstractions.dll",
 		"Plugin.Messaging.dll",
 		"Pongolini_Catalogo.dll",
+		"Rg.Plugins.Popup.dll",
+		"Rg.Plugins.Popup.Droid.dll",
 		"System.Configuration.ConfigurationManager.dll",
 		"System.Security.AccessControl.dll",
 		"System.Security.Permissions.dll",

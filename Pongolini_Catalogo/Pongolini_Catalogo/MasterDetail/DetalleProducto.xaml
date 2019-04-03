@@ -110,20 +110,6 @@
                         <Image Grid.Column="1" Grid.Row="0" x:Name="imgforma" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
-                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
-                <StackLayout x:Name="StackSobremedidaProducto">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Text="Sobremedida (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
-                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblsobremedida" Margin="8,0,8,0" HorizontalOptions="Center"/>
-                    </Grid>
-                </StackLayout>
                 <Label Text="INTERCAMBIOS"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
