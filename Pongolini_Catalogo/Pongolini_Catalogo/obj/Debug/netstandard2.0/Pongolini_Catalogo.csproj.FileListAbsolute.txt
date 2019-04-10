@@ -47,7 +47,6 @@ C:\Users\mauri\Desktop\ProbandoPongo\Pongolini_Catalogo-master\Pongolini_Catalog
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.deps.json
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.pdb
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Aplicaciones.xaml.g.cs
@@ -71,3 +70,4 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandar
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\PopupModal.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache

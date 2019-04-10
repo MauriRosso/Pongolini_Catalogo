@@ -11,6 +11,35 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.CurrentActivity/2.1.0.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        }
+      },
+      "Plugin.Permissions/4.0.4-beta": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.CurrentActivity": "2.1.0.4",
+          "Xamarin.Android.Support.Compat": "27.0.2.1",
+          "Xamarin.Android.Support.Core.Utils": "27.0.2.1"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid81/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid81/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -407,6 +436,13 @@
           "build/MonoAndroid81/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.4.2": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.FFImageLoading/2.4.4.859": {
         "type": "package",
         "compile": {
@@ -461,15 +497,97 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v7.AppCompat": "25.4.0.2",
+          "Xamarin.Android.Support.v7.MediaRouter": "25.4.0.2",
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.GooglePlayServices.Maps": "42.1021.1"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.dll": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Tasks": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "25.1.0",
+          "Xamarin.Build.Download": "0.4.2"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Maps/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Base": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Maps.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.targets": {}
+        }
+      },
       "Pongolini_Catalogo/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "compile": {
           "bin/placeholder/Pongolini_Catalogo.dll": {}
@@ -517,6 +635,45 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.CurrentActivity/2.1.0.4": {
+      "sha512": "mwUaRnl5KyIAJbhqQzL/ZIFuRcqsa0lMyCHuJs8wer+pSjYDH5cJR9X8yoB9BV5j6ccogGxyb5VkUUhvRUemTA==",
+      "type": "package",
+      "path": "plugin.currentactivity/2.1.0.4",
+      "files": [
+        ".signature.p7s",
+        "lib/monoandroid44/Plugin.CurrentActivity.dll",
+        "lib/monoandroid44/Plugin.CurrentActivity.xml",
+        "plugin.currentactivity.2.1.0.4.nupkg.sha512",
+        "plugin.currentactivity.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Plugin.Permissions/4.0.4-beta": {
+      "sha512": "dgXSRgR2l5XuebzgdknYhgy3PatKGKhbtm4z53eM1TYuC2TYHmPhjJJ6C0MMWjajEELv5scdl+IKJWGvtPVNlQ==",
+      "type": "package",
+      "path": "plugin.permissions/4.0.4-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "plugin.permissions.4.0.4-beta.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "Rg.Plugins.Popup/1.1.5.188": {
@@ -967,6 +1124,23 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
+    "Xamarin.Build.Download/0.4.2": {
+      "sha512": "3TTd/T03f9pTa7MBNk9J/wKkpR1ztoKJY8vxMp4cj36Y/1vYbhCvHR3mLfX/skdUyorc/GG8EVdg1/Bh559Q9w==",
+      "type": "package",
+      "path": "xamarin.build.download/0.4.2",
+      "files": [
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Mono.Cecil.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/System.Net.Http.Formatting.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.4.2.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.FFImageLoading/2.4.4.859": {
       "sha512": "/U71/oKIKL+ompfmdYsIYYi3+r3Sj+81zUxg29M1RuNPywKsPKbHIndGiRw8bEYi1CX6meeidIeBpetjnN/ETw==",
       "type": "package",
@@ -1238,6 +1412,86 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.Maps/3.1.0.697729": {
+      "sha512": "WySTPEbjx31ytOvATUpu+5tXCA+X6CbMJ6yunCZqWXwD6oGgyzb91jIq9GT9sMO/+h+J3gIAvUlDHZVnpkd1ZQ==",
+      "type": "package",
+      "path": "xamarin.forms.maps/3.1.0.697729",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.macOS.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.xml",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.Design.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.xml",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.Design.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.xml",
+        "lib/tizen40/Xamarin.Forms.Maps.Tizen.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.xml",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.dll",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.pri",
+        "lib/uap10.0/Xamarin.Forms.Maps.dll",
+        "xamarin.forms.maps.3.1.0.697729.nupkg.sha512",
+        "xamarin.forms.maps.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Base/42.1021.1": {
+      "sha512": "hT+srItg5VaMSsBfjhkO9AERkxdVS50x2AsQVIIn0CzTVndVs4pioD8WnOkWZeDfp/Ku+Cu8TzuqLmjv+OkNnw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.base/42.1021.1",
+      "files": [
+        ".signature.p7s",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Base.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll",
+        "xamarin.googleplayservices.base.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.base.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Basement/42.1021.1": {
+      "sha512": "lTDGIBr6wvfHN/5X9HFVZtADq3Sb1f80Q51p9h2ajyI554zR0h1+TCcwuWNVop7TRJ2Y1QmgiZJ2depddEwCCw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.basement/42.1021.1",
+      "files": [
+        ".signature.p7s",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Basement.targets",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll",
+        "xamarin.googleplayservices.basement.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Maps/42.1021.1": {
+      "sha512": "2i+OKsRZUQcVokZsDDx/MTxldLzncQ4KkWpLfFgd3YAyDKA4Ru/Wz+CPEAuw169sb+lxHCfEGw9AhP3ujG8Wrg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.maps/42.1021.1",
+      "files": [
+        ".signature.p7s",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Maps.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll",
+        "xamarin.googleplayservices.maps.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.maps.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Tasks/42.1021.1": {
+      "sha512": "jIhcZpsrD0KzXGnP6WmkiJw9tsW5kcl2WyzS3Fg36STZRWwc6cmF3hc1+fjz0ndNS3J5H1S+GHqO8t3REk7G9Q==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.tasks/42.1021.1",
+      "files": [
+        ".signature.p7s",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll",
+        "xamarin.googleplayservices.tasks.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.tasks.nuspec"
+      ]
+    },
     "Pongolini_Catalogo/1.0.0": {
       "type": "project",
       "path": "../Pongolini_Catalogo/Pongolini_Catalogo.csproj",
@@ -1247,6 +1501,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.1": [
       "Newtonsoft.Json >= 12.0.1",
+      "Plugin.Permissions >= 4.0.4-beta",
       "Pongolini_Catalogo >= 1.0.0",
       "Rg.Plugins.Popup >= 1.1.5.188",
       "Xam.Plugins.Messaging >= 5.2.0",
@@ -1257,7 +1512,8 @@
       "Xamarin.Android.Support.v7.MediaRouter >= 27.0.2.1",
       "Xamarin.FFImageLoading >= 2.4.4.859",
       "Xamarin.FFImageLoading.Forms >= 2.3.6",
-      "Xamarin.Forms >= 3.1.0.697729"
+      "Xamarin.Forms >= 3.1.0.697729",
+      "Xamarin.Forms.Maps >= 3.1.0.697729"
     ]
   },
   "packageFolders": {
@@ -1301,6 +1557,10 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "Plugin.Permissions": {
+            "target": "Package",
+            "version": "[4.0.4-beta, )"
+          },
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[1.1.5.188, )"
@@ -1338,6 +1598,10 @@
             "version": "[2.3.6, )"
           },
           "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[3.1.0.697729, )"
+          },
+          "Xamarin.Forms.Maps": {
             "target": "Package",
             "version": "[3.1.0.697729, )"
           }

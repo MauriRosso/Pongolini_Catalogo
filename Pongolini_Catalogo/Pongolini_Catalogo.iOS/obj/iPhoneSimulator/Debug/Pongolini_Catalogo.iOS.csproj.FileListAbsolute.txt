@@ -152,4 +152,11 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimula
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.Touch.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\FFImageLoading.Forms.pdb
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Pongolini_Catalogo.dll.mdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Plugin.Permissions.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Plugin.Permissions.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.IOS.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.IOS.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Maps.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Maps.iOS.dll

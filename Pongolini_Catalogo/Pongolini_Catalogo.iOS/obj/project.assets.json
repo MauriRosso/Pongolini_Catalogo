@@ -78,6 +78,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/4.0.4-beta": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -772,15 +781,31 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.1.0.697729"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Pongolini_Catalogo/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "compile": {
           "bin/placeholder/Pongolini_Catalogo.dll": {}
@@ -867,6 +892,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/4.0.4-beta": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -1485,15 +1519,31 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.1.0.697729"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Pongolini_Catalogo/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "compile": {
           "bin/placeholder/Pongolini_Catalogo.dll": {}
@@ -1580,6 +1630,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/4.0.4-beta": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -2198,15 +2257,31 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.1.0.697729"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Pongolini_Catalogo/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "compile": {
           "bin/placeholder/Pongolini_Catalogo.dll": {}
@@ -2293,6 +2368,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/4.0.4-beta": {
+        "type": "package",
+        "compile": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -2911,15 +2995,31 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.1.0.697729"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Pongolini_Catalogo/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "compile": {
           "bin/placeholder/Pongolini_Catalogo.dll": {}
@@ -3027,6 +3127,32 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.Permissions/4.0.4-beta": {
+      "sha512": "dgXSRgR2l5XuebzgdknYhgy3PatKGKhbtm4z53eM1TYuC2TYHmPhjJJ6C0MMWjajEELv5scdl+IKJWGvtPVNlQ==",
+      "type": "package",
+      "path": "plugin.permissions/4.0.4-beta",
+      "files": [
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "plugin.permissions.4.0.4-beta.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "Rg.Plugins.Popup/1.1.5.188": {
@@ -6059,6 +6185,37 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.Maps/3.1.0.697729": {
+      "sha512": "WySTPEbjx31ytOvATUpu+5tXCA+X6CbMJ6yunCZqWXwD6oGgyzb91jIq9GT9sMO/+h+J3gIAvUlDHZVnpkd1ZQ==",
+      "type": "package",
+      "path": "xamarin.forms.maps/3.1.0.697729",
+      "files": [
+        ".signature.p7s",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.macOS.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.xml",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.Design.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.xml",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.Design.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.xml",
+        "lib/tizen40/Xamarin.Forms.Maps.Tizen.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.xml",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.dll",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.pri",
+        "lib/uap10.0/Xamarin.Forms.Maps.dll",
+        "xamarin.forms.maps.3.1.0.697729.nupkg.sha512",
+        "xamarin.forms.maps.nuspec"
+      ]
+    },
     "Pongolini_Catalogo/1.0.0": {
       "type": "project",
       "path": "../Pongolini_Catalogo/Pongolini_Catalogo.csproj",
@@ -6068,12 +6225,14 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Newtonsoft.Json >= 12.0.1",
+      "Plugin.Permissions >= 4.0.4-beta",
       "Pongolini_Catalogo >= 1.0.0",
       "Rg.Plugins.Popup >= 1.1.5.188",
       "Xam.Plugins.Messaging >= 5.2.0",
       "Xamarin.FFImageLoading >= 2.4.4.859",
       "Xamarin.FFImageLoading.Forms >= 2.3.6",
-      "Xamarin.Forms >= 3.1.0.697729"
+      "Xamarin.Forms >= 3.1.0.697729",
+      "Xamarin.Forms.Maps >= 3.1.0.697729"
     ]
   },
   "packageFolders": {
@@ -6117,6 +6276,10 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "Plugin.Permissions": {
+            "target": "Package",
+            "version": "[4.0.4-beta, )"
+          },
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[1.1.5.188, )"
@@ -6134,6 +6297,10 @@
             "version": "[2.3.6, )"
           },
           "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[3.1.0.697729, )"
+          },
+          "Xamarin.Forms.Maps": {
             "target": "Package",
             "version": "[3.1.0.697729, )"
           }

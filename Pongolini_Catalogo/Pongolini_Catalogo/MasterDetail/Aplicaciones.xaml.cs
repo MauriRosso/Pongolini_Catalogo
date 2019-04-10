@@ -140,9 +140,9 @@ namespace Pongolini_Catalogo.MasterDetail
         public void CargarPickerTipoAplicacion()
         {
             pckTipoAplicacion.Items.Add("[ Todos ]");
-            pckTipoAplicacion.Items.Add("Motor de automóvil");
-            pckTipoAplicacion.Items.Add("Motor de motocicleta");
-            pckTipoAplicacion.Items.Add("Motor de camión");
+            pckTipoAplicacion.Items.Add("Admisión");
+            pckTipoAplicacion.Items.Add("Escape");
+            pckTipoAplicacion.Items.Add("Admisión y escape");
             pckTipoAplicacion.SelectedIndex = 0;
         }
 
@@ -174,11 +174,11 @@ namespace Pongolini_Catalogo.MasterDetail
             ListaDatosGuias.Clear();
             ListaDatos_Final.Clear();
             //filtros
-            if (txtNOriginal.Text != null)
+            if (txtNOriginal.Text != null && txtNOriginal.Text != "")
             {
                 BusquedaNOriginalGuias();
             }
-            if (txtMotor.Text != null)
+            if (txtMotor.Text != null && txtMotor.Text != "")
             {
                 BusquedaMotorGuias();
             }
@@ -186,8 +186,12 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMarcaGuias();
             }
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            {
+                BusquedaTipoAplicacionGuias();
+            }
 
-            if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
+            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]")
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
@@ -227,11 +231,11 @@ namespace Pongolini_Catalogo.MasterDetail
             ListaDatosAsientos.Clear();
             ListaDatos_Final.Clear();
             //filtros
-            if (txtNOriginal.Text != null)
+            if (txtNOriginal.Text != null && txtNOriginal.Text != "")
             {
                 BusquedaNOriginalAsientos();
             }
-            if (txtMotor.Text != null)
+            if (txtMotor.Text != null && txtMotor.Text != "")
             {
                 BusquedaMotorAsientos();
             }
@@ -239,8 +243,12 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMarcaAsientos();
             }
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]") 
+            {
+                BusquedaTipoAplicacionAsientos();
+            }
 
-            if (txtNOriginal.Text == null && txtMotor.Text == null && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" && txtCilindrada.Text == null)
+            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]")
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalAsientos)
@@ -267,7 +275,8 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Oculto la busqueda para mostrar con mas espacio la listview
             OcultarCamposAplicaciones();
-
+            ListViewAplicaciones.ItemsSource = null;
+            ListViewAplicaciones.ItemsSource = ListaDatos_Final;
             if (pckProducto.SelectedItem.ToString() == "Guías")
             {
                 productoElegido = "Guías";
@@ -291,11 +300,14 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             foreach (var item in App.ListaGlobalGuias)
             {
-                if (txtNOriginal.Text == item.numero_original)
+                if (item.numero_original != null)
                 {
-                    if (ListaDatosGuias.Contains(item) == false)
+                    if (item.numero_original.Contains(txtNOriginal.Text))
                     {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                        {
+                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        }
                     }
                 }
             }
@@ -305,11 +317,14 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             foreach (var item in App.ListaGlobalAsientos)
             {
-                if (txtNOriginal.Text == item.numero_original)
+                if (item.numero_original != null)
                 {
-                    if (ListaDatosAsientos.Contains(item) == false)
+                    if (item.numero_original.Contains(txtNOriginal.Text))
                     {
-                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                        {
+                            ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        }
                     }
                 }
             }
@@ -320,11 +335,14 @@ namespace Pongolini_Catalogo.MasterDetail
 
             foreach (var item in App.ListaGlobalGuias)
             {
-                if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                if (item.motor != null)
                 {
-                    if (ListaDatosGuias.Contains(item) == false)
+                    if (item.motor.Contains(txtMotor.Text) == true)
                     {
-                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                        {
+                            ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        }
                     }
                 }
             }
@@ -335,11 +353,14 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             foreach (var item in App.ListaGlobalAsientos)
             {
-                if (item.marca_modelo.Contains(txtMotor.Text) == true)
+                if (item.motor != null)
                 {
-                    if (ListaDatosAsientos.Contains(item) == false)
+                    if (item.motor.Contains(txtMotor.Text) == true)
                     {
-                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                        {
+                            ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        }
                     }
                 }
             }
@@ -347,41 +368,11 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public void BusquedaMarcaGuias()
         {
-            string marca_final = string.Empty;
-            //Resuelvo conflictos de marcas mal escritas
-            switch (pckMarca.SelectedItem.ToString())
-            {
-                case "VOLKSWAGEN":
-                    marca_final = "VW";
-                    break;
-                case "MERCEDES BENZ":
-                    marca_final = "M. BENZ";
-                    break;
-                case "PEUGEOT":
-                    marca_final = "PEUG";
-                    break;
-                case "SCANIA VABIS":
-                    marca_final = "SCANIA";
-                    break;
-                case "CHEVROLET":
-                    marca_final = "CHEVROL";
-                    break;
-                case "BMW":
-                    marca_final = "B.M.W";
-                    break;
-                case "CONTINENTAL":
-                    marca_final = "CONTINEN";
-                    break;
-                default:
-                    marca_final = pckMarca.SelectedItem.ToString();
-                    break;
-            }
-
             foreach (var item in App.ListaGlobalGuias)
             {
-                if (item.marca_modelo.Contains(marca_final) == true)
+                if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                 {
-                    if (ListaDatosGuias.Contains(item) == false)
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
                     {
                         ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
                     }
@@ -391,57 +382,86 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public void BusquedaMarcaAsientos()
         {
-            string marca_final = string.Empty;
-            //Resuelvo conflictos de marcas mal escritas
-            switch (pckMarca.SelectedItem.ToString())
-            {
-                case "VOLKSWAGEN":
-                    marca_final = "VW";
-                    break;
-                case "MERCEDES BENZ":
-                    marca_final = "M. BENZ";
-                    break;
-                case "PEUGEOT":
-                    marca_final = "PEUG";
-                    break;
-                case "SCANIA VABIS":
-                    marca_final = "SCANIA";
-                    break;
-                case "CHEVROLET":
-                    marca_final = "CHEVROL";
-                    break;
-                case "BMW":
-                    marca_final = "B.M.W";
-                    break;
-                case "CONTINENTAL":
-                    marca_final = "CONTINEN";
-                    break;
-                default:
-                    marca_final = pckMarca.SelectedItem.ToString();
-                    break;
-            }
-
             foreach (var item in App.ListaGlobalAsientos)
             {
-                if (item.marca_modelo.Contains(marca_final) == true)
+                if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                 {
-                    if (ListaDatosAsientos.Contains(item) == false)
+                    if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
                     {
-                        //ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, tipo_aplicacion = item.tipo_aplicacion, tipo_alimentacion = item.tipo_alimentacion, cilindros = item.cilindros, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, angulo = item.angulo, codigo_trw = item.codigo_trw, codigo_sm = item.codigo_sm, codigo_metelli = item.codigo_metelli, codigo_riosulense = item.codigo_riosulense });
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle});
                     }
                 }
             }
         }
 
+        public void BusquedaTipoAplicacionAsientos()
+        {
+            string adm_esc = string.Empty;
+            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+            {
+                adm_esc = "ADM";
+            }
+            else
+            {
+                if (pckTipoAplicacion.SelectedItem.ToString() == "Escape")
+                {
+                    adm_esc = "ESC";
+                }
+                else
+                {
+                    adm_esc = "A-E";
+                }
+            }
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.admision_escape == adm_esc)
+                {
+                    if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
+        }
+
+        public void BusquedaTipoAplicacionGuias()
+        {
+            string adm_esc = string.Empty;
+            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+            {
+                adm_esc = "ADM";
+            }
+            else
+            {
+                if (pckTipoAplicacion.SelectedItem.ToString() == "Escape")
+                {
+                    adm_esc = "ESC";
+                }
+                else
+                {
+                    adm_esc = "A-E";
+                }
+            }
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.admision_escape == adm_esc)
+                {
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
+        }
         private int CantidadParametros()
         {
             int CP = 0;
 
-            if (txtNOriginal.Text != null)
+            if (txtNOriginal.Text != null && txtNOriginal.Text != "")
             {
                 CP += 1;
             }
-            if (txtMotor.Text != null)
+            if (txtMotor.Text != null && txtMotor.Text != "")
             {
                 CP += 1;
             }
@@ -449,11 +469,7 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 CP += 1;
             }
-            //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
-            //{
-            //    CP += 1;
-            //}
-            if (txtCilindrada.Text != null)
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
             {
                 CP += 1;
             }
@@ -466,52 +482,52 @@ namespace Pongolini_Catalogo.MasterDetail
             foreach (var item in ListaDatosGuias)
             {
                 int coincidencias = 0;
-                if (txtNOriginal.Text != null)
+                if (txtNOriginal.Text != null && txtNOriginal.Text != "")
                 {
-                    if (txtNOriginal.Text == item.numero_original)
+                    if (item.numero_original != null)
                     {
-                        coincidencias += 1;
+                        if (item.numero_original.Contains(txtNOriginal.Text))
+                        {
+                            coincidencias += 1;
+                        }
                     }
                 }
-                if (txtMotor.Text != null)
+                if (txtMotor.Text != null && txtMotor.Text != "")
                 {
-                    if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                    if (item.motor != null)
                     {
-                        coincidencias += 1;
+                        if (item.motor.Contains(txtMotor.Text) == true)
+                        {
+                            coincidencias += 1;
+                        }
                     }
                 }
                 if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
-                {
-                    string marca_final = string.Empty;
-                    //Resuelvo conflictos de marcas mal escritas
-                    switch (pckMarca.SelectedItem.ToString())
+                {               
+                    if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                     {
-                        case "VOLKSWAGEN":
-                            marca_final = "VW";
-                            break;
-                        case "MERCEDES BENZ":
-                            marca_final = "M. BENZ";
-                            break;
-                        case "PEUGEOT":
-                            marca_final = "PEUG";
-                            break;
-                        case "SCANIA VABIS":
-                            marca_final = "SCANIA";
-                            break;
-                        case "CHEVROLET":
-                            marca_final = "CHEVROL";
-                            break;
-                        case "BMW":
-                            marca_final = "B.M.W";
-                            break;
-                        case "CONTINENTAL":
-                            marca_final = "CONTINEN";
-                            break;
-                        default:
-                            marca_final = pckMarca.SelectedItem.ToString();
-                            break;
+                        coincidencias += 1;
                     }
-                    if (item.marca_modelo.Contains(marca_final) == true)
+                }
+                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                {
+                    string adm_esc = string.Empty;
+                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+                    {
+                        adm_esc = "ADM";
+                    }
+                    else
+                    {
+                        if (pckTipoAplicacion.SelectedItem.ToString() == "Escape")
+                        {
+                            adm_esc = "ESC";
+                        }
+                        else
+                        {
+                            adm_esc = "A-E";
+                        }
+                    }
+                    if (item.admision_escape == adm_esc)
                     {
                         coincidencias += 1;
                     }
@@ -530,61 +546,56 @@ namespace Pongolini_Catalogo.MasterDetail
             foreach (var item in ListaDatosAsientos)
             {
                 int coincidencias = 0;
-                if (txtNOriginal.Text != null)
+                if (txtNOriginal.Text != null && txtNOriginal.Text != "")
                 {
-                    if (txtNOriginal.Text == item.numero_original)
+                    if (item.numero_original != null)
                     {
-                        coincidencias += 1;
+                        if (item.numero_original.Contains(txtNOriginal.Text))
+                        {
+                            coincidencias += 1;
+                        }
                     }
                 }
-                if (txtMotor.Text != null)
+                if (txtMotor.Text != null && txtMotor.Text != "")
                 {
-                    if (item.marca_modelo.Contains(txtMotor.Text) == true) //Si el campo marca_modelo contiene el motor
+                    if (item.motor != null)
                     {
-                        coincidencias += 1;
+                        if (item.motor.Contains(txtMotor.Text) == true)
+                        {
+                            coincidencias += 1;
+                        }
                     }
                 }
                 if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
                 {
-                    string marca_final = string.Empty;
-                    //Resuelvo conflictos de marcas mal escritas
-                    switch (pckMarca.SelectedItem.ToString())
-                    {
-                        case "VOLKSWAGEN":
-                            marca_final = "VW";
-                            break;
-                        case "MERCEDES BENZ":
-                            marca_final = "M. BENZ";
-                            break;
-                        case "PEUGEOT":
-                            marca_final = "PEUG";
-                            break;
-                        case "SCANIA VABIS":
-                            marca_final = "SCANIA";
-                            break;
-                        case "CHEVROLET":
-                            marca_final = "CHEVROL";
-                            break;
-                        case "BMW":
-                            marca_final = "B.M.W";
-                            break;
-                        case "CONTINENTAL":
-                            marca_final = "CONTINEN";
-                            break;
-                        default:
-                            marca_final = pckMarca.SelectedItem.ToString();
-                            break;
-                    }
-                    if (item.marca_modelo.Contains(marca_final) == true)
+                    if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                     {
                         coincidencias += 1;
                     }
                 }
-                //if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
-                //{
-
-                //}
-
+                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                {
+                    string adm_esc = string.Empty;
+                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+                    {
+                        adm_esc = "ADM";
+                    }
+                    else
+                    {
+                        if (pckTipoAplicacion.SelectedItem.ToString() == "Escape")
+                        {
+                            adm_esc = "ESC";
+                        }
+                        else
+                        {
+                            adm_esc = "A-E";
+                        }
+                    }
+                    if (item.admision_escape == adm_esc)
+                    {
+                        coincidencias += 1;
+                    }
+                }
                 int cantPar = CantidadParametros();
                 if (cantPar == coincidencias)
                 {

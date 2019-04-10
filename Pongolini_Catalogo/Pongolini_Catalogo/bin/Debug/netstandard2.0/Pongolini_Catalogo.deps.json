@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "a2c9bff77ec5d29a325289b3ddfa8e675e57b29a"
+    "signature": "1f129c22983b7c3a116123448fd9f2858b48c61a"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,10 +11,12 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
+          "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "runtime": {
           "Pongolini_Catalogo.dll": {}
@@ -31,6 +33,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.1.22727"
+          }
+        }
+      },
+      "Plugin.Permissions/4.0.4-beta": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -165,6 +175,21 @@
             "fileVersion": "2.0.0.0"
           }
         }
+      },
+      "Xamarin.Forms.Maps/3.1.0.697729": {
+        "dependencies": {
+          "Xamarin.Forms": "3.1.0.697729"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Maps.Design.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Maps.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
       }
     }
   },
@@ -194,6 +219,13 @@
       "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "Plugin.Permissions/4.0.4-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dgXSRgR2l5XuebzgdknYhgy3PatKGKhbtm4z53eM1TYuC2TYHmPhjJJ6C0MMWjajEELv5scdl+IKJWGvtPVNlQ==",
+      "path": "plugin.permissions/4.0.4-beta",
+      "hashPath": "plugin.permissions.4.0.4-beta.nupkg.sha512"
     },
     "Rg.Plugins.Popup/1.1.5.188": {
       "type": "package",
@@ -278,6 +310,13 @@
       "sha512": "sha512-YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
       "path": "xamarin.forms/3.1.0.697729",
       "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
+    },
+    "Xamarin.Forms.Maps/3.1.0.697729": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WySTPEbjx31ytOvATUpu+5tXCA+X6CbMJ6yunCZqWXwD6oGgyzb91jIq9GT9sMO/+h+J3gIAvUlDHZVnpkd1ZQ==",
+      "path": "xamarin.forms.maps/3.1.0.697729",
+      "hashPath": "xamarin.forms.maps.3.1.0.697729.nupkg.sha512"
     }
   }
 }

@@ -113,8 +113,10 @@ class MonoPackageManager_Resources {
 		"FFImageLoading.Platform.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.CurrentActivity.dll",
 		"Plugin.Messaging.Abstractions.dll",
 		"Plugin.Messaging.dll",
+		"Plugin.Permissions.dll",
 		"Pongolini_Catalogo.dll",
 		"Rg.Plugins.Popup.dll",
 		"Rg.Plugins.Popup.Droid.dll",
@@ -142,9 +144,15 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.Forms.Core.dll",
+		"Xamarin.Forms.Maps.Android.dll",
+		"Xamarin.Forms.Maps.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"Xamarin.GooglePlayServices.Basement.dll",
+		"Xamarin.GooglePlayServices.Tasks.dll",
+		"Xamarin.GooglePlayServices.Base.dll",
+		"Xamarin.GooglePlayServices.Maps.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

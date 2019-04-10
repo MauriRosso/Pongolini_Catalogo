@@ -21,19 +21,6 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
-                    x:Name="lblMotor"
-                    Text="Motor"  
-                    Margin="13,0,73,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtMotor"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Margin="18,0,13,0"                     
-                    />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label
                     x:Name="lblProducto"
                     Text="Producto"  
                     Margin="13,0,71,0"
@@ -46,6 +33,19 @@
                     Margin="0,0,13,0"
                     Title="Seleccione producto"                  
                 />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                    x:Name="lblMotor"
+                    Text="Motor"  
+                    Margin="13,0,73,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Entry x:Name="txtMotor"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="18,0,13,0"                     
+                    />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
@@ -74,20 +74,6 @@
                     VerticalOptions="Start"
                     Margin="0,0,11,0"                 
                 />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                    x:Name="lblCilindrada"
-                    Text="Cilindros"  
-                    Margin="13,0,75,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtCilindrada"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Margin="0,0,13,0"
-                     Keyboard="Numeric"
-                    />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Button x:Name="btnBuscarAplicaciones"
@@ -141,8 +127,7 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
@@ -151,14 +136,12 @@
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.ColumnSpan="2" Text="{Binding marca_modelo}" Margin="0,0,0,0" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
                                     <Label Grid.Column="0" Grid.Row="1" Text="Producto" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                     <Label Grid.Column="1" Grid.Row="2" Text="{Binding motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Label Grid.Column="0" Grid.Row="3" Text="Adm/Esc" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                     <Label Grid.Column="1" Grid.Row="3" Text="{Binding admision_escape}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                </Grid>
+                                    </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -104,13 +104,13 @@ namespace Pongolini_Catalogo.MasterDetail
 
             /////////-->FILTROS<--//////////
 
-            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y en intercambios..
+            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null && txtIntercambio.Text != "") //Si se selecciono algo en el picker y en intercambios..
             {
                 foreach (var item in App.ListaGlobalAsientos)
                 {
                     if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
                     {
-                        if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                        if (item.codigo_riosulense != null && item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                         {
                             if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
@@ -124,7 +124,7 @@ namespace Pongolini_Catalogo.MasterDetail
                     {
                         if (pckFabricante.SelectedItem.ToString() == "MAHLE")
                         {
-                            if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                            if (item.codigo_mahle != null && item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
@@ -138,7 +138,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 if (encontre_fabricante == false)
                 {
-                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                   DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                 }
             }
             else
@@ -170,11 +170,11 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 else
                 {
-                    if (txtIntercambio.Text != null) //Se eligio solo intercambio
+                    if (txtIntercambio.Text != null && txtIntercambio.Text != "") //Se eligio solo intercambio
                     {
                         foreach (var item in App.ListaGlobalAsientos)
                         {
-                            if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                            if (item.codigo_riosulense != null && item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
@@ -184,7 +184,7 @@ namespace Pongolini_Catalogo.MasterDetail
                             }
                             else
                             {
-                                if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                                if (item.codigo_mahle != null && item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                                 {
                                     if (ListaDatosAsientos.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
@@ -196,12 +196,12 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                         if (encontre_intercambio == false)
                         {
-                            DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                           DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                         }
                     }
                     else //No se eligio ninguno de los dos.
                     {
-                        if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null)
+                        if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null || txtIntercambio.Text == "")
                         {
                             //Muestro TODOS los datos.
                             foreach (var item in App.ListaGlobalAsientos)
@@ -265,13 +265,13 @@ namespace Pongolini_Catalogo.MasterDetail
 
             /////////-->FILTROS<--//////////
            
-            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null) //Si se selecciono algo en el picker y en intercambios..
+            if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null && txtIntercambio.Text != "") //Si se selecciono algo en el picker y en intercambios..
             {
                 foreach (var item in App.ListaGlobalGuias)
                 {
                     if (pckFabricante.SelectedItem.ToString() == "RIOSULENSE")
                     {
-                        if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                        if (item.codigo_riosulense != null && item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                         {
                             if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                             {
@@ -285,7 +285,7 @@ namespace Pongolini_Catalogo.MasterDetail
                     {
                         if (pckFabricante.SelectedItem.ToString() == "MAHLE")
                         {
-                            if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                            if (item.codigo_mahle != null && item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
@@ -299,7 +299,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 if (encontre_fabricante == false)
                 {
-                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                   DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                 }
             }
             else
@@ -331,11 +331,11 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 else
                 {
-                    if (txtIntercambio.Text != null) //Se eligio solo intercambio
+                    if (txtIntercambio.Text != null && txtIntercambio.Text != "") //Se eligio solo intercambio
                     {
                         foreach (var item in App.ListaGlobalGuias)
                         {
-                            if (item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
+                            if (item.codigo_riosulense != null && item.codigo_riosulense.Contains(txtIntercambio.Text) == true)
                             {
                                 if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                 {
@@ -345,7 +345,7 @@ namespace Pongolini_Catalogo.MasterDetail
                             }
                             else
                             {
-                                if (item.codigo_mahle.Contains(txtIntercambio.Text) == true)
+                                if (item.codigo_mahle != null && item.codigo_mahle.Contains(txtIntercambio.Text) == true)
                                 {
                                     if (ListaDatosGuias.Contains(item) == false) //Si el item no estaba previamente cargado, lo cargo.
                                     {
@@ -357,12 +357,12 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                         if (encontre_intercambio == false)
                         {
-                            DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                           DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                         }
                     }
                     else //No se eligio ninguno de los dos.
                     {
-                        if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null)
+                        if (pckFabricante.SelectedIndex == 0 && txtIntercambio.Text == null || txtIntercambio.Text == "")
                         {
                             //Muestro TODOS los datos.
                             foreach (var item in App.ListaGlobalGuias)
