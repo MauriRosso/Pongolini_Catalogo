@@ -610,13 +610,13 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 var aplicacion_guia = e.Item as AplicacionesViewModel;
                 Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.numero_300indy == aplicacion_guia.numero_300indy);
-                Navigation.PushAsync(new DetalleAplicacion(guia_encontrada, null));
+                Navigation.PushAsync(new DetalleProducto(guia_encontrada, null));
             }
             else
             {
                 var aplicacion_asiento = e.Item as AplicacionesViewModel;
                 Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.numero_300indy == aplicacion_asiento.numero_300indy);
-                Navigation.PushAsync(new DetalleAplicacion(null, asiento_encontrado));
+                Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
             }
         }
 

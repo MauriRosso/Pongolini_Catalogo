@@ -57,7 +57,7 @@
                     Clicked="btnBuscar_Clicked"
                 Margin="8,0">
             </Button>
-            <BoxView Margin="8,0,8,8" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -68,9 +68,10 @@
                         <ColumnDefinition Width="30*" />
                         <ColumnDefinition Width="30*" />
                     </Grid.ColumnDefinitions>
-                    <Label  Grid.Column="0" Grid.Row="0" Text="FABRICANTE" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
-                    <Label  Grid.Column="1" Grid.Row="0" Text="PRODUCTO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
-                    <Label Grid.Column="2" Grid.Row="0" Text="INTERCAMBIO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="DarkBlue"/>
+                    <BoxView Grid.ColumnSpan="3" Grid.Row="0" HeightRequest="10" Color="DarkBlue" />
+                    <Label Grid.Column="0" Grid.Row="0" Text="FABRICANTE" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="PRODUCTO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="INTERCAMBIO" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White"/>
                 </Grid>
                 <StackLayout x:Name="slLoad" Orientation="Vertical">
                     <ActivityIndicator x:Name="Cargando"

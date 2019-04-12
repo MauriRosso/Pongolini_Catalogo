@@ -10,14 +10,14 @@
                     <Label
                     x:Name="lblProductoDim"
                     Text="Producto"  
-                    Margin="13,8,105,0"
+                    Margin="13,8,87,0"
                     HorizontalTextAlignment="Start"
                 />
                     <Picker 
                     x:Name="pckProductoDim"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
-                    Margin="0,0,13,0"
+                    Margin="8,0,13,0"
                     Title="Seleccione producto"
                     SelectedIndexChanged="pckProductoDim_SelectedIndexChanged"
                 />
@@ -26,84 +26,134 @@
                     <Label
                     x:Name="lblDiamExtDim"
                     Text="Ø Exterior"  
-                    Margin="13,0,89,0"
+                    Margin="13,0,35,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtDiamExtDim"
+                    <Entry x:Name="txtDiamExtDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtDiamExtDesdeDim_Unfocused"
+                     TextChanged="txtDiamExtDesdeDim_TextChanged"
+                />
+                    <Label x:Name="HastaDiamExt" Text="Hasta"/>
+                    <Entry x:Name="txtDiamExtHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone" 
+                     Unfocused="txtDiamExtDesdeDim_Unfocused"
+                     TextChanged="txtDiamExtHastaDim_TextChanged"
                 />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
                     x:Name="lblDiamIntDim"
                     Text="Ø Interior"  
-                    Margin="13,0,93,0"
+                    Margin="13,0,37,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtDiamIntDim"
+                    <Entry x:Name="txtDiamIntDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtDiamIntDesdeDim_Unfocused"
+                     TextChanged="txtDiamIntDesdeDim_TextChanged"
                 />
+                    <Label x:Name="HastaDiamInt" Text="Hasta"/>
+                    <Entry x:Name="txtDiamIntHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone"
+                     Unfocused="txtDiamIntDesdeDim_Unfocused"
+                     TextChanged="txtDiamIntHastaDim_TextChanged"/>
                 </StackLayout>
                 <StackLayout x:Name="StackAngulo" Orientation="Horizontal">
                     <Label
                     x:Name="lblAnguloDim"
                     Text="Angulo"  
-                    Margin="13,0,105,0"
+                    Margin="13,0,50,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtAnguloDim"
+                    <Entry x:Name="txtAnguloDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone" 
+                     Unfocused="txtAnguloDesdeDim_Unfocused"
+                     TextChanged="txtAnguloDesdeDim_TextChanged"     
                 />
-                </StackLayout>
-                <StackLayout x:Name="StackForma" Orientation="Horizontal">
-                    <Label
-                    x:Name="lblFormaDim"
-                    Text="Forma"  
-                    Margin="13,0,107,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtFormaDim"
+                    <Label x:Name="HastaAngulo" Text="Hasta"/>
+                    <Entry x:Name="txtAnguloHastaDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone"  
+                     Unfocused="txtAnguloDesdeDim_Unfocused"
+                     TextChanged="txtAnguloHastaDim_TextChanged"
                 />
                 </StackLayout>
                 <StackLayout x:Name="StackAlto" Orientation="Horizontal">
                     <Label
                     x:Name="lblAltoDim"
                     Text="Alto"  
-                    Margin="13,0,121,0"
+                    Margin="13,0,69,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtAltoDim"
+                    <Entry x:Name="txtAltoDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtAltoDesdeDim_Unfocused"
+                     TextChanged="txtAltoDesdeDim_TextChanged"
+                />
+                    <Label x:Name="HastaAlto" Text="Hasta"/>
+                    <Entry x:Name="txtAltoHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone"                     
+                     Unfocused="txtAltoDesdeDim_Unfocused"
+                     TextChanged="txtAltoHastaDim_TextChanged"
                 />
                 </StackLayout>
                 <StackLayout x:Name="StackLargo" Orientation="Horizontal">
                     <Label
                     x:Name="lblLargoDim"
                     Text="Largo"  
-                    Margin="13,0,110,0"
+                    Margin="13,0,59,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtLargoDim"
+                    <Entry x:Name="txtLargoDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtLargoDesdeDim_Unfocused"
+                     TextChanged="txtLargoDesdeDim_TextChanged"
+                />
+                    <Label x:Name="HastaLargo" Text="Hasta"/>
+                    <Entry x:Name="txtLargoHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtLargoDesdeDim_Unfocused"
+                     TextChanged="txtLargoHastaDim_TextChanged"
+                     Margin="0,0,13,0"
+                />
+                </StackLayout>
+                <StackLayout x:Name="StackMaterial" Orientation="Horizontal">
+                    <Label
+                    x:Name="lblMaterialDim"
+                    Text="Material"  
+                    Margin="13,0,103,0"
+                    HorizontalTextAlignment="Start"
+                />
+                    <Picker 
+                    x:Name="pckMaterialDim"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="0,0,13,0"
+                    Title="Seleccione material"
                 />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -113,6 +163,7 @@
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
+                    Clicked="btnBuscarDimensiones_Clicked"
                    >
                     </Button>
                     <Button x:Name="btnLimpiarDimensiones"
@@ -120,7 +171,8 @@
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
-                    Margin="8,0">
+                    Margin="8,0"
+                    Clicked="btnLimpiarDimensiones_Clicked">
                     </Button>
                 </StackLayout>
             </StackLayout>
@@ -130,41 +182,53 @@
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
-                    Margin="8,0">
+                    Margin="8,0"
+                    Clicked="btnNuevaBusqueda_Clicked">
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout x:Name="slLoadDim" Orientation="Vertical">
+                <ActivityIndicator x:Name="Cargando"
+                                   Color="DarkBlue">
+                </ActivityIndicator>
+                <Label x:Name="lblCargando"
+                       Text="Obteniendo datos.."
+                       FontAttributes="Bold"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center"></Label>
+            </StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
-                <ListView x:Name="ListViewAplicaciones"
-                          RowHeight="250"
+                <ListView x:Name="ListViewDimensiones"
                           VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True"
                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.ColumnSpan="2" Text="{Binding Marca}" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
-                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <BoxView Grid.ColumnSpan="4" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
+                                    <Label Text="{Binding numero_300indy}" Margin="8,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="Start"></Label>
+                                    <Label Grid.Column="3" Grid.Row="0" Text="{Binding producto}" Margin="0,0,8,0" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                                    <Image Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding diametro_exterior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding diametro_interior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding largo_alto}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="3" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="3" Grid.Row="1" Text="{Binding angulo_material}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="{Binding marca_modelo, StringFormat='{0}:'}" Margin="8,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"  Text="{Binding motor}" Margin="0,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

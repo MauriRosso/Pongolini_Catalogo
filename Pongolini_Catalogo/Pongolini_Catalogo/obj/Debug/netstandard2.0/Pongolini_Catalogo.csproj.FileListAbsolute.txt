@@ -52,7 +52,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandar
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Aplicaciones.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\BujesPage.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Contacto.xaml.g.cs
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleAplicacion.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleProducto.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\Dimensiones.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\HomePage.xaml.g.cs
