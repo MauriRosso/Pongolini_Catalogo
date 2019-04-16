@@ -196,7 +196,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor, codigo = item.codigo });
                 }
             }
             else
@@ -253,7 +253,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalAsientos)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor, codigo = item.codigo });
                 }
             }
             else
@@ -536,7 +536,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 int cantPar = CantidadParametros();
                 if (cantPar == coincidencias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Guía", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor, codigo = item.codigo });
                 }
             }
         }
@@ -599,7 +599,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 int cantPar = CantidadParametros();
                 if (cantPar == coincidencias)
                 {
-                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor});
+                    ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor, codigo = item.codigo });
                 }
             }
         }
@@ -609,13 +609,13 @@ namespace Pongolini_Catalogo.MasterDetail
             if (productoElegido == "Guías")
             {
                 var aplicacion_guia = e.Item as AplicacionesViewModel;
-                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.numero_300indy == aplicacion_guia.numero_300indy);
+                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == aplicacion_guia.codigo);
                 Navigation.PushAsync(new DetalleProducto(guia_encontrada, null));
             }
             else
             {
                 var aplicacion_asiento = e.Item as AplicacionesViewModel;
-                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.numero_300indy == aplicacion_asiento.numero_300indy);
+                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == aplicacion_asiento.codigo);
                 Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
             }
         }

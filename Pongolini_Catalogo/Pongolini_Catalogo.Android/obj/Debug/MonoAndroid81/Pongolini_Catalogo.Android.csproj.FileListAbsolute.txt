@@ -228,6 +228,15 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_interior_guia.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_exterior_guia.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\fundicion_gris.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\bronce.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\largo.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\angulo.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_exterior_asiento.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_interior_asiento.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\altura.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Pongolini_Catalogo.Android.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\bin\Debug\Pongolini_Catalogo.dll.mdb

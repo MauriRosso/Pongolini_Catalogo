@@ -129,7 +129,7 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaLargo();
             }
-            if (pckMaterialDim.SelectedItem.ToString() == "[ Todos ]")
+            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
             {
                 BusquedaMaterial();
             }
@@ -139,7 +139,14 @@ namespace Pongolini_Catalogo.MasterDetail
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
                 {
-                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Guía", marca_modelo=item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.material });
+                    if (item.material != null)
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Guía", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.material, codigo = item.codigo, img_diam_int = "Diametro_Interior_Guia.png", img_diam_ext = "Diametro_Exterior_Guia.png", img_largo_alto = "Largo.png", img_angulo_material = (item.material == "FG") ? "Fundicion_Gris.png" : "Bronce.png" });
+                    }
+                    else
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Guía", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.material, codigo = item.codigo, img_diam_int = "Diametro_Interior_Guia.png", img_diam_ext = "Diametro_Exterior_Guia.png", img_largo_alto = "Largo.png"});
+                    }
                 }
             }
             else
@@ -158,44 +165,345 @@ namespace Pongolini_Catalogo.MasterDetail
 
         private void BusquedaDiametroExteriorGuias()
         {
-
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.diametro_exterior >= Convert.ToDouble(txtDiamExtDesdeDim.Text) && item.diametro_exterior <= Convert.ToDouble(txtDiamExtHastaDim.Text))
+                {
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaDiametroExteriorAsientos()
         {
-
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.diametro_exterior >= Convert.ToDouble(txtDiamExtDesdeDim.Text) && item.diametro_exterior <= Convert.ToDouble(txtDiamExtHastaDim.Text))
+                {
+                    if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaDiametroInteriorGuias()
         {
-
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.diametro_interior >= Convert.ToDouble(txtDiamIntDesdeDim.Text) && item.diametro_interior <= Convert.ToDouble(txtDiamIntHastaDim.Text))
+                {
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaDiametroInteriorAsientos()
         {
-
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.diametro_interior >= Convert.ToDouble(txtDiamIntDesdeDim.Text) && item.diametro_interior <= Convert.ToDouble(txtDiamIntHastaDim.Text))
+                {
+                    if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaLargo()
         {
-
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.largo >= Convert.ToDouble(txtLargoDesdeDim.Text) && item.largo <= Convert.ToDouble(txtLargoHastaDim.Text))
+                {
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaAlto()
         {
-
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.largo >= Convert.ToDouble(txtAltoDesdeDim.Text) && item.largo <= Convert.ToDouble(txtAltoHastaDim.Text))
+                {
+                    if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaMaterial()
         {
-
+            string mat = string.Empty;
+            if (pckMaterialDim.SelectedItem.ToString() == "Fundición gris")
+            {
+                mat = "FG";
+            }
+            else
+            {
+                if (pckMaterialDim.SelectedItem.ToString() == "Bronce")
+                {
+                    mat = "B";
+                }
+            }
+            foreach (var item in App.ListaGlobalGuias)
+            {
+                if (item.material == mat)
+                {
+                    if (ListaDatosGuias.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                    {
+                        ListaDatosGuias.Add(new Guias { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, material = item.material, forma = item.forma, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                    }
+                }
+            }
         }
         private void BusquedaAngulo()
         {
+            double angulo = double.NaN;
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.angulo != null && item.angulo != "" && item.angulo != "-") //Angulo en formato ej: 45°
+                {
+                    angulo = TransformarAngulo(item.angulo);
+                    if (angulo >= Convert.ToDouble(txtAnguloDesdeDim.Text) && angulo <= Convert.ToDouble(txtAnguloHastaDim.Text))
+                    {
+                        if (ListaDatosAsientos.Exists(x => x.codigo == item.codigo) == false) //Si NO existe el elemento.. lo agrego.
+                        {
+                            ListaDatosAsientos.Add(new Asientos { codigo = item.codigo, marca_modelo = item.marca_modelo, motor = item.motor, numero_original = item.numero_original, numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo = item.largo, angulo = item.angulo, codigo_riosulense = item.codigo_riosulense, codigo_mahle = item.codigo_mahle });
+                        }
+                    }
+                }
+            }
+        }
 
+        private double TransformarAngulo(string ang)
+        {
+            double angulo = double.NaN;
+            ang = ang.Remove(ang.Length - 1);
+            angulo = Convert.ToDouble(ang);
+            return angulo;
         }
         private void CoincidenciasGuias()
         {
-
+            foreach (var item in ListaDatosGuias)
+            {
+                int coincidencias = 0;
+                if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
+                {
+                    if (item.diametro_exterior >= Convert.ToDouble(txtDiamExtDesdeDim.Text) && item.diametro_exterior <= Convert.ToDouble(txtDiamExtHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")
+                {
+                    if (item.diametro_interior >= Convert.ToDouble(txtDiamIntDesdeDim.Text) && item.diametro_interior <= Convert.ToDouble(txtDiamIntHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtLargoDesdeDim.Text != null && txtLargoHastaDim.Text != "")
+                {
+                    if (item.largo >= Convert.ToDouble(txtLargoDesdeDim.Text) && item.largo <= Convert.ToDouble(txtLargoHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
+                {
+                    string mat = string.Empty;
+                    if (pckMaterialDim.SelectedItem.ToString() == "Fundición gris")
+                    {
+                        mat = "FG";
+                    }
+                    else
+                    {
+                        if (pckMaterialDim.SelectedItem.ToString() == "Bronce")
+                        {
+                            mat = "B";
+                        }
+                    }
+                    if (item.material == mat)
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                int cantPar = CantidadParametrosGuias();
+                if (cantPar == coincidencias)
+                {
+                    if (item.material != null)
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Guía", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.material, codigo = item.codigo, img_diam_int = "Diametro_Interior_Guia.png", img_diam_ext = "Diametro_Exterior_Guia.png", img_largo_alto = "Largo.png", img_angulo_material = (item.material == "FG") ? "Fundicion_Gris.png" : "Bronce.png" });
+                    }
+                    else
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Guía", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.material, codigo = item.codigo, img_diam_int = "Diametro_Interior_Guia.png", img_diam_ext = "Diametro_Exterior_Guia.png", img_largo_alto = "Largo.png" });
+                    }
+                }
+            }
         }
 
-        private void ObtenerAsientos()
+        private async void ObtenerAsientos()
         {
+            if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de guias..
+            {
+                Cargando.IsVisible = true;
+                lblCargando.IsVisible = true;
+                RestClient client = new RestClient();
+                ListaAuxAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
+                App.ListaGlobalAsientos = ListaAuxAsientos;
+                Cargando.IsVisible = false;
+                lblCargando.IsVisible = false;
+            }
+            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
+            {
+                ListaAuxAsientos = App.ListaGlobalAsientos;
+            }
+            ListaDatosAsientos.Clear();
+            ListaDatos_Final.Clear();
+            //filtros
 
+            if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
+            {
+                BusquedaDiametroExteriorAsientos();
+            }
+            if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")
+            {
+                BusquedaDiametroInteriorAsientos();
+            }
+            if (txtAltoDesdeDim.Text != null && txtAltoDesdeDim.Text != "")
+            {
+                BusquedaAlto();
+            }
+            if (txtAnguloDesdeDim.Text != null && txtAnguloDesdeDim.Text != "")
+            {
+                BusquedaAngulo();
+            }
+
+            if ((txtDiamExtDesdeDim.Text == null || txtDiamExtDesdeDim.Text == "") && (txtDiamIntDesdeDim.Text == null || txtDiamIntDesdeDim.Text == "") && (txtAltoDesdeDim.Text == null || txtAltoDesdeDim.Text == "") && (txtAnguloDesdeDim.Text == null || txtAnguloDesdeDim.Text == ""))
+            {
+                //Mostrar TODOS los datos.
+                foreach (var item in App.ListaGlobalAsientos)
+                {
+                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png"  });
+                }
+            }
+            else
+            {
+                CoincidenciasAsientos();
+            }
+
+            if (ListaDatos_Final.Count() == 0)
+            {
+                DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+            }
+            ListViewDimensiones.ItemsSource = null;
+            ListViewDimensiones.ItemsSource = ListaDatos_Final;
+        }
+
+        private void CoincidenciasAsientos()
+        {
+            foreach (var item in ListaDatosAsientos)
+            {
+                int coincidencias = 0;
+                if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
+                {
+                    if (item.diametro_exterior >= Convert.ToDouble(txtDiamExtDesdeDim.Text) && item.diametro_exterior <= Convert.ToDouble(txtDiamExtHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")
+                {
+                    if (item.diametro_interior >= Convert.ToDouble(txtDiamIntDesdeDim.Text) && item.diametro_interior <= Convert.ToDouble(txtDiamIntHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+                if (txtAltoDesdeDim.Text != null && txtAltoHastaDim.Text != "")
+                {
+                    if (item.largo >= Convert.ToDouble(txtAltoDesdeDim.Text) && item.largo <= Convert.ToDouble(txtAltoHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+
+                double angulo = double.NaN;
+                if (item.angulo != null && item.angulo != "" && item.angulo != "-") //Angulo en formato ej: 45°
+                {
+                    angulo = TransformarAngulo(item.angulo);
+                    if (angulo >= Convert.ToDouble(txtAnguloDesdeDim.Text) && angulo <= Convert.ToDouble(txtAnguloHastaDim.Text))
+                    {
+                        coincidencias += 1;
+                    }
+                }
+
+                int cantPar = CantidadParametrosAsientos();
+                if (cantPar == coincidencias)
+                {
+                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                }
+            }
+        }
+
+        private int CantidadParametrosGuias()
+        {
+            int CP = 0;
+
+            if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (txtLargoDesdeDim.Text != null && txtLargoDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
+            {
+                CP += 1;
+            }
+            if (txtAnguloDesdeDim.Text != null && txtAnguloDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            return CP;
+        }
+
+        private int CantidadParametrosAsientos()
+        {
+            int CP = 0;
+
+            if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (txtAltoDesdeDim.Text != null && txtAltoDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+            if (txtAnguloDesdeDim.Text != null && txtAnguloDesdeDim.Text != "")
+            {
+                CP += 1;
+            }
+
+            return CP;
         }
 
         private void btnBuscarDimensiones_Clicked(object sender, EventArgs e)
@@ -233,11 +541,13 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else //El hasta es un numero comparable
             {
+                txtDiamExtHastaDim.Text = txtDiamExtHastaDim.Text.Replace('.', ',');
                 if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")  //El desde es un numero comparable
                 {
-                    if (txtDiamExtDesdeDim.Text[txtDiamExtDesdeDim.Text.Length - 1].ToString() == "," || (txtDiamExtDesdeDim.Text[txtDiamExtDesdeDim.Text.Length - 1]).ToString() == ".")
+                    txtDiamExtDesdeDim.Text = txtDiamExtDesdeDim.Text.Replace('.', ',');
+                    if (txtDiamExtDesdeDim.Text[txtDiamExtDesdeDim.Text.Length - 1].ToString() == ",")
                     {
-                        //Si el ultimo caracter es un . o una ,
+                        //Si el ultimo caracter es una ,
                         txtDiamExtDesdeDim.Text = txtDiamExtDesdeDim.Text.Remove(txtDiamExtDesdeDim.Text.Length - 1);
                     }
                     if (Convert.ToDecimal(txtDiamExtHastaDim.Text) < Convert.ToDecimal(txtDiamExtDesdeDim.Text))
@@ -264,31 +574,36 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtDiamExtDesdeDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtDiamExtDesdeDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
             }
-
         }
 
         private void txtDiamExtHastaDim_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtDiamExtHastaDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtDiamExtHastaDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }            
         }
 
         private void txtDiamIntDesdeDim_Unfocused(object sender, FocusEventArgs e)
@@ -300,11 +615,13 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else //El hasta es un numero comparable
             {
+                txtDiamIntHastaDim.Text = txtDiamIntHastaDim.Text.Replace('.', ',');
                 if (txtDiamIntDesdeDim.Text != null && txtDiamIntDesdeDim.Text != "")  //El desde es un numero comparable
                 {
-                    if (txtDiamIntDesdeDim.Text[txtDiamIntDesdeDim.Text.Length - 1].ToString() == "," || (txtDiamIntDesdeDim.Text[txtDiamIntDesdeDim.Text.Length - 1]).ToString() == ".")
+                    txtDiamIntDesdeDim.Text = txtDiamIntDesdeDim.Text.Replace('.', ',');
+                    if (txtDiamIntDesdeDim.Text[txtDiamIntDesdeDim.Text.Length - 1].ToString() == ",")
                     {
-                        //Si el ultimo caracter es un . o una ,
+                        //Si el ultimo caracter es una ,
                         txtDiamIntDesdeDim.Text = txtDiamIntDesdeDim.Text.Remove(txtDiamIntDesdeDim.Text.Length - 1);
                     }
                     if (Convert.ToDecimal(txtDiamIntHastaDim.Text) < Convert.ToDecimal(txtDiamIntDesdeDim.Text))
@@ -331,30 +648,36 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtDiamIntDesdeDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtDiamIntDesdeDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }           
         }
 
         private void txtDiamIntHastaDim_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtDiamIntHastaDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtDiamIntHastaDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }           
         }
 
         private void txtAnguloDesdeDim_Unfocused(object sender, FocusEventArgs e)
@@ -366,9 +689,11 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else //El hasta es un numero comparable
             {
+                txtAnguloHastaDim.Text = txtAnguloHastaDim.Text.Replace('.', ',');
                 if (txtAnguloDesdeDim.Text != null && txtAnguloDesdeDim.Text != "")  //El desde es un numero comparable
                 {
-                    if (txtAnguloDesdeDim.Text[txtAnguloDesdeDim.Text.Length - 1].ToString() == "," || (txtAnguloDesdeDim.Text[txtAnguloDesdeDim.Text.Length - 1]).ToString() == ".")
+                    txtAnguloDesdeDim.Text = txtAnguloDesdeDim.Text.Replace('.', ',');
+                    if (txtAnguloDesdeDim.Text[txtAnguloDesdeDim.Text.Length - 1].ToString() == ",")
                     {
                         //Si el ultimo caracter es un . o una ,
                         txtAnguloDesdeDim.Text = txtAnguloDesdeDim.Text.Remove(txtAnguloDesdeDim.Text.Length - 1);
@@ -397,30 +722,36 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtAnguloDesdeDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtAnguloDesdeDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }           
         }
 
         private void txtAnguloHastaDim_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtAnguloHastaDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtAnguloHastaDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }           
         }
 
         private void txtAltoDesdeDim_Unfocused(object sender, FocusEventArgs e)
@@ -432,9 +763,11 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else //El hasta es un numero comparable
             {
+                txtAltoHastaDim.Text = txtAltoHastaDim.Text.Replace('.', ',');
                 if (txtAltoDesdeDim.Text != null && txtAltoDesdeDim.Text != "")  //El desde es un numero comparable
                 {
-                    if (txtAltoDesdeDim.Text[txtAltoDesdeDim.Text.Length - 1].ToString() == "," || (txtAltoDesdeDim.Text[txtAltoDesdeDim.Text.Length - 1]).ToString() == ".")
+                    txtAltoDesdeDim.Text = txtAltoDesdeDim.Text.Replace('.', ',');
+                    if (txtAltoDesdeDim.Text[txtAltoDesdeDim.Text.Length - 1].ToString() == ",")
                     {
                         //Si el ultimo caracter es un . o una ,
                         txtAltoDesdeDim.Text = txtAltoDesdeDim.Text.Remove(txtAltoDesdeDim.Text.Length - 1);
@@ -463,13 +796,16 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtAltoDesdeDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtAltoDesdeDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
             }
         }
@@ -478,15 +814,18 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtAltoHastaDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtAltoHastaDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }         
         }
 
         private void txtLargoDesdeDim_Unfocused(object sender, FocusEventArgs e)
@@ -498,9 +837,11 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else //El hasta es un numero comparable
             {
+                txtLargoHastaDim.Text = txtLargoHastaDim.Text.Replace('.', ',');
                 if (txtLargoDesdeDim.Text != null && txtLargoDesdeDim.Text != "")  //El desde es un numero comparable
                 {
-                    if (txtLargoDesdeDim.Text[txtLargoDesdeDim.Text.Length - 1].ToString() == "," || (txtLargoDesdeDim.Text[txtLargoDesdeDim.Text.Length - 1]).ToString() == ".")
+                    txtLargoDesdeDim.Text = txtLargoDesdeDim.Text.Replace('.', ',');
+                    if (txtLargoDesdeDim.Text[txtLargoDesdeDim.Text.Length - 1].ToString() == ",")
                     {
                         //Si el ultimo caracter es un . o una ,
                         txtLargoDesdeDim.Text = txtLargoDesdeDim.Text.Remove(txtLargoDesdeDim.Text.Length - 1);
@@ -529,30 +870,36 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtLargoDesdeDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtLargoDesdeDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }         
         }
 
         private void txtLargoHastaDim_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Se controla el caracter de los campos numericos
             string nuevaCadena = e.NewTextValue;
-            for (int i = 0; i < (nuevaCadena.Length); i++)
+            if (nuevaCadena != null)
             {
-                if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                for (int i = 0; i < (nuevaCadena.Length); i++)
                 {
-                    //Y tampoco es un . o ,
-                    txtLargoHastaDim.Text = e.OldTextValue;
-                    break;
+                    if (nuevaCadena[i] != '.' && nuevaCadena[i] != ',' && char.IsDigit(nuevaCadena[i]) == false)
+                    {
+                        //Y tampoco es un . o ,
+                        txtLargoHastaDim.Text = e.OldTextValue;
+                        break;
+                    }
                 }
-            }
+            }          
         }
 
         private void btnNuevaBusqueda_Clicked(object sender, EventArgs e)
@@ -579,6 +926,22 @@ namespace Pongolini_Catalogo.MasterDetail
             txtLargoHastaDim.Text = string.Empty;
             pckMaterialDim.SelectedIndex = 0;
 
+        }
+
+        private void ListViewDimensiones_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (productoElegido == "Guías")
+            {
+                var dimension_guia = e.Item as DimensionesViewModel;
+                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == dimension_guia.codigo);
+                Navigation.PushAsync(new DetalleProducto(guia_encontrada, null));
+            }
+            else
+            {
+                var dimension_asiento = e.Item as DimensionesViewModel;
+                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+                Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ namespace Pongolini_Catalogo.Negocio
 {
     class AplicacionesViewModel
     {
+        public int codigo { get; set; }
         public string producto { get; set; }
         public string marca_modelo { get; set; }
         public string motor { get; set; }
