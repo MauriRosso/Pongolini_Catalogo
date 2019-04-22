@@ -4,7 +4,3 @@ Tipo aplicacion, alimentacion, cilindrada.
 
 - CONTACTO: Poder llamar pulsando en el teléfono y enviar un mail por consultas.
  Ademas, poner mapa del lugar con direccion debajo y los perfiles de redes sociales de la empresa.
-
-
-EXTRA: Cuando llego al detalle de un producto, poder pedirlo a través de un mail,
-con todos los datos que figuran en ese detalle.

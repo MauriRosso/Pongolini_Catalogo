@@ -132,8 +132,8 @@ namespace Pongolini_Catalogo.MasterDetail
         }
         public void CargarPickerProducto()
         {
-            pckProducto.Items.Add("Guías");
-            pckProducto.Items.Add("Asientos");
+            pckProducto.Items.Add("Guías de válvulas");
+            pckProducto.Items.Add("Asientos de válvulas");
             pckProducto.SelectedIndex = 0;
         }
 
@@ -277,7 +277,7 @@ namespace Pongolini_Catalogo.MasterDetail
             OcultarCamposAplicaciones();
             ListViewAplicaciones.ItemsSource = null;
             ListViewAplicaciones.ItemsSource = ListaDatos_Final;
-            if (pckProducto.SelectedItem.ToString() == "Guías")
+            if (pckProducto.SelectedItem.ToString() == "Guías de válvulas")
             {
                 productoElegido = "Guías";
                 ObtenerGuias();

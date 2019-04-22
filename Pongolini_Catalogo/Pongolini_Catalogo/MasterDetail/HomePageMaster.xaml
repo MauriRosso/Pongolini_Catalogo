@@ -34,7 +34,7 @@
                                 />
                 </StackLayout>
                 <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
-                <Label x:Name="lblBuscarPorGuiasAsientos" Text="Búsqueda de guías y asientos por"
+                <Label x:Name="lblBuscarPorGuiasAsientos" Text="Buscar guías y asientos de válvulas por"
                                     Margin="20,8"
                                     FontSize="Small"
                                     VerticalOptions="Center"
@@ -129,7 +129,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblNuevosDesarrollos" Text="Nuevos Desarrollos"
+                    <Label x:Name="lblNuevosDesarrollos" Text="SERIE 6000"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"

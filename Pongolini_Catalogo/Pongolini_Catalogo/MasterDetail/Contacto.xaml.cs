@@ -24,41 +24,41 @@ namespace Pongolini_Catalogo.MasterDetail
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            CargarMapa();
+            //CargarMapa();
         }
 
-        public async void CargarMapa()
-        {
-            Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(-31.2590372, -61.5120252), Distance.FromKilometers(5)));
-            try
-            {
-                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
-                if (status != PermissionStatus.Granted)
-                {
-                    if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
-                    {
-                        await DisplayAlert("Se necesita localizacion", "El catálogo necesita la localización.", "OK");
-                    }
+        //public async void CargarMapa()
+        //{
+        //    Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(-31.2590372, -61.5120252), Distance.FromKilometers(5)));
+        //    try
+        //    {
+        //        var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+        //        if (status != PermissionStatus.Granted)
+        //        {
+        //            if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
+        //            {
+        //                await DisplayAlert("Se necesita localizacion", "El catálogo necesita la localización.", "OK");
+        //            }
 
-                    var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Location });
-                    status = results[Permission.Location];
-                }
+        //            var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Location });
+        //            status = results[Permission.Location];
+        //        }
 
-                if (status == PermissionStatus.Granted)
-                {
-                    Mapa.IsShowingUser = true;
-                }
-                else if (status != PermissionStatus.Unknown)
-                {
-                    await DisplayAlert("Localizacion denegada", "No podrá continuar. Intente nuevamente.", "OK");
-                }
-            }
-            catch (Exception ex)
-            {
+        //        if (status == PermissionStatus.Granted)
+        //        {
+        //            Mapa.IsShowingUser = true;
+        //        }
+        //        else if (status != PermissionStatus.Unknown)
+        //        {
+        //            await DisplayAlert("Localizacion denegada", "No podrá continuar. Intente nuevamente.", "OK");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-        }
+        //        throw ex;
+        //    }
+        //}
 
         private void btnLlamar_Clicked(object sender, EventArgs e)
         {

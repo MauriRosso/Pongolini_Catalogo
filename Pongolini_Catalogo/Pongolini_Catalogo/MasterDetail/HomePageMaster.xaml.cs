@@ -49,7 +49,7 @@ namespace Pongolini_Catalogo.MasterDetail
         }
         private void OnStackNuevosDesarrollos_Tapped(object sender, EventArgs e)
         {
-            App.MasterD.Detail = new NavigationPage(new NuevosDesarrollos());
+            App.MasterD.Detail = new NavigationPage(new SERIE6000());
             App.MasterD.IsPresented = false;
         }
         private void OnStackBujes_Tapped(object sender, EventArgs e)

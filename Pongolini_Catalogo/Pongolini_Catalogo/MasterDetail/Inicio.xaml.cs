@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace Pongolini_Catalogo.MasterDetail
@@ -35,7 +36,7 @@ namespace Pongolini_Catalogo.MasterDetail
         }
         private void OnStackNuevosDesarrollos_Tapped(object sender, EventArgs e)
         {
-            App.MasterD.Detail = new NavigationPage(new NuevosDesarrollos());
+            App.MasterD.Detail = new NavigationPage(new SERIE6000());
         }
         private void OnStackBujes_Tapped(object sender, EventArgs e)
         {

@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.BujesPage"
-             Title="Bujes">
+             Title="Tubos para encasquillar">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout x:Name="StackCamposBusqueda">
+                <Image Source="buje_de_fundicion_copia1.jpg"
+                       Aspect="AspectFit"></Image>
                 <StackLayout Orientation="Horizontal">
                     <Label
                     x:Name="lblTipo"

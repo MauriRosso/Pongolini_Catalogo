@@ -57,7 +57,7 @@
     <EmbeddedResource Update="MasterDetail\No300Indy.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MasterDetail\NuevosDesarrollos.xaml">
+    <EmbeddedResource Update="MasterDetail\SERIE6000.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PopupModal.xaml">

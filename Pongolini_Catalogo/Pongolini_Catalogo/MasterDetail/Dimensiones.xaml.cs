@@ -34,8 +34,8 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public void CargarPickerProducto()
         {
-            pckProductoDim.Items.Add("Guías");
-            pckProductoDim.Items.Add("Asientos");
+            pckProductoDim.Items.Add("Guías de válvulas");
+            pckProductoDim.Items.Add("Asientos de válvulas");
             pckProductoDim.SelectedIndex = 0;
             lblAnguloDim.IsVisible = false;
             txtAnguloDesdeDim.IsVisible = false;
@@ -513,7 +513,7 @@ namespace Pongolini_Catalogo.MasterDetail
             OcultarCamposDimensiones();
             ListViewDimensiones.ItemsSource = null;
             ListViewDimensiones.ItemsSource = ListaDatos_Final;
-            if (pckProductoDim.SelectedItem.ToString() == "Guías")
+            if (pckProductoDim.SelectedItem.ToString() == "Guías de válvulas")
             {
                 productoElegido = "Guías";
                 ObtenerGuias();

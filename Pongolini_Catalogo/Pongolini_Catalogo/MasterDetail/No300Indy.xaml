@@ -24,39 +24,58 @@
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
+                    Clicked="btnBuscar300Indy_Clicked"
                    >
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout x:Name="slLoad300indy" Orientation="Vertical">
+                <ActivityIndicator x:Name="Cargando"
+                                   Color="DarkBlue">
+                </ActivityIndicator>
+                <Label x:Name="lblCargando"
+                       Text="Obteniendo datos.."
+                       FontAttributes="Bold"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center"></Label>
+            </StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
                 <ListView x:Name="ListView300indy"
-                          RowHeight="190"
                           VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True"
+                          ItemTapped="ListView300indy_ItemTapped"
                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                        <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Grid.Row="1" Text="Modelo" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Modelo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Text="Años" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="3" Text="{Binding Años}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="4" Text="Tipo Aplicación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="4" Text="{Binding TipoAplicacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="5" Text="Tipo Alimentación" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Grid.Row="5" Text="{Binding TipoAlimentacion}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <BoxView Grid.ColumnSpan="7" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
+                                    <Label Grid.ColumnSpan="2" Text="{Binding numero_300indy}" Margin="8,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="Start"></Label>
+                                    <Label Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding producto}" Margin="0,0,8,0" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                                    <Image Grid.Column="0" Grid.Row="1" Source="{Binding img_diam_ext}" HorizontalOptions="Center" VerticalOptions="Center" Margin="2,0,0,0"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="{Binding diametro_exterior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" VerticalTextAlignment="Start"/>
+                                    <Image Grid.Column="2" Grid.Row="1" Source="{Binding img_diam_int}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="2" Grid.Row="2" Text="{Binding diametro_interior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="4" Grid.Row="1" Source="{Binding img_largo_alto}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="4" Grid.Row="2" Text="{Binding largo_alto}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="6" Grid.Row="1" Source="{Binding img_angulo_material}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,2,0"/>
+                                    <Label Grid.Column="6" Grid.Row="2" Text="{Binding angulo_material}" Margin="0,0,2,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding marca_modelo, StringFormat='{0}:'}" Margin="8,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="4"  Text="{Binding motor}" Margin="0,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

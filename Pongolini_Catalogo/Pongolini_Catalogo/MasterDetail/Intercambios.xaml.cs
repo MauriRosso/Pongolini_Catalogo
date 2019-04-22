@@ -74,8 +74,8 @@ namespace Pongolini_Catalogo.MasterDetail
         public void CargarPickerTipoProducto()
         {
             pckTipoProducto.Title = "Seleccione producto";
-            pckTipoProducto.Items.Add("Guías");
-            pckTipoProducto.Items.Add("Asientos");
+            pckTipoProducto.Items.Add("Guías de válvulas");
+            pckTipoProducto.Items.Add("Asientos de válvulas");
             pckTipoProducto.SelectedIndex = 0;
         }
 

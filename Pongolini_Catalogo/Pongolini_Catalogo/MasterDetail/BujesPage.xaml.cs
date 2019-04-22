@@ -21,7 +21,7 @@ namespace Pongolini_Catalogo.MasterDetail
         public void CargarTipoBujes()
         {
             pckTipoBujes.Title = "Seleccione tipo";
-            pckTipoBujes.Items.Add("Gris");
+            pckTipoBujes.Items.Add("Fundición gris aleada");
             pckTipoBujes.Items.Add("Templado");
         }
     }

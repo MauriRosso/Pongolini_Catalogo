@@ -171,7 +171,8 @@
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.ColumnSpan="2" Text="{Binding marca_modelo}" Margin="0,0,0,0" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                                        <BoxView Grid.ColumnSpan="2" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
+                                        <Label Grid.ColumnSpan="2" Text="{Binding marca_modelo}" Margin="0,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
                                         <Label Grid.Column="0" Grid.Row="1" Text="Producto" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                         <Label Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                         <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
