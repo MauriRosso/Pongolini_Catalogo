@@ -16,5 +16,11 @@ namespace Pongolini_Catalogo.MasterDetail
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+    }
 }

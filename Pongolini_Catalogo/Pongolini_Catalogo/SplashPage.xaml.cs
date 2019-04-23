@@ -20,7 +20,7 @@ namespace Pongolini_Catalogo
         public SplashPage()
         {
             InitializeComponent();
-            this.BackgroundColor = Color.DarkBlue;
+            this.BackgroundColor = Color.FromHex("#1A237E");
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
             

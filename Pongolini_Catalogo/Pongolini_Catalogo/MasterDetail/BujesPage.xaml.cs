@@ -18,6 +18,12 @@ namespace Pongolini_Catalogo.MasterDetail
             CargarTipoBujes();
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+
         public void CargarTipoBujes()
         {
             pckTipoBujes.Title = "Seleccione tipo";

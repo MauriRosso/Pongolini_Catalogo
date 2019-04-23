@@ -10,13 +10,30 @@ using Xamarin.Forms.Xaml;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Inicio : ContentPage
-	{
-		public Inicio ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Inicio : ContentPage
+    {
+        public Inicio()
+        {
+            InitializeComponent();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            base.OnBackButtonPressed();
+            DeseaSalir();
+            return true;            
+        }
+
+        private async void DeseaSalir()
+        {
+            //Cerrar aplicacion.
+            var respuesta = await DisplayAlert("Salir", "¿Está seguro que desea salir de la aplicación?", "SI", "NO");
+            if (respuesta == true)
+            {
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+        }
 
         private void OnStackAplicaciones_Tapped(object sender, EventArgs e)
         {

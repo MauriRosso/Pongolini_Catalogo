@@ -32,6 +32,12 @@ namespace Pongolini_Catalogo.MasterDetail
             lblCargando.IsVisible = false;
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+
         public void CargarPickerProducto()
         {
             pckProductoDim.Items.Add("Guías de válvulas");

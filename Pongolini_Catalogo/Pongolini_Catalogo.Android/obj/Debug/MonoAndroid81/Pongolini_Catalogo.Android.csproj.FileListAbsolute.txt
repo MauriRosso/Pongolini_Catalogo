@@ -133,7 +133,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_interior_asiento.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\altura.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\contacto_info.jpg
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\buje_de_fundicion_copia1.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\guias_asientos.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\R.cs.flag
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\R.txt
@@ -239,7 +238,10 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_bujes.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Pongolini_Catalogo.Android.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\bin\Debug\Pongolini_Catalogo.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Messaging.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Permissions.dll.mdb

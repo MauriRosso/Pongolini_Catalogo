@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout x:Name="StackCamposBusqueda">
-                <Image Source="buje_de_fundicion_copia1.jpg"
+                <Image Source="img_bujes.jpg"
                        Aspect="AspectFit"></Image>
                 <StackLayout Orientation="Horizontal">
                     <Label

@@ -27,6 +27,12 @@ namespace Pongolini_Catalogo.MasterDetail
             //CargarMapa();
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+
         //public async void CargarMapa()
         //{
         //    Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(-31.2590372, -61.5120252), Distance.FromKilometers(5)));

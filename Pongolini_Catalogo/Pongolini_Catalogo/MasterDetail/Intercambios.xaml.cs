@@ -39,6 +39,12 @@ namespace Pongolini_Catalogo.MasterDetail
 
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+
         public void CargarListaFabricantes()
         {
             ListaFabricantes.Add("RIOSULENSE");

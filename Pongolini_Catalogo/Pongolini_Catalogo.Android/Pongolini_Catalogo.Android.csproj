@@ -419,10 +419,10 @@
     <AndroidResource Include="Resources\drawable\Contacto_info.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buje_de_fundicion_copia1.jpg" />
+    <AndroidResource Include="Resources\drawable\Guias_Asientos.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Guias_Asientos.jpg" />
+    <AndroidResource Include="Resources\drawable\img_bujes.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

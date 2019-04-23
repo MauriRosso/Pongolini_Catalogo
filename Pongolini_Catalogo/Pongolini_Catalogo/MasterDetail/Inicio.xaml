@@ -5,7 +5,7 @@
              Title="Pongolini Catálogo"
              >
     <ContentPage.Content>
-        
+        <ScrollView>
             <StackLayout x:Name="stackPrincipal" BackgroundColor="DimGray"
                      Orientation="Vertical">
 
@@ -20,7 +20,7 @@
                     </Label>
 
                 </Frame>
-            <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DimGray" Margin="0,0,0,-4">
+            <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DimGray" Margin="0,0,0,-2.5">
                     <Image Source="Guias_Asientos.jpg"
                        Aspect="AspectFit" Margin="0,0,0,-47" 
                              ></Image>
@@ -176,8 +176,8 @@
                    TextColor="White">
                     </Label>
                 </Frame>
-                <AbsoluteLayout HorizontalOptions="Center">
-                    <Image Source="buje_de_fundicion_copia1.jpg"
+            <AbsoluteLayout HorizontalOptions="Center" Margin="0,0,0,-30">
+                    <Image Source="img_bujes.jpg"
                        Aspect="AspectFit" Margin="0,0,0,0"
                              ></Image>
                     <Frame BackgroundColor="DarkBlue"
@@ -187,12 +187,12 @@
                    Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="115,10,130,80">
+                           AbsoluteLayout.LayoutBounds="115,15,130,80">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackBujes_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="115,14,130,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="115,19,130,80" HorizontalOptions="Center">
                         <Image Source="ic_Bujes_blanco.png"
                            HeightRequest="40">
 
@@ -208,6 +208,6 @@
                     </StackLayout>
                 </AbsoluteLayout>
             </StackLayout>
-        
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

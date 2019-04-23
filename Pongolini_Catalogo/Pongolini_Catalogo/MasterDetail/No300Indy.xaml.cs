@@ -27,6 +27,12 @@ namespace Pongolini_Catalogo.MasterDetail
             lblCargando.IsVisible = false;
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            App.MasterD.Detail = new NavigationPage(new Inicio());
+            return true;
+        }
+
         private async void ObtenerGuias()
         {
             if (App.ListaGlobalGuias.Count == 0) //Si es la primera vez que trae datos de guias..
