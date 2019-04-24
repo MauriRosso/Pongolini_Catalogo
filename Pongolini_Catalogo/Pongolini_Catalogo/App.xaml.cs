@@ -15,13 +15,11 @@ namespace Pongolini_Catalogo
         public static List<Guias> ListaGlobalGuias = new List<Guias>();
         public static List<Asientos> ListaGlobalAsientos = new List<Asientos>();
         public static List<Bujes> ListaGlobalBujes = new List<Bujes>();
+        public static List<Asientos> ListaGlobalSerie6000 = new List<Asientos>();
 
         public App()
         {
-            InitializeComponent();
-
-            
-           
+            InitializeComponent();           
             MainPage = new NavigationPage(new SplashPage());
         }
 

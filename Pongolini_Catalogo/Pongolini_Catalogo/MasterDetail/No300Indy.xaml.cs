@@ -15,8 +15,6 @@ namespace Pongolini_Catalogo.MasterDetail
     public partial class No300Indy : ContentPage
     {
         List<DimensionesViewModel> ListaDatos_Final = new List<DimensionesViewModel>(); //Informacion que se muestra en la listview.
-        List<Guias> ListaAuxGuias = new List<Guias>(); //Traigo TODAS las guias de apphb
-        List<Asientos> ListaAuxAsientos = new List<Asientos>(); //Traigo TODAS los asientos de apphb
         string productoElegido = string.Empty;
 
         public No300Indy()
@@ -40,15 +38,11 @@ namespace Pongolini_Catalogo.MasterDetail
                 Cargando.IsVisible = true;
                 lblCargando.IsVisible = true;
                 RestClient client = new RestClient();
-                ListaAuxGuias = await client.Get<Guias>("http://serviciowebpongolini.apphb.com/api/GuiasApi");//URL de la api.
-                App.ListaGlobalGuias = ListaAuxGuias;
+                App.ListaGlobalGuias = await client.Get<Guias>("http://serviciowebpongolini.apphb.com/api/GuiasApi");//URL de la api.
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
             }
-            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
-            {
-                ListaAuxGuias = App.ListaGlobalGuias;
-            }
+
             ListaDatos_Final.Clear();
             //filtros
             if (txtNO300Indy.Text != null && txtNO300Indy.Text != "")
@@ -65,6 +59,19 @@ namespace Pongolini_Catalogo.MasterDetail
 
         }
 
+        public void SepararAsientosSemiTerminados()
+        {
+            foreach (var item in App.ListaGlobalAsientos)
+            {
+                if (item.marca_modelo == "ADAPTACIONES")
+                {
+                    App.ListaGlobalSerie6000.Add(item);
+                }
+            }
+            //Remuevo todas las adaptaciones de la ListaGlobalAsientos
+            App.ListaGlobalAsientos.RemoveAll(x => x.marca_modelo == "ADAPTACIONES");
+        }
+
         private async void ObtenerAsientos()
         {
             if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de guias..
@@ -72,14 +79,14 @@ namespace Pongolini_Catalogo.MasterDetail
                 Cargando.IsVisible = true;
                 lblCargando.IsVisible = true;
                 RestClient client = new RestClient();
-                ListaAuxAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
-                App.ListaGlobalAsientos = ListaAuxAsientos;
+                App.ListaGlobalAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
+                SepararAsientosSemiTerminados();
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
             }
             else //Si alguna vez ya trajo los datos, simplemente se los asigno.
             {
-                ListaAuxAsientos = App.ListaGlobalAsientos;
+                SepararAsientosSemiTerminados();
             }
             ListaDatos_Final.Clear();
             //filtros
