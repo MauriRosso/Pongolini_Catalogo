@@ -521,7 +521,6 @@ namespace Pongolini_Catalogo.MasterDetail
 
         private void btnBuscarDimensiones_Clicked(object sender, EventArgs e)
         {
-            btnNuevaBusqueda.IsVisible = true;
             //Oculto la busqueda para mostrar con mas espacio la listview
             OcultarCamposDimensiones();
             ListViewDimensiones.ItemsSource = null;

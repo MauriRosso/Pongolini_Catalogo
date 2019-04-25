@@ -11,7 +11,7 @@
                        FontAttributes="Bold"
                        FontSize="Small"
                        HorizontalOptions="Start"
-                       Margin="8,4,8,4"/>
+                       Margin="8,4,8,2"/>
                 <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
                 <Label x:Name="lbl300indy"
                        FontAttributes="Bold"
@@ -26,7 +26,7 @@
                        FontAttributes="Bold"
                        FontSize="Small"
                        HorizontalOptions="Start"
-                       Margin="8,4,8,4"/>
+                       Margin="8,4,8,2"/>
                 <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
                 <StackLayout x:Name="StackAdmEscProducto">
                     <Grid>
@@ -116,8 +116,22 @@
                        FontAttributes="Bold"
                        FontSize="Small"
                        HorizontalOptions="Start"
-                       Margin="8,4,8,4"/>
+                       Margin="8,4,8,2"/>
                 <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                <StackLayout x:Name="StackOEM">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Text="OEM" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lblOEM" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
                 <StackLayout x:Name="StackInterMahle">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -150,7 +164,7 @@
                        FontAttributes="Bold"
                        FontSize="Small"
                        HorizontalOptions="Start"
-                       Margin="8,4,8,4"/>
+                       Margin="8,4,8,2"/>
                 <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
                 <StackLayout VerticalOptions="FillAndExpand">
                     <ListView x:Name="ListViewAplicaciones"
@@ -191,7 +205,7 @@
                     TextColor="White"
                     BackgroundColor="DarkBlue"
                     Clicked="btnRealizarPedido_Clicked"
-                    Margin="8,0">
+                    Margin="8,8">
                 </Button>
             </StackLayout>
         </ScrollView>

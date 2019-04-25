@@ -70,3 +70,4 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandar
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\SERIE6000.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Debug\netstandard2.0\MasterDetail\DetalleBuje.xaml.g.cs

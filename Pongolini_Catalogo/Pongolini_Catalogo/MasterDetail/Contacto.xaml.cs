@@ -66,12 +66,19 @@ namespace Pongolini_Catalogo.MasterDetail
         //    }
         //}
 
+        //FACEBOOK
+        //Device.OpenUri(new Uri("https://www.facebook.com/300-INDY-354674128063671/"));
+        //LINKED IN
+        //Device.OpenUri(new Uri("https://ar.linkedin.com/company/aberaldo-pongolini-srl"));
+
+
         private void btnLlamar_Clicked(object sender, EventArgs e)
         {
             var phoneDialer = CrossMessaging.Current.PhoneDialer;
+            //Seleccionar telefono con cuadro MODAL
             if (phoneDialer.CanMakePhoneCall)
             {
-                phoneDialer.MakePhoneCall("3492212689");
+                phoneDialer.MakePhoneCall("+54 3492 504045");
             }
         }
 
@@ -81,13 +88,25 @@ namespace Pongolini_Catalogo.MasterDetail
             if (emailMessenger.CanSendEmail)
             {
                 var email = new EmailMessageBuilder()
-                    .To("maurirosso@hotmail.com") //Colocar mail de pongolini.
+                    .To("comercial@pongolini.com") //Colocar mail de pongolini.
                     .Subject("Consulta")
-                    .Body("Este mensaje fue enviado desde la aplicación móvil de Pongolini.")
+                    .Body("Este mensaje fue enviado desde la aplicación móvil de Pongolini Catálogo.")
                     .Build();
 
                 emailMessenger.SendEmail(email);
             }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            //Facebook
+            Device.OpenUri(new Uri("https://www.facebook.com/300-INDY-354674128063671/"));
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            //LinkedIn
+            Device.OpenUri(new Uri("https://ar.linkedin.com/company/aberaldo-pongolini-srl"));
         }
 
         //Falta el MAPA 

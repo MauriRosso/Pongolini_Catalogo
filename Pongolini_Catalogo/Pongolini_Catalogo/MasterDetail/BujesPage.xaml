@@ -5,9 +5,9 @@
              Title="Tubos para encasquillar">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <Image Source="img_bujes_recortada.jpg"
+                       Aspect="AspectFit" Margin="0,0,0,0"></Image>
             <StackLayout x:Name="StackCamposBusqueda">
-                <Image Source="img_bujes.jpg"
-                       Aspect="AspectFit"></Image>
                 <StackLayout Orientation="Horizontal">
                     <Label
                     x:Name="lblTipo"
@@ -25,44 +25,74 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
-                    x:Name="lblDiametroExterior"
+                    x:Name="lblDiamExtDim"
                     Text="Ø Exterior"  
-                    Margin="13,0,75,0"
+                    Margin="13,0,35,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtDiamExt"
+                    <Entry x:Name="txtDiamExtDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtDiamExtDesdeDim_Unfocused"
+                     TextChanged="txtDiamExtDesdeDim_TextChanged"
+                />
+                    <Label x:Name="HastaDiamExt" Text="Hasta"/>
+                    <Entry x:Name="txtDiamExtHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone" 
+                     Unfocused="txtDiamExtDesdeDim_Unfocused"
+                     TextChanged="txtDiamExtHastaDim_TextChanged"                     
                 />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label
-                    x:Name="lblDiametroInterior"
+                    x:Name="lblDiamIntDim"
                     Text="Ø Interior"  
-                    Margin="13,0,78,0"
+                    Margin="13,0,37,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtDiamInt"
+                    <Entry x:Name="txtDiamIntDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtDiamIntDesdeDim_Unfocused"
+                     TextChanged="txtDiamIntDesdeDim_TextChanged"
                 />
+                    <Label x:Name="HastaDiamInt" Text="Hasta"/>
+                    <Entry x:Name="txtDiamIntHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Margin="0,0,13,0"
+                     Keyboard="Telephone"
+                     Unfocused="txtDiamIntDesdeDim_Unfocused"
+                     TextChanged="txtDiamIntHastaDim_TextChanged"
+                     />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout x:Name="StackLargo" Orientation="Horizontal">
                     <Label
-                    x:Name="lblLargo"
+                    x:Name="lblLargoDim"
                     Text="Largo"  
-                    Margin="13,0,97,0"
+                    Margin="13,0,59,0"
                     HorizontalTextAlignment="Start"
                 />
-                    <Entry x:Name="txtLargo"
+                    <Entry x:Name="txtLargoDesdeDim"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
-                     Margin="12,0,13,0"
-                     Keyboard="Numeric"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtLargoDesdeDim_Unfocused"
+                     TextChanged="txtLargoDesdeDim_TextChanged"
+                />
+                    <Label x:Name="HastaLargo" Text="Hasta"/>
+                    <Entry x:Name="txtLargoHastaDim"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"  
+                     Keyboard="Telephone"  
+                     Unfocused="txtLargoDesdeDim_Unfocused"
+                     TextChanged="txtLargoHastaDim_TextChanged"
+                     Margin="0,0,13,0"
                 />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -72,6 +102,7 @@
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
+                    Clicked="btnBuscarBujes_Clicked"
                    >
                     </Button>
                     <Button x:Name="btnLimpiarBujes"
@@ -79,11 +110,73 @@
                     FontAttributes="Bold"
                     TextColor="Black"
                     HorizontalOptions="FillAndExpand"
-                    Margin="8,0">
+                    Margin="8,0"
+                    Clicked="btnLimpiarBujes_Clicked">
                     </Button>
                 </StackLayout>
             </StackLayout>
+            <Button x:Name="btnNuevaBusqueda"
+                    Text="NUEVA BUSQUEDA"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0,8,0"
+                    Clicked="btnNuevaBusqueda_Clicked"
+                  >
+            </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <StackLayout x:Name="slLoad" Orientation="Vertical">
+                <ActivityIndicator x:Name="Cargando"
+                                   Color="DarkBlue">
+                </ActivityIndicator>
+                <Label x:Name="lblCargando"
+                       Text="Obteniendo datos.."
+                       FontAttributes="Bold"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="ListViewBujes"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True"
+                          ItemTapped="ListViewBujes_ItemTapped"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="41" />
+                                    </Grid.ColumnDefinitions>
+                                    <BoxView Grid.ColumnSpan="7" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
+                                    <Label Grid.ColumnSpan="2" Text="{Binding codigo}" Margin="8,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="Start"></Label>
+                                    <Label Grid.Column="6" Grid.Row="0" Text="Buje" Margin="0,0,8,0" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                                    <Image Grid.Column="1" Grid.Row="1" Source="{Binding img_diam_ext}" HorizontalOptions="Center" VerticalOptions="Center" Margin="2,0,0,0"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding diametro_exterior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" VerticalTextAlignment="Start"/>
+                                    <Image Grid.Column="3" Grid.Row="1" Source="{Binding img_diam_int}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="3" Grid.Row="2" Text="{Binding diametro_interior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Image Grid.Column="5" Grid.Row="1" Source="{Binding img_largo}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="5" Grid.Row="2" Text="{Binding largo}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Text="Tipo aplicación: " Margin="8,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4"  Text="{Binding aplicacion}" Margin="0,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

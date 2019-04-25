@@ -9,14 +9,13 @@
                 <StackLayout Orientation="Horizontal">
                     <Label
                     x:Name="lblNOriginal"
-                    Text="N° Original"  
+                    Text="OEM        "  
                     Margin="13,10,47,0"
                 />
                     <Entry x:Name="txtNOriginal"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="Start"  
                      Margin="12,0,13,0"
-                     Keyboard="Numeric"  
                     />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">

@@ -27,7 +27,7 @@ namespace Pongolini_Catalogo.MasterDetail
             if (guia != null) //Viene una guia
             {
                 lbl300indy.Text = guia.numero_300indy;
-                lblTipoProducto.Text = "GUIA";
+                lblTipoProducto.Text = "GUÍA";
                 lbladmesc.Text = guia.admision_escape;
                 lbldiamext.Text = guia.diametro_exterior.ToString();
                 lbldiamint.Text = guia.diametro_interior.ToString();
@@ -73,6 +73,7 @@ namespace Pongolini_Catalogo.MasterDetail
                     }
                 }
                 //INTERCAMBIOS
+                lblOEM.Text = App.ListaGlobalGuias.Find(x => x.codigo == guia.codigo).numero_original;
                 lblinter_Mahle.Text = App.ListaGlobalGuias.Find(x => x.codigo == guia.codigo).codigo_mahle;
                 lblinter_Riosulense.Text = App.ListaGlobalGuias.Find(x => x.codigo == guia.codigo).codigo_riosulense;
                 ///APLICACIONES
@@ -98,15 +99,30 @@ namespace Pongolini_Catalogo.MasterDetail
                 lblmat_ang.Text = asiento.angulo;
                 lblforma.IsVisible = false;
                 bxUltimo.IsVisible = false;
-                //INTERCAMBIOS
-                lblinter_Mahle.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_mahle;
-                lblinter_Riosulense.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_riosulense;
-                ///APLICACIONES
-                foreach (var item in App.ListaGlobalAsientos)
+
+                if (asiento.marca_modelo != "ADAPTACIONES")
                 {
-                    if (item.codigo == asiento.codigo)
+                    //INTERCAMBIOS
+                    lblOEM.Text = App.ListaGlobalAsientos.Find(x => x.codigo == guia.codigo).numero_original;
+                    lblinter_Mahle.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_mahle;
+                    lblinter_Riosulense.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_riosulense;
+                    ///APLICACIONES
+                    foreach (var item in App.ListaGlobalAsientos)
                     {
-                        ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor });
+                        if (item.codigo == asiento.codigo)
+                        {
+                            ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor });
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in App.ListaGlobalSerie6000)
+                    {
+                        if (item.codigo == asiento.codigo)
+                        {
+                            ListaDatos_Final.Add(new AplicacionesViewModel { producto = "Asiento", numero_300indy = item.numero_300indy, admision_escape = item.admision_escape, marca_modelo = item.marca_modelo, motor = item.motor });
+                        }
                     }
                 }
                 ListViewAplicaciones.ItemsSource = null;

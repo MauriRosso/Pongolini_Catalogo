@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.DetalleBuje"
+             Title="Detalle del producto">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="DETALLE"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,2"/>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                    <Label x:Name="lblCodigo"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                    <Label x:Name="lblTipoProducto"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,4"/>
+                    <Label Text="ATRIBUTOS"
+                       TextColor="DarkBlue"
+                       FontAttributes="Bold"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       Margin="8,4,8,2"/>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+                    <StackLayout x:Name="StackDiamExtProducto">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Text="Ø Exterior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamext"  Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                    <StackLayout x:Name="StackDiamIntProducto">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamint" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                    <StackLayout x:Name="StackLargoProducto">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lbllargo" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                    <StackLayout x:Name="StackMaterialProducto">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" x:Name="lblmaterial" Text="Material" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lblmat" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                    <StackLayout x:Name="StackTipoAplicacion">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" x:Name="lbltipoaplicacion" Text="Tipo aplicación" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lbltipoapl" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="Gray"/>
+                    <StackLayout x:Name="StackDureza">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" x:Name="lbldureza" Text="Dureza" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="0" x:Name="lbldur" Margin="8,0,8,0" HorizontalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                    <Button x:Name="btnRealizarPedido"
+                    Text="REALIZAR PEDIDO"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    Clicked="btnRealizarPedido_Clicked"
+                    Margin="8,8">
+                    </Button>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
