@@ -103,7 +103,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 if (asiento.marca_modelo != "ADAPTACIONES")
                 {
                     //INTERCAMBIOS
-                    lblOEM.Text = App.ListaGlobalAsientos.Find(x => x.codigo == guia.codigo).numero_original;
+                    lblOEM.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).numero_original;
                     lblinter_Mahle.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_mahle;
                     lblinter_Riosulense.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_riosulense;
                     ///APLICACIONES

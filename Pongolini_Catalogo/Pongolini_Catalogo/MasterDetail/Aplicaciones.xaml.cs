@@ -44,6 +44,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("ALFA ROMEO");
             pckMarca.Items.Add("AUDI");
             pckMarca.Items.Add("AUSTIN");
+            pckMarca.Items.Add("BAJAJ");
             pckMarca.Items.Add("BEDFORD");
             pckMarca.Items.Add("BERLIET");
             pckMarca.Items.Add("BIELARUS");
@@ -51,8 +52,8 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("BORGWARD");
             pckMarca.Items.Add("BOUNUS");
             pckMarca.Items.Add("CASE");
-            pckMarca.Items.Add("CAVALIER");
             pckMarca.Items.Add("CATERPILLAR");
+            pckMarca.Items.Add("CAVALIER");
             pckMarca.Items.Add("CHEVROLET");
             pckMarca.Items.Add("CHRYSLER");
             pckMarca.Items.Add("CITROEN");
@@ -64,13 +65,14 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("DATSUN");
             pckMarca.Items.Add("DETROIT");
             pckMarca.Items.Add("DEUTZ");
-            pckMarca.Items.Add("DIAR");
             pckMarca.Items.Add("DI TELLA");
+            pckMarca.Items.Add("DIAR");
             pckMarca.Items.Add("DODGE");
             pckMarca.Items.Add("FIAT");
             pckMarca.Items.Add("FORD");
             pckMarca.Items.Add("GARDNER");
             pckMarca.Items.Add("GM");
+            pckMarca.Items.Add("GUASCOR");
             pckMarca.Items.Add("HANOMAG");
             pckMarca.Items.Add("HINO");
             pckMarca.Items.Add("HONDA");
@@ -79,6 +81,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("INDENOR");
             pckMarca.Items.Add("INTERNACIONAL");
             pckMarca.Items.Add("ISUZU");
+            pckMarca.Items.Add("JEEP");
             pckMarca.Items.Add("JOHN DEERE");
             pckMarca.Items.Add("KAMAZ");
             pckMarca.Items.Add("KAWASAKI");
@@ -89,13 +92,13 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("LEYLAND");
             pckMarca.Items.Add("LISTER");
             pckMarca.Items.Add("LOMBARDINI");
-            pckMarca.Items.Add("M W M");
+            pckMarca.Items.Add("M.W.M");
             pckMarca.Items.Add("MACK");
             pckMarca.Items.Add("MAN");
             pckMarca.Items.Add("MAXION");
             pckMarca.Items.Add("MAZ");
             pckMarca.Items.Add("MAZDA");
-            pckMarca.Items.Add("MERCEDES BENZ");
+            pckMarca.Items.Add("M BENZ");
             pckMarca.Items.Add("MITSUBISHI");
             pckMarca.Items.Add("NAVISTAR");
             pckMarca.Items.Add("NISSAN");
@@ -109,6 +112,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("RENAULT");
             pckMarca.Items.Add("R.V.I");
             pckMarca.Items.Add("ROVER");
+            pckMarca.Items.Add("SCANIA");
             pckMarca.Items.Add("SCANIA VABIS");
             pckMarca.Items.Add("SCHLUTER");
             pckMarca.Items.Add("SEAT");
@@ -124,6 +128,7 @@ namespace Pongolini_Catalogo.MasterDetail
             pckMarca.Items.Add("UTB");
             pckMarca.Items.Add("VALIANT");
             pckMarca.Items.Add("VALTRA");
+            pckMarca.Items.Add("VILLA");
             pckMarca.Items.Add("VOLKSWAGEN");
             pckMarca.Items.Add("VOLVO");
             pckMarca.Items.Add("WAUKESHA");
@@ -620,20 +625,35 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             if (productoElegido == "Guías")
             {
-                var aplicacion_guia = e.Item as AplicacionesViewModel;
-                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == aplicacion_guia.codigo);
+                var dimension_guia = e.Item as AplicacionesViewModel;
+                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == dimension_guia.codigo);
                 Navigation.PushAsync(new DetalleProducto(guia_encontrada, null));
             }
             else
             {
-                var aplicacion_asiento = e.Item as AplicacionesViewModel;
-                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == aplicacion_asiento.codigo);
-                Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                if (productoElegido == "Asientos")
+                {
+                    var dimension_asiento = e.Item as AplicacionesViewModel;
+                    if (dimension_asiento.marca_modelo == "ADAPTACIONES")
+                    {
+                        Asientos asiento_encontrado = App.ListaGlobalSerie6000.Find(x => x.codigo == dimension_asiento.codigo);
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }
+                    else
+                    {
+                        Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }
+                }
             }
         }
 
         private void btnLimpiarAplicaciones_Clicked(object sender, EventArgs e)
         {
+            txtNOriginal.Text = null;
+            txtMotor.Text = null;
+            pckMarca.SelectedIndex = 0;
+            pckTipoAplicacion.SelectedIndex = 0;
             ListaDatos_Final.Clear();
             ListViewAplicaciones.ItemsSource = null;
             ListViewAplicaciones.ItemsSource = ListaDatos_Final;

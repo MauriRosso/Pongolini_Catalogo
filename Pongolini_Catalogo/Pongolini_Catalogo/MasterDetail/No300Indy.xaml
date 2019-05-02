@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.No300Indy"
              Title="N° 300 Indy">
-    <ContentPage.Content>
+    <ContentPage.Content >
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
                 <Label
@@ -26,6 +26,10 @@
                     Margin="8,0"
                     Clicked="btnBuscar300Indy_Clicked"
                    >
+                <Button.Image>
+                    <OnPlatform x:TypeArguments="FileImageSource" Android="ic_search.png">
+                    </OnPlatform>
+                </Button.Image>
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad300indy" Orientation="Vertical">
@@ -55,7 +59,7 @@
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="41" />
                                         <ColumnDefinition Width="50" />
                                         <ColumnDefinition Width="41" />
@@ -74,8 +78,8 @@
                                     <Label Grid.Column="4" Grid.Row="2" Text="{Binding largo_alto}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
                                     <Image Grid.Column="6" Grid.Row="1" Source="{Binding img_angulo_material}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,2,0"/>
                                     <Label Grid.Column="6" Grid.Row="2" Text="{Binding angulo_material}" Margin="0,0,2,0" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                                    <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding marca_modelo, StringFormat='{0}:'}" Margin="8,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                    <Label Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="4"  Text="{Binding motor}" Margin="0,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding marca_modelo, StringFormat='{0}:'}" Margin="8,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" Text="{Binding motor}" Margin="0,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

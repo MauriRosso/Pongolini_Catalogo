@@ -14,11 +14,14 @@
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
                     <Button x:Name="btnLlamar"
                     Margin="8,25,8,25"
-                    Text="Llamar a Aberaldo Pongolini S.R.L"
+                    Text="   Llamar a la empresa"
                     FontAttributes="Bold"
                     HorizontalOptions="FillAndExpand"
                     Clicked="btnLlamar_Clicked">
-
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_phone.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                     <Button x:Name="btnEnviarMail"
                     Margin="8,0,8,25"
@@ -26,11 +29,15 @@
                     FontAttributes="Bold"
                     HorizontalOptions="FillAndExpand"
                     Clicked="btnEnviarMail_Clicked">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_email.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,25">
                         <StackLayout x:Name="StackFacebook" Margin="12,0,12,0" HorizontalOptions="Center">
                             <Image x:Name="imgFacebook"
-                           Source="ic_facebook_logo.png">
+                           Source="ic_facebook_logo.png" BackgroundColor="Transparent">
                             </Image>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
@@ -38,7 +45,7 @@
                         </StackLayout>
                         <StackLayout x:Name="StackLinkedin" Margin="12,0,12,0" HorizontalOptions="Center">
                             <Image x:Name="imgLinkedin"
-                           Source="ic_linkedin_logo.png">
+                           Source="ic_linkedin_logo.png" BackgroundColor="Transparent">
                             </Image>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1" />

@@ -5,7 +5,17 @@
              Title="SERIE 6000">
     <ContentPage.Content>
         <StackLayout>
-            <Image x:Name="imgSerie600" Source="img_serie_6000.jpg" Margin="0,0,0,0"></Image>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView HeightRequest="36" Color="#1A237E" Margin="0,-3,0,0"/>
+                <Label Text="ASIENTOS SEMI-TERMINADOS" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Start" VerticalOptions="Start" Margin="0,0,0,0"></Label>
+            </Grid>
+            <Image x:Name="imgSerie600" Source="img_serie_6000.jpg" Margin="0,-5.5,0,0"></Image>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad" Orientation="Vertical">
                 <ActivityIndicator x:Name="Cargando"

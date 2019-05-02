@@ -33,9 +33,12 @@ namespace Pongolini_Catalogo.MasterDetail
             lbldur.Text = buje.codigo[1].ToString() == "T" ? "310-350 HB" : "200-240 HB";
         }
 
+
+
         private async void btnRealizarPedido_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new PopupModal(lblTipoProducto.Text, lblCodigo.Text));
+            PopupModal popup = new PopupModal(lblTipoProducto.Text, lblCodigo.Text);
+            await PopupNavigation.Instance.PushAsync(popup);
         }
     }
 }

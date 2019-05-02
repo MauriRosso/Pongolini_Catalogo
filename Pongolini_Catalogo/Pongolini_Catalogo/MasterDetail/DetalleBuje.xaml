@@ -119,6 +119,10 @@
                     BackgroundColor="DarkBlue"
                     Clicked="btnRealizarPedido_Clicked"
                     Margin="8,8">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_cart.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                 </StackLayout>
             </ScrollView>

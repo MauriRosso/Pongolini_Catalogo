@@ -56,6 +56,10 @@
                     TextColor="Black"
                     Clicked="btnBuscar_Clicked"
                 Margin="8,0">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments="FileImageSource" Android="ic_search.png">
+                    </OnPlatform>
+                </Button.Image>
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout>

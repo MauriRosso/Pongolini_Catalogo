@@ -18,7 +18,7 @@
             </StackLayout>
             <StackLayout>
                 <Label Text="Teléfono" Margin="15,0,15,0"/>
-                <Entry x:Name="txtTelefono" FontSize="20" Margin="15,0,15,0" Keyboard="Numeric"/>
+                <Entry x:Name="txtTelefono" FontSize="20" Margin="15,0,15,0" Keyboard="Telephone"/>
             </StackLayout>
             <StackLayout>
                 <Label Text="Dirección" Margin="15,0,15,0"/>

@@ -7,6 +7,7 @@
         <StackLayout Orientation="Vertical">
             <Image Source="img_bujes_recortada.jpg"
                        Aspect="AspectFit" Margin="0,0,0,0"></Image>
+            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="StackCamposBusqueda">
                 <StackLayout Orientation="Horizontal">
                     <Label
@@ -104,6 +105,10 @@
                     Margin="8,0"
                     Clicked="btnBuscarBujes_Clicked"
                    >
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_search.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                     <Button x:Name="btnLimpiarBujes"
                     Text="LIMPIAR"
@@ -112,6 +117,10 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
                     Clicked="btnLimpiarBujes_Clicked">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_clear.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                 </StackLayout>
             </StackLayout>
@@ -123,6 +132,10 @@
                     Margin="8,0,8,0"
                     Clicked="btnNuevaBusqueda_Clicked"
                   >
+                <Button.Image>
+                    <OnPlatform x:TypeArguments="FileImageSource" Android="ic_new_search.png">
+                    </OnPlatform>
+                </Button.Image>
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad" Orientation="Vertical">

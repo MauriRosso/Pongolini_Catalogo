@@ -20,7 +20,7 @@
                     </Label>
 
                 </Frame>
-            <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DimGray" Margin="0,0,0,-2.5">
+            <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DimGray" Margin="0,0,0,-1">
                     <Image Source="Guias_Asientos.jpg"
                        Aspect="AspectFit" Margin="0,0,0,-47" 
                              ></Image>
@@ -32,7 +32,7 @@
                             Opacity="0.6"   
                            BorderColor="White"
                            HasShadow="False"
-                               AbsoluteLayout.LayoutBounds="60,15,115,80"
+                               AbsoluteLayout.LayoutBounds="60,12,115,80"
                            >
 
                         <Frame.GestureRecognizers>
@@ -40,7 +40,7 @@
                         </Frame.GestureRecognizers>
                     </Frame>
 
-                    <StackLayout x:Name="strenderAplicaciones" Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,17,115,80" HorizontalOptions="Center">
+                    <StackLayout x:Name="strenderAplicaciones" Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,14,115,80" HorizontalOptions="Center">
                         <Image x:Name="imgAplicaciones" Source="ic_Aplicaciones_blanco.png"
                                             HeightRequest="40"   
                                        Opacity="1"
@@ -66,12 +66,12 @@
                             Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
-                               AbsoluteLayout.LayoutBounds="185,15,115,80">
+                               AbsoluteLayout.LayoutBounds="185,12,115,80">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackIntercambios_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,17,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,14,115,80" HorizontalOptions="Center">
                         <Image Source="ic_Intercambios_blanco.png"
                            HeightRequest="40">
 
@@ -93,12 +93,12 @@
                    Padding="10,2"
                            Opacity="0.6"
                                HasShadow="False"
-                          AbsoluteLayout.LayoutBounds="185,105,115,80">
+                          AbsoluteLayout.LayoutBounds="185,102,115,80">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackDimensiones_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,109,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,106,115,80" HorizontalOptions="Center">
                         <Image Source="ic_Dimensiones_blanco.png"
                            HeightRequest="40">
 
@@ -120,12 +120,12 @@
                    Padding="23,2"
                            Opacity="0.6"
                           HasShadow="False"   
-                               AbsoluteLayout.LayoutBounds="60,105,115,80">
+                               AbsoluteLayout.LayoutBounds="60,102,115,80">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStack300Indy_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,109,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,106,115,80" HorizontalOptions="Center">
                         <Image Source="ic_300Indy_blanco.png"
                            HeightRequest="40">
 
@@ -146,12 +146,12 @@
                    Padding="10,2"
                            Opacity="0.6"
                         HasShadow="False"       
-                               AbsoluteLayout.LayoutBounds="122.5,195,115,80">
+                               AbsoluteLayout.LayoutBounds="122.5,192,115,80">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackNuevosDesarrollos_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="122.5,199,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="122.5,196,115,80" HorizontalOptions="Center">
                         <Image Source="ic_NuevosDesarrollos_blanco.png"
                            HeightRequest="40">
 
@@ -176,7 +176,7 @@
                    TextColor="White">
                     </Label>
                 </Frame>
-            <AbsoluteLayout HorizontalOptions="Center" Margin="0,0,0,-30">
+            <AbsoluteLayout HorizontalOptions="Center" Margin="0,0,0,-27">
                     <Image Source="img_bujes.jpg"
                        Aspect="AspectFit" Margin="0,0,0,0"
                              ></Image>

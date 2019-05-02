@@ -82,6 +82,10 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
                     Clicked="btnBuscarAplicaciones_Clicked">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_search.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                     <Button x:Name="btnLimpiarAplicaciones"
                     Text="LIMPIAR"
@@ -90,6 +94,10 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
                     Clicked="btnLimpiarAplicaciones_Clicked">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_clear.png">
+                            </OnPlatform>
+                        </Button.Image>
                     </Button>
                 </StackLayout>
             </StackLayout>
@@ -101,6 +109,10 @@
                     HorizontalOptions="FillAndExpand"
                     Margin="8,0"
                     Clicked="btnNuevaBusqueda_Clicked">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments="FileImageSource" Android="ic_new_search.png">
+                    </OnPlatform>
+                </Button.Image>
             </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad" Orientation="Vertical">

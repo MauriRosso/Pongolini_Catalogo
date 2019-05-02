@@ -84,21 +84,26 @@ namespace Pongolini_Catalogo.MasterDetail
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
             }
-            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
+            else 
             {
                 SepararAsientosSemiTerminados();
             }
             ListaDatos_Final.Clear();
             //filtros
 
+
             if (txtNO300Indy.Text != null && txtNO300Indy.Text != "")
             {
                 Busqueda300indyAsientos();
             }               
-
+            
             if (ListaDatos_Final.Count() == 0)
             {
-                DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                Busqueda300indySemiTerminados();
+                if (ListaDatos_Final.Count() == 0)
+                {
+                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                }
             }
             ListView300indy.ItemsSource = null;
             ListView300indy.ItemsSource = ListaDatos_Final;
@@ -133,6 +138,17 @@ namespace Pongolini_Catalogo.MasterDetail
             }
         }
 
+        private void Busqueda300indySemiTerminados()
+        {
+            foreach (var item in App.ListaGlobalSerie6000)
+            {
+                if (item.numero_300indy == txtNO300Indy.Text)
+                {
+                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                }
+            }
+        }
+
         private void ListView300indy_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (productoElegido == null) //Significa que cargo la listview con todos los datos (guias y asientos)
@@ -148,9 +164,20 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else
             {
-                var dimension_asiento = e.Item as DimensionesViewModel;
-                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
-                Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                if (productoElegido == "Asientos")
+                {
+                    var dimension_asiento = e.Item as DimensionesViewModel;
+                    if (dimension_asiento.marca_modelo == "ADAPTACIONES")
+                    {
+                        Asientos asiento_encontrado = App.ListaGlobalSerie6000.Find(x => x.codigo == dimension_asiento.codigo);
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }
+                    else
+                    {
+                        Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }                  
+                }                
             }
         }       
 
@@ -160,6 +187,7 @@ namespace Pongolini_Catalogo.MasterDetail
             ListView300indy.ItemsSource = null;
             ListView300indy.ItemsSource = ListaDatos_Final;
             productoElegido = null;
+            txtNO300Indy.Text = txtNO300Indy.Text.ToUpper();
             if (txtNO300Indy.Text != null && txtNO300Indy.Text != "")
             {
                 if (txtNO300Indy.Text[0] == 'G')

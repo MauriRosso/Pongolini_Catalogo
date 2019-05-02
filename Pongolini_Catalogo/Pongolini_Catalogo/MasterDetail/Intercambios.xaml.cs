@@ -54,15 +54,26 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             if (productoElegido == "Guías")
             {
-                var producto_intercambio = e.Item as IntercambiosViewModel;
-                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == producto_intercambio.codigo);             
+                var dimension_guia = e.Item as IntercambiosViewModel;
+                Guias guia_encontrada = App.ListaGlobalGuias.Find(x => x.codigo == dimension_guia.codigo);
                 Navigation.PushAsync(new DetalleProducto(guia_encontrada, null));
             }
             else
             {
-                var producto_intercambio = e.Item as IntercambiosViewModel;
-                Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == producto_intercambio.codigo);
-                Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                if (productoElegido == "Asientos")
+                {
+                    var dimension_asiento = e.Item as IntercambiosViewModel;
+                    Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+                    if (asiento_encontrado != null)
+                    {
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }
+                    else
+                    {
+                        asiento_encontrado = App.ListaGlobalSerie6000.Find(x => x.codigo == dimension_asiento.codigo);
+                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
+                    }
+                }
             }
         }
 
@@ -155,7 +166,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 if (encontre_fabricante == false)
                 {
-                   DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                 }
             }
             else
@@ -213,7 +224,7 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                         if (encontre_intercambio == false)
                         {
-                           DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                            DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                         }
                     }
                     else //No se eligio ninguno de los dos.
@@ -236,7 +247,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     if (fabricanteElegido == "RIOSULENSE")
                     {
-                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense, codigo = item.codigo});
+                        ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense, codigo = item.codigo });
                     }
                     else //Son todos mahle
                     {
@@ -276,7 +287,7 @@ namespace Pongolini_Catalogo.MasterDetail
             encontre_fabricante = false;
 
             /////////-->FILTROS<--//////////
-           
+
             if (pckFabricante.SelectedIndex != 0 && txtIntercambio.Text != null && txtIntercambio.Text != "") //Si se selecciono algo en el picker y en intercambios..
             {
                 foreach (var item in App.ListaGlobalGuias)
@@ -311,7 +322,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 if (encontre_fabricante == false)
                 {
-                   DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                    DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                 }
             }
             else
@@ -369,7 +380,7 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                         if (encontre_intercambio == false)
                         {
-                           DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+                            DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
                         }
                     }
                     else //No se eligio ninguno de los dos.
@@ -403,7 +414,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "RIOSULENSE", Producto = item.numero_300indy, Intercambio = item.codigo_riosulense, codigo = item.codigo });
                     ListaDatos_Final.Add(new IntercambiosViewModel { Fabricante = "MAHLE", Producto = item.numero_300indy, Intercambio = item.codigo_mahle, codigo = item.codigo });
-                }           
+                }
             }
             ///
             ////////////////
