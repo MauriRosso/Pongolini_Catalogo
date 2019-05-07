@@ -8,6 +8,7 @@ using Negocio;
 using Pongolini_Catalogo.Negocio;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Connectivity;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
@@ -25,6 +26,43 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsRunning = true;
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
+            CargarCarrito();
+        }
+
+        private bool TieneConexion()
+        {
+            if (CrossConnectivity.Current.IsConnected == false)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool ConexionRevisada()
+        {
+            if (CrossConnectivity.IsSupported)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
         }
 
         protected override bool OnBackButtonPressed()
@@ -513,13 +551,24 @@ namespace Pongolini_Catalogo.MasterDetail
             Navigation.PushAsync(new DetalleBuje(buje_encontrado));
         }
 
-        private void btnBuscarBujes_Clicked(object sender, EventArgs e)
+        private async void btnBuscarBujes_Clicked(object sender, EventArgs e)
         {
-            //Oculto la busqueda para mostrar con mas espacio la listview
-            OcultarCamposBujes();
-            ListViewBujes.ItemsSource = null;
-            ListViewBujes.ItemsSource = ListaDatos_Final;
-            ObtenerBujes();
+            if (!ConexionRevisada()) //El dispositivo no soporta el plugin, no puedo controlarlo.
+            {
+                await DisplayAlert("Estado de la conexión", "No hemos podido comprobar el estado de tu conexión a internet. Por favor, asegúrate de estar conectado a la red antes de realizar una búsqueda.", "OK");
+            }                     
+            if (TieneConexion())
+            {
+                //Oculto la busqueda para mostrar con mas espacio la listview
+                OcultarCamposBujes();
+                ListViewBujes.ItemsSource = null;
+                ListViewBujes.ItemsSource = ListaDatos_Final;
+                ObtenerBujes();
+            }
+            else
+            {
+                await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy debil. Por favor, reintenta más tarde.", "OK");
+            }
         }
 
         private void btnLimpiarBujes_Clicked(object sender, EventArgs e)
@@ -548,6 +597,11 @@ namespace Pongolini_Catalogo.MasterDetail
             var stackBusqueda = this.FindByName<StackLayout>("StackCamposBusqueda");
             stackBusqueda.IsVisible = false;
             btnNuevaBusqueda.IsVisible = true;
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
     }
 }

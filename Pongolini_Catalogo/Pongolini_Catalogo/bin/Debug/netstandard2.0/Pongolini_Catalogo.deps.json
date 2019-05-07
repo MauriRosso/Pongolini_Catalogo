@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "1f129c22983b7c3a116123448fd9f2858b48c61a"
+    "signature": "1a5a12a03f357541750e77a526e5fc85cf0051ad"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,6 +14,7 @@
           "Plugin.Permissions": "4.0.4-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
           "System.Configuration.ConfigurationManager": "4.5.0",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Messaging": "5.2.0",
           "Xamarin.Forms": "3.1.0.697729",
           "Xamarin.Forms.Maps": "3.1.0.697729"
@@ -142,6 +143,21 @@
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
             "assemblyVersion": "4.1.1.0",
             "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
           }
         }
       },
@@ -296,6 +312,13 @@
       "sha512": "sha512-hs2zF4tOQ3V4iQttVnLrnR/i8AOrrAgu2Gmp4/jNaE/+5hiZWDj20FK/m/OW3Itdi9XDvqf55WzHkiWYtOSUNg==",
       "path": "system.security.principal.windows/4.5.0",
       "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
+    },
+    "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tDxs/D2VH+6edGlGZunu34GAcuYE6SM0j5DetAqBiaqQHMnoPYq4wH+H9xZVioRLEA1uo1JpPzXcJn+Ld1l/CQ==",
+      "path": "xam.plugin.connectivity/4.0.0.190-beta",
+      "hashPath": "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512"
     },
     "Xam.Plugins.Messaging/5.2.0": {
       "type": "package",

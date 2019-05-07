@@ -22,6 +22,7 @@ namespace Pongolini_Catalogo.MasterDetail
         public DetalleProducto (Guias guia, Asientos asiento)
 		{
 			InitializeComponent ();
+            CargarCarrito();
             ListaDatos_Final.Clear();
             ///ATRIBUTOS
             if (guia != null) //Viene una guia
@@ -87,7 +88,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 ListViewAplicaciones.ItemsSource = null;
                 ListViewAplicaciones.ItemsSource = ListaDatos_Final;
             }
-            else
+            else //Viene un asiento.
             {
                 lbl300indy.Text = asiento.numero_300indy;
                 lblTipoProducto.Text = "ASIENTO";
@@ -106,7 +107,7 @@ namespace Pongolini_Catalogo.MasterDetail
                     lblOEM.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).numero_original;
                     lblinter_Mahle.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_mahle;
                     lblinter_Riosulense.Text = App.ListaGlobalAsientos.Find(x => x.codigo == asiento.codigo).codigo_riosulense;
-                    ///APLICACIONES
+                    //APLICACIONES
                     foreach (var item in App.ListaGlobalAsientos)
                     {
                         if (item.codigo == asiento.codigo)
@@ -117,7 +118,8 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 else
                 {
-                    foreach (var item in App.ListaGlobalSerie6000)
+                    //APLICACIONES
+                    foreach (var item in App.ListaGlobalAsientos)
                     {
                         if (item.codigo == asiento.codigo)
                         {
@@ -130,24 +132,30 @@ namespace Pongolini_Catalogo.MasterDetail
             }
         }
 
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
+        }
+
         private async void btnRealizarPedido_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new PopupModal(lblTipoProducto.Text, lbl300indy.Text));
-            //bool rta = await DisplayAlert("¿Confirmar pedido?", mensaje, "Confirmar", "Cancelar");
-            //if (rta == true) //Confirmo pedido
-            //{
-            //    var emailMessenger = CrossMessaging.Current.EmailMessenger;
-            //    if (emailMessenger.CanSendEmail)
-            //    {
-            //        var email = new EmailMessageBuilder()
-            //            .To("maurirosso@hotmail.com") //Colocar mail de pongolini.
-            //            .Subject("PEDIDO REALIZADO - Pongolini catálogo app")
-            //            .Body("Hola, deseo realizar el siguiente pedido: \n" + mensaje + "\n" + "Espero respuesta para confirmar la compra, saludos.")
-            //            .Build();
+            //Se agrega el producto al carrito
+            await PopupNavigation.Instance.PushAsync(new PopupModal(lblTipoProducto.Text,lbl300indy.Text,lbllargo.Text,lbldiamext.Text,lbldiamint.Text)); //Le pido la cantidad             
+        }
 
-            //        emailMessenger.SendEmail(email);
-            //    }
-            //}
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
     }
 }

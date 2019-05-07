@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pongolini_Catalogo.MasterDetail.CarroDeCompras"
+             Title="Mis pedidos">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label x:Name="lblSinPedidos" Margin="8,8" FontSize="20" TextColor="DarkBlue" HorizontalTextAlignment="Center"></Label>
+                <ListView x:Name="ListViewCarrito"
+                          RowHeight="150"
+                          VerticalOptions="FillAndExpand"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="125" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="4" Grid.Column="0" Source="{Binding imagen}" Margin="0,0,0,0" HorizontalOptions="Start"></Image>
+                                    <Button Grid.Row="4" Grid.RowSpan="2" x:Name="btnBorrarProducto" Text="Quitar" BackgroundColor="IndianRed" TextColor="White" Clicked="btnBorrarProducto_Clicked"></Button>
+                                    <Label Grid.Column="1" Grid.Row="0" Text="Producto:" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="N°300INDY:" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding numero_300indy}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="2" Text="Largo(mm):" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="2" Text="{Binding largo}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="3" Text="Ø Exterior(mm):" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="3" Text="{Binding diametro_exterior}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="4" Text="Ø interior(mm):" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="4" Text="{Binding diametro_interior}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Grid.Row="5" Text="Unidades:" Margin="4,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="5" Text="{Binding cantidad}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button x:Name="btnRealizarPedido"
+                    Text="REALIZAR PEDIDO"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    Clicked="btnRealizarPedido_Clicked"
+                    Margin="8,0,0,8"
+                    HorizontalOptions="FillAndExpand">
+                    <Button.Image>
+                        <OnPlatform x:TypeArguments="FileImageSource" Android="ic_order.png">
+                        </OnPlatform>
+                    </Button.Image>
+                </Button>
+                <Button x:Name="btnVaciarCarrito"
+                    Text="VACIAR CARRITO"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="IndianRed"
+                    Clicked="btnVaciarCarrito_Clicked"
+                    Margin="8,0,8,8"
+                    HorizontalOptions="FillAndExpand">
+                    <Button.Image>
+                        <OnPlatform x:TypeArguments="FileImageSource" Android="ic_cart_clear.png">
+                        </OnPlatform>
+                    </Button.Image>
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

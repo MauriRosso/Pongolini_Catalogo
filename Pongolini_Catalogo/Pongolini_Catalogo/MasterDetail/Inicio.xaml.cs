@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
+using Pongolini_Catalogo.Negocio;
+using Plugin.Connectivity;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
@@ -16,6 +18,22 @@ namespace Pongolini_Catalogo.MasterDetail
         public Inicio()
         {
             InitializeComponent();
+            CargarCarrito();
+        }
+
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
         }
 
         protected override bool OnBackButtonPressed()
@@ -62,6 +80,11 @@ namespace Pongolini_Catalogo.MasterDetail
         private void OnStackContacto_Tapped(object sender, EventArgs e)
         {
             App.MasterD.Detail = new NavigationPage(new Contacto());
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e) //Cuando se presiona el carro de compras
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
     }
 }

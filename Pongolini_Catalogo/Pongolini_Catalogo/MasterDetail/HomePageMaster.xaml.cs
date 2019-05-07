@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pongolini_Catalogo.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace Pongolini_Catalogo.MasterDetail
         public HomePageMaster()
         {
             InitializeComponent();
-        }
+        }      
 
         private void OnStackInicio_Tapped(object sender, EventArgs e)
         {
@@ -74,6 +75,13 @@ namespace Pongolini_Catalogo.MasterDetail
         private void OnStackIrAlSitio_Tapped(object sender, EventArgs e)
         {
             Device.OpenUri(new Uri("https://pongolini.com/"));
-        }     
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            //Mis pedidos
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
+            App.MasterD.IsPresented = false;
+        }
     }
 }

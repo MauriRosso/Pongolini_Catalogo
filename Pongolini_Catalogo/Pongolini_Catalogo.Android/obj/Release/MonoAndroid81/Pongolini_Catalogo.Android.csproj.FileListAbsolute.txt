@@ -130,7 +130,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\contacto_info.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\guias_asientos.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\img_bujes.jpg
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\img_serie_6000.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\diametro_exterior_guia.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\altura.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\angulo.png
@@ -169,6 +168,9 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable-xhdpi\ic_cart.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable-xxhdpi\ic_cart.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable-xxxhdpi\ic_cart.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\img_serie_6000.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\asientos_carrito.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\res\drawable\guias_carrito.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\R.cs.flag
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\R.txt
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Release\MonoAndroid81\uploadflags.txt

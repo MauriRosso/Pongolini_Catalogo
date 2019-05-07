@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.BujesPage"
              Title="Tubos para encasquillar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Image Source="img_bujes_recortada.jpg"

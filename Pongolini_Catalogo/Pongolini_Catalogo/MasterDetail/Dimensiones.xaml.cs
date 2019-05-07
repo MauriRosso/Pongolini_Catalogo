@@ -8,13 +8,15 @@ using Pongolini_Catalogo.Negocio;
 using Negocio;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Connectivity;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dimensiones : ContentPage
     {
-        List<DimensionesViewModel> ListaDatos_Final = new List<DimensionesViewModel>(); //Informacion que se muestra en la listview.
+        List<DimensionesViewModel> ListaDatos_Final = new List<DimensionesViewModel>(); //Informacion que se muestra en la listview de dimensiones.
+        List<DimensionesViewModel> ListaDatos_FinalSERIE6000 = new List<DimensionesViewModel>(); //Informacion que se muestra en la listview de serie6000.
         List<Guias> ListaDatosGuias = new List<Guias>(); //Almaceno info filtrada de guias
         List<Asientos> ListaDatosAsientos = new List<Asientos>(); //Almaceno info filtrada de asientos
         string productoElegido = string.Empty;
@@ -28,6 +30,26 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsRunning = true;
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
+            CargarCarrito();
+            bxSemiTerminados.IsVisible = false;
+            lblSemiTerminados.IsVisible = false;
+            lblNoHaySemiTerminados.IsVisible = false;
+            ListViewDimensionesSERIE6000.IsVisible = false;
+        }
+
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
         }
 
         protected override bool OnBackButtonPressed()
@@ -102,19 +124,6 @@ namespace Pongolini_Catalogo.MasterDetail
             }
         }
 
-        public void SepararAsientosSemiTerminados()
-        {
-            foreach (var item in App.ListaGlobalAsientos)
-            {
-                if (item.marca_modelo == "ADAPTACIONES")
-                {
-                    App.ListaGlobalSerie6000.Add(item);
-                }
-            }
-            //Remuevo todas las adaptaciones de la ListaGlobalAsientos
-            App.ListaGlobalAsientos.RemoveAll(x => x.marca_modelo == "ADAPTACIONES");
-        }
-
         private async void ObtenerGuias()
         {
             if (App.ListaGlobalGuias.Count == 0) //Si es la primera vez que trae datos de guias..
@@ -173,7 +182,9 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             ListViewDimensiones.ItemsSource = null;
             ListViewDimensiones.ItemsSource = ListaDatos_Final;
-
+            lblSemiTerminados.IsVisible = true;
+            bxSemiTerminados.IsVisible = true;
+            lblNoHaySemiTerminados.IsVisible = true;
         }
 
         private void BusquedaDiametroExteriorGuias()
@@ -367,22 +378,22 @@ namespace Pongolini_Catalogo.MasterDetail
 
         private async void ObtenerAsientos()
         {
-            if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de guias..
+            if (App.ListaGlobalAsientos.Count == 0) //Si es la primera vez que trae datos de asientos..
             {
                 Cargando.IsVisible = true;
                 lblCargando.IsVisible = true;
                 RestClient client = new RestClient();
                 App.ListaGlobalAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
-                SepararAsientosSemiTerminados();
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
+                bxSemiTerminados.IsVisible = true;
+                lblSemiTerminados.IsVisible = true;
             }
-            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
-            {
-                SepararAsientosSemiTerminados();
-            }
+            //No separo los semiterminados aca para ahorrar logica.
+
             ListaDatosAsientos.Clear();
             ListaDatos_Final.Clear();
+
             //filtros
 
             if (txtDiamExtDesdeDim.Text != null && txtDiamExtDesdeDim.Text != "")
@@ -407,7 +418,14 @@ namespace Pongolini_Catalogo.MasterDetail
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalAsientos)
                 {
-                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    if (item.marca_modelo != "ADAPTACIONES")
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    }
+                    else //Es un asiento semi-terminado.
+                    {
+                        ListaDatos_FinalSERIE6000.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    }
                 }
             }
             else
@@ -421,6 +439,21 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             ListViewDimensiones.ItemsSource = null;
             ListViewDimensiones.ItemsSource = ListaDatos_Final;
+            ListViewDimensionesSERIE6000.ItemsSource = null;
+            ListViewDimensionesSERIE6000.ItemsSource = ListaDatos_FinalSERIE6000;
+            if (ListaDatos_FinalSERIE6000.Count == 0)
+            {
+                lblSemiTerminados.IsVisible = true;
+                bxSemiTerminados.IsVisible = true;
+                lblNoHaySemiTerminados.IsVisible = true;
+            }
+            else
+            {
+                lblSemiTerminados.IsVisible = true;
+                bxSemiTerminados.IsVisible = true;
+                lblNoHaySemiTerminados.IsVisible = false;
+                ListViewDimensionesSERIE6000.IsVisible = true;
+            }
         }
 
         private void CoincidenciasAsientos()
@@ -463,7 +496,14 @@ namespace Pongolini_Catalogo.MasterDetail
                 int cantPar = CantidadParametrosAsientos();
                 if (cantPar == coincidencias)
                 {
-                    ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    if (item.marca_modelo != "ADAPTACIONES")
+                    {
+                        ListaDatos_Final.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    }
+                    else //Es un asiento semi-terminado.
+                    {
+                        ListaDatos_FinalSERIE6000.Add(new DimensionesViewModel { producto = "Asiento", marca_modelo = item.marca_modelo, motor = item.motor, numero_300indy = item.numero_300indy, diametro_exterior = item.diametro_exterior, diametro_interior = item.diametro_interior, largo_alto = item.largo, angulo_material = item.angulo, codigo = item.codigo, img_diam_ext = "Diametro_Exterior_Asiento.png", img_diam_int = "Diametro_Interior_Asiento.png", img_largo_alto = "Altura.png", img_angulo_material = "Angulo.png" });
+                    }
                 }
             }
         }
@@ -519,22 +559,57 @@ namespace Pongolini_Catalogo.MasterDetail
             return CP;
         }
 
-        private void btnBuscarDimensiones_Clicked(object sender, EventArgs e)
+        private bool TieneConexion()
         {
-            //Oculto la busqueda para mostrar con mas espacio la listview
-            OcultarCamposDimensiones();
-            ListViewDimensiones.ItemsSource = null;
-            ListViewDimensiones.ItemsSource = ListaDatos_Final;
-            if (pckProductoDim.SelectedItem.ToString() == "Guías de válvulas")
+            if (CrossConnectivity.Current.IsConnected == false)
             {
-                productoElegido = "Guías";
-                ObtenerGuias();
+                return false;
+            }
+            return true;
+        }
+
+        private bool ConexionRevisada()
+        {
+            if (CrossConnectivity.IsSupported)
+            {
+                return true;
             }
             else
             {
-                productoElegido = "Asientos";
-                ObtenerAsientos();
+                return false;
             }
+        }
+
+        private async void btnBuscarDimensiones_Clicked(object sender, EventArgs e)
+        {          
+            if (!ConexionRevisada()) //El dispositivo no soporta el plugin, no puedo controlarlo.
+            {
+                await DisplayAlert("Estado de la conexión", "No hemos podido comprobar el estado de tu conexión a internet. Por favor, asegúrate de estar conectado a la red antes de realizar una búsqueda.", "OK");
+            }
+            if (TieneConexion())
+            {
+                //Oculto la busqueda para mostrar con mas espacio la listview          
+                OcultarCamposDimensiones();
+                ListViewDimensiones.ItemsSource = null;
+                ListViewDimensiones.ItemsSource = ListaDatos_Final;
+                ListViewDimensionesSERIE6000.ItemsSource = null;
+                ListViewDimensionesSERIE6000.ItemsSource = ListaDatos_FinalSERIE6000;
+                if (pckProductoDim.SelectedItem.ToString() == "Guías de válvulas")
+                {
+                    productoElegido = "Guías";
+                    ObtenerGuias();
+                }
+                else
+                {
+                    productoElegido = "Asientos";
+                    ObtenerAsientos();
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy debil. Por favor, reintenta más tarde.", "OK");
+            }
+
         }
 
         public void OcultarCamposDimensiones()
@@ -917,15 +992,28 @@ namespace Pongolini_Catalogo.MasterDetail
         private void btnNuevaBusqueda_Clicked(object sender, EventArgs e)
         {
             btnNuevaBusqueda.IsVisible = false;
+            ListViewDimensionesSERIE6000.IsVisible = false;
             var stackBusqueda = this.FindByName<StackLayout>("StackCamposBusqueda");
             stackBusqueda.IsVisible = true;
+            bxSemiTerminados.IsVisible = false;
+            lblSemiTerminados.IsVisible = false;
+            lblNoHaySemiTerminados.IsVisible = false;
+            ListaDatos_Final.Clear();
+            ListaDatos_FinalSERIE6000.Clear();
+            ListViewDimensiones.ItemsSource = null;
+            ListViewDimensiones.ItemsSource = ListaDatos_Final;
+            ListViewDimensionesSERIE6000.ItemsSource = null;
+            ListViewDimensionesSERIE6000.ItemsSource = ListaDatos_FinalSERIE6000;
         }
 
         private void btnLimpiarDimensiones_Clicked(object sender, EventArgs e)
         {
             ListaDatos_Final.Clear();
+            ListaDatos_FinalSERIE6000.Clear();
             ListViewDimensiones.ItemsSource = null;
             ListViewDimensiones.ItemsSource = ListaDatos_Final;
+            ListViewDimensionesSERIE6000.ItemsSource = null;
+            ListViewDimensionesSERIE6000.ItemsSource = ListaDatos_FinalSERIE6000;
             txtDiamExtDesdeDim.Text = string.Empty;
             txtDiamExtHastaDim.Text = string.Empty;
             txtDiamIntDesdeDim.Text = string.Empty;
@@ -953,16 +1041,8 @@ namespace Pongolini_Catalogo.MasterDetail
                 if (productoElegido == "Asientos")
                 {
                     var dimension_asiento = e.Item as DimensionesViewModel;
-                    if (dimension_asiento.marca_modelo == "ADAPTACIONES")
-                    {
-                        Asientos asiento_encontrado = App.ListaGlobalSerie6000.Find(x => x.codigo == dimension_asiento.codigo);
-                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
-                    }
-                    else
-                    {
-                        Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
-                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
-                    }
+                    Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+                    Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
                 }
             }
         }
@@ -970,6 +1050,18 @@ namespace Pongolini_Catalogo.MasterDetail
         private void ListViewSerie6000_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
+        }
+
+        private void ListViewDimensionesSERIE6000_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var dimension_asiento = e.Item as DimensionesViewModel;
+            Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
+            Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
         }
     }
 }

@@ -8,6 +8,8 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Android.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\mscorlib.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Newtonsoft.Json.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.Abstractions.dll
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.CurrentActivity.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Messaging.Abstractions.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Messaging.dll

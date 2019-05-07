@@ -4,6 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.Contacto"
              Title="Contacto">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#1A237E">

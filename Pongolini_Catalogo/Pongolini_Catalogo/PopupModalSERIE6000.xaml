@@ -1,0 +1,24 @@
+﻿<pages:PopupPage xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Pongolini_Catalogo.PopupModalSERIE6000">
+    <ContentPage.Content>
+        <StackLayout 
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+            <Label Text="La informacion de SERIE 6000 estará ubicada en este cuadro modal. Este es un texto de prueba colocado para experimentar como se verá el texto sobre este tipo de asientos."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   TextColor="DarkBlue" FontSize="20" Margin="8,8"/>
+            <Button x:Name="btnOK" 
+                BackgroundColor="DarkBlue"
+                FontSize="20"
+                Text="OK"
+                TextColor="White"
+                FontAttributes="Bold"
+                Margin="15,0,15,10"
+                Clicked="btnOK_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

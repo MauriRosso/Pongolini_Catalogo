@@ -5,6 +5,7 @@
              xmlns:pages="clr-namespace:Pongolini_Catalogo.MasterDetail">
   <MasterDetailPage.Master>
     <pages:HomePageMaster x:Name="MasterPage" />
+     
   </MasterDetailPage.Master>
     
   <MasterDetailPage.Detail>

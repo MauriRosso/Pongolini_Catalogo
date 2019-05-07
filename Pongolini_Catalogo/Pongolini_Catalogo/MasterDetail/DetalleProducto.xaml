@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.DetalleProducto"
              Title="Detalle del producto">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -200,7 +203,7 @@
                     </ListView>
                 </StackLayout>
                 <Button x:Name="btnRealizarPedido"
-                    Text="REALIZAR PEDIDO"
+                    Text="AGREGAR AL CARRITO"
                     FontAttributes="Bold"
                     TextColor="White"
                     BackgroundColor="DarkBlue"

@@ -4,6 +4,9 @@
              x:Class="Pongolini_Catalogo.MasterDetail.Inicio"
              Title="Pongolini Catálogo"
              >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="stackPrincipal" BackgroundColor="DimGray"

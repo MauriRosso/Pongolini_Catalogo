@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using Pongolini_Catalogo.Negocio;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
@@ -19,12 +20,28 @@ namespace Pongolini_Catalogo.MasterDetail
 		public Contacto ()
 		{
 			InitializeComponent ();
+            CargarCarrito();
 		}
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             //CargarMapa();
+        }
+
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
         }
 
         protected override bool OnBackButtonPressed()
@@ -107,6 +124,11 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             //LinkedIn
             Device.OpenUri(new Uri("https://ar.linkedin.com/company/aberaldo-pongolini-srl"));
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
 
         //Falta el MAPA 

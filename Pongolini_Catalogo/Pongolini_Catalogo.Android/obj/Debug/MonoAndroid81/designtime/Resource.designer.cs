@@ -2924,20 +2924,23 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F010004
 			public const int Angulo = 2130771972;
 			
+			// aapt resource value: 0x7F010005
+			public const int Asientos_Carrito = 2130771973;
+			
 			// aapt resource value: 0x7F090054
 			public const int avd_hide_password = 2131296340;
 			
 			// aapt resource value: 0x7F090055
 			public const int avd_show_password = 2131296341;
 			
-			// aapt resource value: 0x7F010005
-			public const int B = 2130771973;
-			
 			// aapt resource value: 0x7F010006
-			public const int Bronce = 2130771974;
+			public const int B = 2130771974;
 			
 			// aapt resource value: 0x7F010007
-			public const int C = 2130771975;
+			public const int Bronce = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int C = 2130771976;
 			
 			// aapt resource value: 0x1
 			public const int cast_abc_scrubber_control_off_mtrl_alpha = 1;
@@ -3158,8 +3161,8 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x1
 			public const int common_google_signin_btn_text_light_normal_background = 1;
 			
-			// aapt resource value: 0x7F010008
-			public const int Contacto_info = 2130771976;
+			// aapt resource value: 0x7F010009
+			public const int Contacto_info = 2130771977;
 			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
@@ -3179,29 +3182,29 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F010009
-			public const int Diametro_Exterior_Asiento = 2130771977;
-			
 			// aapt resource value: 0x7F010010
-			public const int Diametro_Exterior_Guia = 2130771984;
+			public const int Diametro_Exterior_Asiento = 2130771984;
 			
 			// aapt resource value: 0x7F010011
-			public const int Diametro_Interior_Asiento = 2130771985;
+			public const int Diametro_Exterior_Guia = 2130771985;
 			
 			// aapt resource value: 0x7F010012
-			public const int Diametro_Interior_Guia = 2130771986;
+			public const int Diametro_Interior_Asiento = 2130771986;
 			
 			// aapt resource value: 0x7F010013
-			public const int E = 2130771987;
+			public const int Diametro_Interior_Guia = 2130771987;
 			
 			// aapt resource value: 0x7F010014
-			public const int F = 2130771988;
+			public const int E = 2130771988;
 			
 			// aapt resource value: 0x7F010015
-			public const int Fundicion_Gris = 2130771989;
+			public const int F = 2130771989;
 			
 			// aapt resource value: 0x7F010016
-			public const int G = 2130771990;
+			public const int Fundicion_Gris = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int G = 2130771991;
 			
 			// aapt resource value: 0x1
 			public const int googleg_disabled_color_18 = 1;
@@ -3209,23 +3212,26 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x1
 			public const int googleg_standard_color_18 = 1;
 			
-			// aapt resource value: 0x7F010017
-			public const int Guias_Asientos = 2130771991;
+			// aapt resource value: 0x7F010018
+			public const int Guias_Asientos = 2130771992;
 			
-			// aapt resource value: 0x7F010028
-			public const int Icon = 2130772008;
-			
-			// aapt resource value: 0x7F010029
-			public const int ic_300Indy = 2130772009;
+			// aapt resource value: 0x7F010019
+			public const int Guias_Carrito = 2130771993;
 			
 			// aapt resource value: 0x7F010030
-			public const int ic_300Indy_blanco = 2130772016;
+			public const int Icon = 2130772016;
 			
 			// aapt resource value: 0x7F010031
-			public const int ic_Aplicaciones = 2130772017;
+			public const int ic_300Indy = 2130772017;
 			
 			// aapt resource value: 0x7F010032
-			public const int ic_Aplicaciones_blanco = 2130772018;
+			public const int ic_300Indy_blanco = 2130772018;
+			
+			// aapt resource value: 0x7F010033
+			public const int ic_Aplicaciones = 2130772019;
+			
+			// aapt resource value: 0x7F010034
+			public const int ic_Aplicaciones_blanco = 2130772020;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -3233,20 +3239,26 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090055
 			public const int ic_audiotrack_light = 2131296341;
 			
-			// aapt resource value: 0x7F010033
-			public const int ic_Bujes = 2130772019;
-			
-			// aapt resource value: 0x7F010034
-			public const int ic_Bujes_blanco = 2130772020;
-			
 			// aapt resource value: 0x7F010035
-			public const int ic_cart = 2130772021;
+			public const int ic_Bujes = 2130772021;
 			
 			// aapt resource value: 0x7F010036
-			public const int ic_clear = 2130772022;
+			public const int ic_Bujes_blanco = 2130772022;
 			
 			// aapt resource value: 0x7F010037
-			public const int ic_Contacto = 2130772023;
+			public const int ic_cart = 2130772023;
+			
+			// aapt resource value: 0x7F010038
+			public const int ic_cart_clear = 2130772024;
+			
+			// aapt resource value: 0x7F010039
+			public const int ic_cart_master = 2130772025;
+			
+			// aapt resource value: 0x7F010040
+			public const int ic_clear = 2130772032;
+			
+			// aapt resource value: 0x7F010041
+			public const int ic_Contacto = 2130772033;
 			
 			// aapt resource value: 0x7F090056
 			public const int ic_dialog_close_dark = 2131296342;
@@ -3254,17 +3266,17 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090057
 			public const int ic_dialog_close_light = 2131296343;
 			
-			// aapt resource value: 0x7F010038
-			public const int ic_Dimensiones = 2130772024;
+			// aapt resource value: 0x7F010042
+			public const int ic_Dimensiones = 2130772034;
 			
-			// aapt resource value: 0x7F010039
-			public const int ic_Dimensiones_blanco = 2130772025;
+			// aapt resource value: 0x7F010043
+			public const int ic_Dimensiones_blanco = 2130772035;
 			
-			// aapt resource value: 0x7F010040
-			public const int ic_email = 2130772032;
+			// aapt resource value: 0x7F010044
+			public const int ic_email = 2130772036;
 			
-			// aapt resource value: 0x7F010041
-			public const int ic_facebook_logo = 2130772033;
+			// aapt resource value: 0x7F010045
+			public const int ic_facebook_logo = 2130772037;
 			
 			// aapt resource value: 0x7F090058
 			public const int ic_group_collapse_00 = 2131296344;
@@ -3362,26 +3374,26 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090077
 			public const int ic_group_expand_15 = 2131296375;
 			
-			// aapt resource value: 0x7F010042
-			public const int ic_home_1 = 2130772034;
-			
-			// aapt resource value: 0x7F010043
-			public const int ic_home_2 = 2130772035;
-			
-			// aapt resource value: 0x7F010044
-			public const int ic_Inicio = 2130772036;
-			
-			// aapt resource value: 0x7F010045
-			public const int ic_Intercambios = 2130772037;
-			
 			// aapt resource value: 0x7F010046
-			public const int ic_Intercambios_blanco = 2130772038;
+			public const int ic_home_1 = 2130772038;
 			
 			// aapt resource value: 0x7F010047
-			public const int ic_IrAlSitio = 2130772039;
+			public const int ic_home_2 = 2130772039;
 			
 			// aapt resource value: 0x7F010048
-			public const int ic_linkedin_logo = 2130772040;
+			public const int ic_Inicio = 2130772040;
+			
+			// aapt resource value: 0x7F010049
+			public const int ic_Intercambios = 2130772041;
+			
+			// aapt resource value: 0x7F010050
+			public const int ic_Intercambios_blanco = 2130772048;
+			
+			// aapt resource value: 0x7F010051
+			public const int ic_IrAlSitio = 2130772049;
+			
+			// aapt resource value: 0x7F010052
+			public const int ic_linkedin_logo = 2130772050;
 			
 			// aapt resource value: 0x7F090078
 			public const int ic_media_pause_dark = 2131296376;
@@ -3401,8 +3413,8 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F09007D
 			public const int ic_media_stop_light = 2131296381;
 			
-			// aapt resource value: 0x7F010049
-			public const int ic_menu = 2130772041;
+			// aapt resource value: 0x7F010053
+			public const int ic_menu = 2130772051;
 			
 			// aapt resource value: 0x7F09007E
 			public const int ic_mr_button_connected_00_dark = 2131296382;
@@ -3791,17 +3803,20 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F0900FE
 			public const int ic_mr_button_grey = 2131296510;
 			
-			// aapt resource value: 0x7F010050
-			public const int ic_new_search = 2130772048;
+			// aapt resource value: 0x7F010054
+			public const int ic_new_search = 2130772052;
 			
-			// aapt resource value: 0x7F010051
-			public const int ic_NuevosDesarrollos = 2130772049;
+			// aapt resource value: 0x7F010055
+			public const int ic_NuevosDesarrollos = 2130772053;
 			
-			// aapt resource value: 0x7F010052
-			public const int ic_NuevosDesarrollos_blanco = 2130772050;
+			// aapt resource value: 0x7F010056
+			public const int ic_NuevosDesarrollos_blanco = 2130772054;
 			
-			// aapt resource value: 0x7F010053
-			public const int ic_phone = 2130772051;
+			// aapt resource value: 0x7F010057
+			public const int ic_order = 2130772055;
+			
+			// aapt resource value: 0x7F010058
+			public const int ic_phone = 2130772056;
 			
 			// aapt resource value: 0x1
 			public const int ic_plusone_medium_off_client = 1;
@@ -3815,11 +3830,11 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x1
 			public const int ic_plusone_tall_off_client = 1;
 			
-			// aapt resource value: 0x7F010054
-			public const int ic_Salir = 2130772052;
+			// aapt resource value: 0x7F010059
+			public const int ic_Salir = 2130772057;
 			
-			// aapt resource value: 0x7F010055
-			public const int ic_search = 2130772053;
+			// aapt resource value: 0x7F010060
+			public const int ic_search = 2130772064;
 			
 			// aapt resource value: 0x7F0900FF
 			public const int ic_vol_type_speaker_dark = 2131296511;
@@ -3839,23 +3854,23 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
-			// aapt resource value: 0x7F010018
-			public const int img_bujes = 2130771992;
-			
-			// aapt resource value: 0x7F010019
-			public const int img_bujes_recortada = 2130771993;
-			
 			// aapt resource value: 0x7F010020
-			public const int img_serie_6000 = 2130772000;
+			public const int img_bujes = 2130772000;
 			
 			// aapt resource value: 0x7F010021
-			public const int L = 2130772001;
+			public const int img_bujes_recortada = 2130772001;
 			
 			// aapt resource value: 0x7F010022
-			public const int Largo = 2130772002;
+			public const int img_serie_6000 = 2130772002;
 			
 			// aapt resource value: 0x7F010023
-			public const int M = 2130772003;
+			public const int L = 2130772003;
+			
+			// aapt resource value: 0x7F010024
+			public const int Largo = 2130772004;
+			
+			// aapt resource value: 0x7F010025
+			public const int M = 2130772005;
 			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;
@@ -3917,8 +3932,8 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F090118
 			public const int mr_vol_type_audiotrack_light = 2131296536;
 			
-			// aapt resource value: 0x7F010024
-			public const int N = 2130772004;
+			// aapt resource value: 0x7F010026
+			public const int N = 2130772006;
 			
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
@@ -3959,8 +3974,8 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010025
-			public const int P = 2130772005;
+			// aapt resource value: 0x7F010027
+			public const int P = 2130772007;
 			
 			// aapt resource value: 0x1
 			public const int places_ic_clear = 1;
@@ -3968,11 +3983,11 @@ namespace Pongolini_Catalogo.Droid
 			// aapt resource value: 0x1
 			public const int places_ic_search = 1;
 			
-			// aapt resource value: 0x7F010026
-			public const int Pongolini_Final = 2130772006;
+			// aapt resource value: 0x7F010028
+			public const int Pongolini_Final = 2130772008;
 			
-			// aapt resource value: 0x7F010027
-			public const int Pongolini_Logo = 2130772007;
+			// aapt resource value: 0x7F010029
+			public const int Pongolini_Logo = 2130772009;
 			
 			// aapt resource value: 0x1
 			public const int powered_by_google_dark = 1;

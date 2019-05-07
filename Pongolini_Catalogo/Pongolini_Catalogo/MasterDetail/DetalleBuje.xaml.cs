@@ -31,14 +31,33 @@ namespace Pongolini_Catalogo.MasterDetail
             lblmat.Text = (buje.codigo[1].ToString() == "T") ? "Templado" : "Gris aleada";
             lbltipoapl.Text = buje.codigo[1].ToString() == "T" ? "ENG. DIESEL-GNC" : "ENG. NAFTERO";
             lbldur.Text = buje.codigo[1].ToString() == "T" ? "310-350 HB" : "200-240 HB";
+            CargarCarrito();
         }
 
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
 
+            };
+            ToolbarItems.Add(cantidadCarro);
+        }
 
         private async void btnRealizarPedido_Clicked(object sender, EventArgs e)
         {
-            PopupModal popup = new PopupModal(lblTipoProducto.Text, lblCodigo.Text);
-            await PopupNavigation.Instance.PushAsync(popup);
+            //Se agrega el producto al carrito
+            await PopupNavigation.Instance.PushAsync(new PopupModal(lblTipoProducto.Text, lblCodigo.Text, lbllargo.Text, lbldiamext.Text, lbldiamint.Text)); //Le pido la cantidad             
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
     }
 }

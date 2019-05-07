@@ -149,13 +149,32 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblBujes" Text="Bujes de Fundición"
+                    <Label x:Name="lblBujes" Text="Bujes de fundición"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
                                 />
                 </StackLayout>
                 <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
+                <StackLayout x:Name="StackMisPedidos" VerticalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Padding="20,8"
+                                    Spacing="20"
+                                    BackgroundColor="White" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="imgMisPedidos" Source="ic_cart_master.png"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    VerticalOptions="Center" />
+
+                    <Label x:Name="lblMisPedidos" Text="Mis pedidos"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Black"
+                                />
+                </StackLayout>
                 <StackLayout x:Name="StackIrAlSitio" VerticalOptions="FillAndExpand"
                                     Orientation="Horizontal"
                                     Padding="20,8"

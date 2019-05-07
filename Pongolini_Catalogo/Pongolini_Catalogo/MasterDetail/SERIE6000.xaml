@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.SERIE6000"
              Title="SERIE 6000">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -12,11 +15,37 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <BoxView HeightRequest="36" Color="#1A237E" Margin="0,-3,0,0"/>
-                <Label Text="ASIENTOS SEMI-TERMINADOS" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Start" VerticalOptions="Start" Margin="0,0,0,0"></Label>
+                <BoxView HeightRequest="36" Color="#1A237E" Margin="0,0,0,0"/>
+                <Label Text="ASIENTOS SEMI-TERMINADOS" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="0,0,0,0"></Label>
             </Grid>
-            <Image x:Name="imgSerie600" Source="img_serie_6000.jpg" Margin="0,-5.5,0,0"></Image>
-            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
+            <AbsoluteLayout>
+                <Image x:Name="imgSerie600" Source="img_serie_6000.jpg" Margin="0,-5.5,0,0"></Image>
+                <Frame x:Name="frameInfo" BackgroundColor="LightGray"
+                            OutlineColor="Transparent"
+                            HeightRequest="20"
+                            CornerRadius="12"
+                            Padding="10,2"
+                            Opacity="0.7"   
+                            HasShadow="False"
+                            AbsoluteLayout.LayoutBounds="140.5,38,90,50"
+                           >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <StackLayout x:Name="stackInfo" AbsoluteLayout.LayoutBounds="140.5,49,90,50"
+                             HorizontalOptions="Center">
+                    <Label x:Name="lblInfo" Text="+ INFO"
+                                            FontSize='18'
+                                            FontAttributes="Bold"
+                                            TextColor="DarkBlue">
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </AbsoluteLayout>
+            <BoxView Margin="8,-10,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad" Orientation="Vertical">
                 <ActivityIndicator x:Name="Cargando"
                                    Color="DarkBlue">

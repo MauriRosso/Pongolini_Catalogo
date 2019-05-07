@@ -7,6 +7,7 @@ using Pongolini_Catalogo.Negocio;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Negocio;
+using Plugin.Connectivity;
 
 namespace Pongolini_Catalogo.MasterDetail
 {
@@ -34,7 +35,22 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsRunning = true;
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
+            CargarCarrito();
+        }
 
+        private void CargarCarrito()
+        {
+            int cant_prod = 0;
+            foreach (CarroViewModel item in App.ListaGlobalProductos)
+            {
+                cant_prod += item.cantidad;
+            }
+            ToolbarItem cantidadCarro = new ToolbarItem
+            {
+                Text = "(" + cant_prod + ")",
+
+            };
+            ToolbarItems.Add(cantidadCarro);
         }
 
         protected override bool OnBackButtonPressed()
@@ -64,15 +80,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     var dimension_asiento = e.Item as IntercambiosViewModel;
                     Asientos asiento_encontrado = App.ListaGlobalAsientos.Find(x => x.codigo == dimension_asiento.codigo);
-                    if (asiento_encontrado != null)
-                    {
-                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
-                    }
-                    else
-                    {
-                        asiento_encontrado = App.ListaGlobalSerie6000.Find(x => x.codigo == dimension_asiento.codigo);
-                        Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
-                    }
+                    Navigation.PushAsync(new DetalleProducto(null, asiento_encontrado));
                 }
             }
         }
@@ -94,18 +102,6 @@ namespace Pongolini_Catalogo.MasterDetail
             pckTipoProducto.SelectedIndex = 0;
         }
 
-        public void SepararAsientosSemiTerminados()
-        {
-            foreach (var item in App.ListaGlobalAsientos)
-            {
-                if (item.marca_modelo == "ADAPTACIONES")
-                {
-                    App.ListaGlobalSerie6000.Add(item);
-                }
-            }
-            //Remuevo todas las adaptaciones de la ListaGlobalAsientos
-            App.ListaGlobalAsientos.RemoveAll(x => x.marca_modelo == "ADAPTACIONES");
-        }
 
         public async void ObtenerAsientos()
         {
@@ -115,13 +111,8 @@ namespace Pongolini_Catalogo.MasterDetail
                 lblCargando.IsVisible = true;
                 RestClient client = new RestClient();
                 App.ListaGlobalAsientos = await client.Get<Asientos>("http://serviciowebpongolini.apphb.com/api/AsientosApi");//URL de la api.
-                SepararAsientosSemiTerminados();
                 Cargando.IsVisible = false;
                 lblCargando.IsVisible = false;
-            }
-            else //Si alguna vez ya trajo los datos, simplemente se los asigno.
-            {
-                SepararAsientosSemiTerminados();
             }
 
             ListaDatosAsientos.Clear();
@@ -424,18 +415,55 @@ namespace Pongolini_Catalogo.MasterDetail
             ListViewDatos.ItemsSource = ListaDatos_Final;
         }
 
-        private void btnBuscar_Clicked(object sender, EventArgs e)
+        private bool TieneConexion()
         {
-            if (pckTipoProducto.SelectedIndex == 0) //Eligio guia
+            if (CrossConnectivity.Current.IsConnected == false)
             {
-                productoElegido = "Guías";
-                ObtenerGuias();
+                return false;
+            }
+            return true;
+        }
+
+        private bool ConexionRevisada()
+        {
+            if (CrossConnectivity.IsSupported)
+            {
+                return true;
             }
             else
             {
-                productoElegido = "Asientos";
-                ObtenerAsientos();
+                return false;
             }
+        }
+
+        private async void btnBuscar_Clicked(object sender, EventArgs e)
+        {
+            if (!ConexionRevisada()) //El dispositivo no soporta el plugin, no puedo controlarlo.
+            {
+                await DisplayAlert("Estado de la conexión", "No hemos podido comprobar el estado de tu conexión a internet. Por favor, asegúrate de estar conectado a la red antes de realizar una búsqueda.", "OK");
+            }
+            if (TieneConexion())
+            {
+                if (pckTipoProducto.SelectedIndex == 0) //Eligio guia
+                {
+                    productoElegido = "Guías";
+                    ObtenerGuias();
+                }
+                else
+                {
+                    productoElegido = "Asientos";
+                    ObtenerAsientos();
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy debil. Por favor, reintenta más tarde.", "OK");
+            }
+        }
+
+        private void imgCarro_Activated(object sender, EventArgs e)
+        {
+            App.MasterD.Detail = new NavigationPage(new CarroDeCompras());
         }
     }
 }
