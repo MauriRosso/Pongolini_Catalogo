@@ -8,9 +8,10 @@
             <StackLayout VerticalOptions="FillAndExpand">
                 <Label x:Name="lblSinPedidos" Margin="8,8" FontSize="20" TextColor="DarkBlue" HorizontalTextAlignment="Center"></Label>
                 <ListView x:Name="ListViewCarrito"
-                          RowHeight="150"
+                          RowHeight="157"
                           VerticalOptions="FillAndExpand"
-                          >
+                          CachingStrategy="RecycleElement"
+                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

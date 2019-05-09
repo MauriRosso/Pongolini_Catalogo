@@ -9,33 +9,42 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout x:Name="stackPrincipal" BackgroundColor="DimGray"
+            <StackLayout x:Name="stackPrincipal" BackgroundColor="DarkGray"
                      Orientation="Vertical">
-
-                <Frame BackgroundColor="Gray"
-                   Padding="0"
-                       Margin="0,0,0,-5">
-                    <Label Text="Buscar Guías y Asientos por"
-                   FontSize='20'
-                   HorizontalTextAlignment="Center"
-                   TextColor="White"
-                           >
-                    </Label>
-
-                </Frame>
-            <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DimGray" Margin="0,0,0,-1">
+                <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DarkGray" Margin="0,0,0,-65">
                     <Image Source="Guias_Asientos.jpg"
-                       Aspect="AspectFit" Margin="0,0,0,-47" 
-                             ></Image>
-                    <Frame x:Name="frameAplicaciones" BackgroundColor="DarkBlue"
+                       Aspect="AspectFit" Margin="0,0,0,0"/>
+                    <Frame  BackgroundColor="DimGray"
+                            OutlineColor="Transparent"
+                            CornerRadius="7"
+                            Opacity="0.25"   
+                            BorderColor="White"
+                            HasShadow="False"
+                            Margin="10,0,10,0"
+                            HorizontalOptions="FillAndExpand"
+                            AbsoluteLayout.LayoutBounds="0.25,0.04,1,0.33"
+                            AbsoluteLayout.LayoutFlags="All"
+                           >
+                    </Frame>
+                    <Label Text="Buscar Guías y Asientos por"
+                                            FontSize='16'
+                                            FontAttributes="Bold"
+                                            TextColor="White"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.04,1,0.3"
+                                            AbsoluteLayout.LayoutFlags="All"
+                           HorizontalTextAlignment="Center">
+                    </Label>
+                    <Frame x:Name="frameAplicaciones" BackgroundColor="#333333"
                             OutlineColor="Transparent"
                             HeightRequest="20"
-                            CornerRadius="12"
+                            CornerRadius="7"
                             Padding="10,2"
-                            Opacity="0.6"   
-                           BorderColor="White"
-                           HasShadow="False"
-                               AbsoluteLayout.LayoutBounds="60,12,115,80"
+                            Opacity="0.4"   
+                            BorderColor="White"                           
+                            HasShadow="False"
+                            AbsoluteLayout.LayoutBounds="0,0.09,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="20,0,10,0"
                            >
 
                         <Frame.GestureRecognizers>
@@ -43,17 +52,19 @@
                         </Frame.GestureRecognizers>
                     </Frame>
 
-                    <StackLayout x:Name="strenderAplicaciones" Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,14,115,80" HorizontalOptions="Center">
+                    <StackLayout x:Name="strenderAplicaciones" Orientation="Vertical" 
+                                 AbsoluteLayout.LayoutBounds="0,0.09,0.50,0.12"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 Margin="22,0,10,0" HorizontalOptions="Center">
                         <Image x:Name="imgAplicaciones" Source="ic_Aplicaciones_blanco.png"
                                             HeightRequest="40"   
                                        Opacity="1"
-                           AbsoluteLayout.LayoutBounds="60,12,115,80"
+                                        Margin="0,3,0,-3"
                                         >
 
                         </Image>
-                        <Label x:Name="lblAplicaciones" Text="Aplicaciones"
-                                            FontSize='15'
-                                            FontAttributes="Bold"
+                        <Label x:Name="lblAplicaciones" Text="APLICACIONES"
+                                            FontSize='17'
                                             TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>
@@ -65,23 +76,27 @@
                     <Frame BackgroundColor="DarkBlue"
                             OutlineColor="White"
                             HeightRequest="70"
-                            CornerRadius="12"
+                            CornerRadius="7"
                             Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
-                               AbsoluteLayout.LayoutBounds="185,12,115,80">
+                               AbsoluteLayout.LayoutBounds="0.95,0.09,0.50,0.12"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 Margin="10,0,10,0">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackIntercambios_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,14,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.95,0.09,0.50,0.12"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 Margin="10,0,10,0" HorizontalOptions="Center">
                         <Image Source="ic_Intercambios_blanco.png"
-                           HeightRequest="40">
+                           HeightRequest="40"
+                               Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="Intercambios"
-                       FontSize='15'
-                       FontAttributes="Bold"
+                        <Label Text="INTERCAMBIOS"
+                       FontSize='17'
                        TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>
@@ -89,26 +104,30 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
 
-                    <Frame BackgroundColor="DarkBlue"
+                    <Frame BackgroundColor="#1A237E"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="12"
+                   CornerRadius="7"
                    Padding="10,2"
                            Opacity="0.6"
                                HasShadow="False"
-                          AbsoluteLayout.LayoutBounds="185,102,115,80">
+                          AbsoluteLayout.LayoutBounds="0.95,0.245,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="10,0,10,0">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackDimensiones_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="185,106,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.95,0.245,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="10,0,10,0" HorizontalOptions="Center">
                         <Image Source="ic_Dimensiones_blanco.png"
-                           HeightRequest="40">
+                           HeightRequest="40"
+                               Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="Dimensiones"
-                       FontSize='15'
-                       FontAttributes="Bold"
+                        <Label Text="DIMENSIONES"
+                       FontSize='17'
                        TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>
@@ -116,93 +135,109 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
 
-                    <Frame BackgroundColor="DarkBlue"
+                    <Frame BackgroundColor="LightGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="12"
+                   CornerRadius="7"
                    Padding="23,2"
                            Opacity="0.6"
                           HasShadow="False"   
-                               AbsoluteLayout.LayoutBounds="60,102,115,80">
+                                   AbsoluteLayout.LayoutBounds="0,0.245,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="20,0,10,0">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStack300Indy_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="60,106,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0,0.245,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="20,0,10,0" HorizontalOptions="Center">
                         <Image Source="ic_300Indy_blanco.png"
-                           HeightRequest="40">
+                           HeightRequest="40"
+                               Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="#300Indy"
-                       FontSize='15'
-                       FontAttributes="Bold"
+                        <Label Text="#300INDY"
+                       FontSize='17'
                        TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStack300Indy_Tapped" NumberOfTapsRequired="1" />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
-                    <Frame BackgroundColor="DarkBlue"
+                    <Frame  BackgroundColor="DimGray"
+                            OutlineColor="Transparent"
+                            CornerRadius="7"
+                            Opacity="0.25"   
+                            BorderColor="White"
+                            HasShadow="False"
+                            Margin="10,0,10,0"
+                            AbsoluteLayout.LayoutBounds="0,0.48,1,0.20"
+                            AbsoluteLayout.LayoutFlags="All"
+                           >
+                    </Frame>
+                    <Label Text="Conocé nuestros nuevos productos"
+                                            FontSize='16'
+                                            FontAttributes="Bold"
+                                            TextColor="White"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.55,1,0.3"
+                            AbsoluteLayout.LayoutFlags="All"
+                           HorizontalTextAlignment="Center">
+                    </Label>
+                    <Frame BackgroundColor="LightSlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="12"
+                   CornerRadius="7"
                    Padding="10,2"
                            Opacity="0.6"
                         HasShadow="False"       
-                               AbsoluteLayout.LayoutBounds="122.5,192,115,80">
+                               AbsoluteLayout.LayoutBounds="0,0.50,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="20,0,10,0">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackNuevosDesarrollos_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="122.5,196,115,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0,0.50,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="20,0,10,0" HorizontalOptions="Center">
                         <Image Source="ic_NuevosDesarrollos_blanco.png"
-                           HeightRequest="40">
+                           HeightRequest="40"
+                               Margin="0,3,0,-3">
 
                         </Image>
                         <Label Text="SERIE 6000"
-                                FontSize='15'
-                                FontAttributes="Bold"
+                                FontSize='17'
                                 TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackNuevosDesarrollos_Tapped" NumberOfTapsRequired="1" />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
-                </AbsoluteLayout>
-
-                <Frame BackgroundColor="Gray"
-                   Padding="0"
-                    Margin="0,0,0,-5">
-                    <Label Text="Buscar Bujes de fundición"
-                   FontSize='20'
-                   HorizontalTextAlignment="Center"
-                   TextColor="White">
-                    </Label>
-                </Frame>
-            <AbsoluteLayout HorizontalOptions="Center" Margin="0,0,0,-27">
-                    <Image Source="img_bujes.jpg"
-                       Aspect="AspectFit" Margin="0,0,0,0"
-                             ></Image>
-                    <Frame BackgroundColor="DarkBlue"
+                    <Frame BackgroundColor="SlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="12"
+                   CornerRadius="7"
                    Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
-                           AbsoluteLayout.LayoutBounds="115,15,130,80">
+                           AbsoluteLayout.LayoutBounds="0.95,0.50,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="10,0,10,0">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStackBujes_Tapped" NumberOfTapsRequired="1" />
                         </Frame.GestureRecognizers>
                     </Frame>
-                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="115,19,130,80" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.95,0.50,0.50,0.12"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Margin="10,0,10,0" HorizontalOptions="Center">
                         <Image Source="ic_Bujes_blanco.png"
-                           HeightRequest="40">
+                           HeightRequest="40"
+                               Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="Bujes de fundición"
-                                FontSize='15'
-                                FontAttributes="Bold"
+                        <Label Text="BUJES"
+                                FontSize='17'
                                 TextColor="White">
                         </Label>
                         <StackLayout.GestureRecognizers>

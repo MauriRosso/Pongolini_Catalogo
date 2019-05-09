@@ -7,17 +7,17 @@
                  BackgroundColor="White"
                  HorizontalOptions="Center"
                  VerticalOptions="Center">
-            <Label Text="La informacion de SERIE 6000 estará ubicada en este cuadro modal. Este es un texto de prueba colocado para experimentar como se verá el texto sobre este tipo de asientos."
+            <Label Text="La línea 6000 es la solución ideal para el reparador de cabezas de cilindros con problemas de sobremedidas. Están construidos en aceros de altas aleaciones de cromo, niquel y molibdeno. Tratamientos térmicos que obtienen una dureza final de 38-44 HRC."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                   TextColor="DarkBlue" FontSize="20" Margin="8,8"/>
+                   TextColor="DarkBlue" FontSize="20" Margin="15,15,15,15" HorizontalTextAlignment="Center"/>
             <Button x:Name="btnOK" 
                 BackgroundColor="DarkBlue"
                 FontSize="20"
                 Text="OK"
                 TextColor="White"
                 FontAttributes="Bold"
-                Margin="15,0,15,10"
+                Margin="15,0,15,15"
                 Clicked="btnOK_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
