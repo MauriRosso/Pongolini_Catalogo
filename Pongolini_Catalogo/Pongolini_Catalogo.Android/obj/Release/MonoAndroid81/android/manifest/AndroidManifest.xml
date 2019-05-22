@@ -9,7 +9,7 @@
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="Pongolini Catalogo.Android" android:icon="@mipmap/ic_pongolini" android:name="android.app.Application" android:allowBackup="true">
+  <application android:label="300 INDY" android:icon="@mipmap/ic_pongolini" android:name="android.app.Application" android:allowBackup="true">
     <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDbrGtywRDxtgQLzjTRkTypoc1XdtW6C8k" />
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/ic_pongolini" android:label="Pongolini Catálogo" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="md549692b9576e15b55bbc3f279562c0148.MainActivity">
       <intent-filter>
@@ -17,6 +17,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <receiver android:enabled="true" android:exported="false" android:label="Connectivity Plugin Broadcast Receiver" android:name="md59628c2715c1bb8febcc7ae8402df0582.ConnectivityChangeBroadcastReceiver" />
     <receiver android:enabled="true" android:exported="false" android:name="md51558244f76c53b6aeda52c8a337f2c37.PowerSaveModeBroadcastReceiver" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.companyname.Pongolini_Catalogo.mono.MonoRuntimeProvider.__mono_init__" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />

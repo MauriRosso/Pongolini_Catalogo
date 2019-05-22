@@ -4,6 +4,8 @@ FFImageLoading.Forms.Droid
 FFImageLoading.Platform
 FormsViewGroup
 Newtonsoft.Json
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 Plugin.CurrentActivity
 Plugin.Messaging.Abstractions
 Plugin.Messaging

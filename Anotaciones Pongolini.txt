@@ -1,6 +1,38 @@
-- En el detalle de la aplicacion dejar solamente: MARCA, modelo, motor,
-Tipo aplicacion, alimentacion, cilindrada.
-- Agregar en atributos del producto, un combobox de sobremedidas(estandar, 0.1.. VER CUANTAS SON)
+-OK- dejar bujes igual que serie 6000 (sin filtros + info)
 
-- CONTACTO: Poder llamar pulsando en el teléfono y enviar un mail por consultas.
- Ademas, poner mapa del lugar con direccion debajo y los perfiles de redes sociales de la empresa.
+Solicitud de cotizacion (popup confirmar pedido)
+cambiar numero (poner prefijo)
+
+Idioma
+
+pantalla inicio:
+cambiar imagen recibida por mail
+Aberaldo pongolini SRL Catalogo
+
+Intercambios:
+cambiar intercambio por codigo (sacar leyenda)
+
+-OK- nombre aplicacion, barra de navegacion: 300-INDY
+
+cambiar de lado buscar y limpiar
+
+
+
+Dimensiones: poner asientos semi terminados solo cuando existan.  Pone flecha para levantar su pestaña.
+
+Tanto en guias como asientos poner en hasta + 2mm
+
+dejar un solo cmapo de busqueda en angulo (dimensiones)
+
+Problema en dimensiones (altura con coma salio)
+
+cambiar en contacto horarios (hasta 18:30)
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ using Plugin.Permissions;
 
 namespace Pongolini_Catalogo.Droid
 {
-    [Activity(Label = "Pongolini Catálogo", Icon = "@mipmap/ic_pongolini", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "300 INDY", Icon = "@mipmap/ic_pongolini", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

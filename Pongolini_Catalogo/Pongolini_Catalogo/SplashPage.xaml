@@ -10,14 +10,53 @@
                    VerticalOptions="Center"
                    Aspect="AspectFit"></Image>
             <Label x:Name="SplashName"
-                   Text="Pongolini Catálogo"
+                   Text="Aberaldo Pongolini S.R.L"
                    FontSize="Large"
                    FontAttributes="Bold"
                    TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"></Label>
-
-
+            <StackLayout x:Name="slIdiomas" Orientation="Vertical" HorizontalOptions="Center">
+                <Label x:Name="lblSeleccioneIdioma" Margin="0,0,0,15" HorizontalOptions="Center" FontAttributes="Italic" Text="Seleccione idioma" FontSize="Medium" TextColor="White"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="20,5">
+                        <Image x:Name="imgEs"
+                   Source="ES.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"
+                           />
+                        <Label x:Name="lblEspanol" Text="Español" FontAttributes="Bold" TextColor="White"/>
+                        <Image x:Name="switchES" Source="ic_tick.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Switch_Idioma" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="20,5">
+                        <Image x:Name="imgEn"
+                   Source="EN.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"
+                           />
+                        <Label x:Name="lblEnglish" Text="English" FontAttributes="Bold" TextColor="White"/>
+                        <Image x:Name="switchEN" Source="ic_cross.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Switch_Idioma" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+                <Button x:Name="btnAcceder"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="8,0,8,0"
+                    Text="Acceder"
+                    Clicked="btnAcceder_Clicked"
+                    VerticalOptions="EndAndExpand">
+                </Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

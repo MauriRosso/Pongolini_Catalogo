@@ -16,7 +16,8 @@ namespace Pongolini_Catalogo
         public static List<Asientos> ListaGlobalAsientos = new List<Asientos>();
         public static List<Bujes> ListaGlobalBujes = new List<Bujes>();
         public static List<CarroViewModel> ListaGlobalProductos = new List<CarroViewModel>();
-        
+        public static string Idioma { get; set; }
+
         public App()
         {
             InitializeComponent();           

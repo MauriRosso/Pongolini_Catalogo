@@ -126,13 +126,11 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\bronce.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_interior_guia.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\largo.png
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_bujes.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_exterior_guia.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\altura.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\angulo.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_exterior_asiento.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\diametro_interior_asiento.png
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_bujes_recortada.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xxxhdpi\ic_facebook_logo.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-hdpi\ic_facebook_logo.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xhdpi\ic_facebook_logo.png
@@ -165,7 +163,6 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xhdpi\ic_cart.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xxhdpi\ic_cart.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xxxhdpi\ic_cart.png
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_serie_6000.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\asientos_carrito.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\guias_carrito.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xhdpi\ic_cart_master.png
@@ -181,7 +178,9 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-xxxhdpi\ic_order.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable-hdpi\ic_order.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\pongolini_logo.jpg
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\guias_asientos.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_bujes_recortada.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\guias_asientos_ok.jpg
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\img_serie_6000_final.jpg
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\R.cs.flag
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\R.txt
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\uploadflags.txt
@@ -256,6 +255,8 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Pongolini_Catalogo.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Rg.Plugins.Popup.Droid.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\es.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\en.png
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\FormsViewGroup.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Messaging.dll.mdb
@@ -292,7 +293,11 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\Mo
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\ic_tick.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\res\drawable\ic_cross.png
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\bin\Debug\netstandard2.0\Pongolini_Catalogo.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Pongolini_Catalogo.Android.pdb
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\bin\Debug\Pongolini_Catalogo.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Connectivity.dll.mdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Messaging.dll.mdb

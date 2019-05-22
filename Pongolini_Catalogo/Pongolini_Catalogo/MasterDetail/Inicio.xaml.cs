@@ -18,7 +18,35 @@ namespace Pongolini_Catalogo.MasterDetail
         public Inicio()
         {
             InitializeComponent();
+            this.BackgroundImage = "Guias_Asientos_ok.jpg";
+            CargarTextoLabels();
             CargarCarrito();
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma == "ES")
+            {
+                lblBuscarGuiasyAsientosPor.Text = "Buscar Guías y Asientos por";
+                lblAplicaciones.Text = "APLICACIONES";
+                lblIntercambios.Text = "INTERCAMBIOS";
+                lbl300Indy.Text = "#300INDY";
+                lblDimensiones.Text = "DIMENSIONES";
+                lblConoceNuestrosNuevosProductos.Text = "Conocé nuestros nuevos productos";
+                lblSerie6000.Text = "SERIE 6000";
+                lblBujes.Text = "BUJES";
+            }
+            else
+            {
+                lblBuscarGuiasyAsientosPor.Text = "Look for Guides and Seats for";
+                lblAplicaciones.Text = "APPLICATIONS";
+                lblIntercambios.Text = "EXCHANGES";
+                lbl300Indy.Text = "#300INDY";
+                lblDimensiones.Text = "DIMENSIONS";
+                lblConoceNuestrosNuevosProductos.Text = "Know our new products";
+                lblSerie6000.Text = "SERIES 6000";
+                lblBujes.Text = "BUSHINGS";
+            }
         }
 
         private void CargarCarrito()

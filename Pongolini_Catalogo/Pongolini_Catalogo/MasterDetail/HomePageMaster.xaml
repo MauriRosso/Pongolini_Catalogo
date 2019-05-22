@@ -27,14 +27,14 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblInicio" Text="Inicio"
+                    <Label x:Name="lblInicio"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
                                 />
                 </StackLayout>
                 <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
-                <Label x:Name="lblBuscarPorGuiasAsientos" Text="Buscar guías y asientos de válvulas por"
+                <Label x:Name="lblBuscarPorGuiasAsientos"
                                     Margin="20,8"
                                     FontSize="Small"
                                     VerticalOptions="Center"
@@ -53,7 +53,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblAplicaciones" Text="Aplicaciones"
+                    <Label x:Name="lblAplicaciones"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -72,7 +72,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblIntercambios" Text="Intercambios"
+                    <Label x:Name="lblIntercambios"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -91,7 +91,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lbl300Indy" Text="#300Indy"
+                    <Label x:Name="lbl300Indy"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -110,12 +110,19 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblDimensiones" Text="Dimensiones"
+                    <Label x:Name="lblDimensiones"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
                                 />
                 </StackLayout>
+                <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
+                <Label x:Name="lblConoceNuestrosProductos"
+                                    Margin="20,8"
+                                    FontSize="Small"
+                                    VerticalOptions="Center"
+                                    TextColor="Gray"
+                                />
                 <StackLayout x:Name="StackNuevosDesarrollos" VerticalOptions="FillAndExpand"
                                     Orientation="Horizontal"
                                     Padding="20,8"
@@ -129,13 +136,12 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblNuevosDesarrollos" Text="SERIE 6000"
+                    <Label x:Name="lblNuevosDesarrollos"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
                                 />
                 </StackLayout>
-                <BoxView HeightRequest="2" BackgroundColor="DarkBlue"/>
                 <StackLayout x:Name="StackBujes" VerticalOptions="FillAndExpand"
                                     Orientation="Horizontal"
                                     Padding="20,8"
@@ -149,7 +155,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblBujes" Text="Bujes de fundición"
+                    <Label x:Name="lblBujes"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -169,7 +175,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblMisPedidos" Text="Mis pedidos"
+                    <Label x:Name="lblMisPedidos"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -188,7 +194,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblIrAlSitio" Text="Ir al sitio institucional"
+                    <Label x:Name="lblIrAlSitio"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -207,7 +213,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblContacto" Text="Contacto"
+                    <Label x:Name="lblContacto"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="Black"
@@ -226,7 +232,7 @@
                                     HeightRequest="30"
                                     VerticalOptions="Center" />
 
-                    <Label x:Name="lblSalir" Text="Salir"
+                    <Label x:Name="lblSalir"
                                     FontSize="Small"
                                     VerticalOptions="Center"
                                     TextColor="IndianRed"

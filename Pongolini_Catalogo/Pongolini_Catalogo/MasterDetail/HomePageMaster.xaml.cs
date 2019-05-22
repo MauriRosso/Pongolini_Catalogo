@@ -17,11 +17,60 @@ namespace Pongolini_Catalogo.MasterDetail
     public partial class HomePageMaster : ContentPage
     {
         public ListView ListView;
+        string PopSalirTitulo;
+        string PopSalirContenido;
+        string PopSalirSi;
+        string PopSalirNo;
 
         public HomePageMaster()
         {
             InitializeComponent();
+            CargarTextoLabels();
         }      
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma == "ES")
+            {
+                lblInicio.Text = "Inicio";
+                lblBuscarPorGuiasAsientos.Text = "Buscar guías y asientos de válvulas por";
+                lblAplicaciones.Text = "Aplicaciones";
+                lblIntercambios.Text = "Intercambios";
+                lbl300Indy.Text = "#300INDY";
+                lblDimensiones.Text = "Dimensiones";
+                lblNuevosDesarrollos.Text = "SERIE 6000";
+                lblConoceNuestrosProductos.Text = "Conocé nuestros nuevos productos";
+                lblBujes.Text = "Bujes de fundición";
+                lblMisPedidos.Text = "Mis pedidos";
+                lblIrAlSitio.Text = "Ir al sitio institucional";
+                lblContacto.Text = "Contacto";
+                lblSalir.Text = "Salir";
+                PopSalirTitulo = "Salir";
+                PopSalirContenido = "¿Está seguro que desea salir de la aplicación?";
+                PopSalirSi = "Sí";
+                PopSalirNo = "No";
+            }
+            else
+            {
+                lblInicio.Text = "Home";
+                lblBuscarPorGuiasAsientos.Text = "Look for valve guides and seats for";
+                lblAplicaciones.Text = "Applications";
+                lblIntercambios.Text = "Exchanges";
+                lbl300Indy.Text = "#300INDY";
+                lblDimensiones.Text = "Dimensions";
+                lblNuevosDesarrollos.Text = "SERIES 6000";
+                lblConoceNuestrosProductos.Text = "Know our new products";
+                lblBujes.Text = "Casting bushings";
+                lblMisPedidos.Text = "My orders";
+                lblIrAlSitio.Text = "Go to the institutional site";
+                lblContacto.Text = "Contact";
+                lblSalir.Text = "Exit";
+                PopSalirTitulo = "Exit";
+                PopSalirContenido = "Are you sure you want to exit the application?";
+                PopSalirSi = "Yes";
+                PopSalirNo = "No";
+            }
+        }
 
         private void OnStackInicio_Tapped(object sender, EventArgs e)
         {
@@ -66,7 +115,7 @@ namespace Pongolini_Catalogo.MasterDetail
         private async void OnStackSalir_Tapped(object sender, EventArgs e)
         {
             //Cerrar aplicacion.
-            var respuesta = await DisplayAlert("Salir", "¿Está seguro que desea salir de la aplicación?", "SI", "NO");
+            var respuesta = await DisplayAlert(PopSalirTitulo, PopSalirContenido, PopSalirSi, PopSalirNo);
             if (respuesta == true)
             {
                 System.Diagnostics.Process.GetCurrentProcess().Kill();

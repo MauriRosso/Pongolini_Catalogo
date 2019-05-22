@@ -2,144 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.BujesPage"
-             Title="Tubos para encasquillar">
+             Title="Bujes">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView HeightRequest="36" Color="#1A237E" Margin="0,0,0,0"/>
+                <Label x:Name="lblTubosParaEncasquillar" Text="TUBOS PARA ENCASQUILLAR" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="0,0,0,0"></Label>
+            </Grid>
             <Image Source="img_bujes_recortada.jpg"
                        Aspect="AspectFit" Margin="0,0,0,0"></Image>
-            <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
-            <StackLayout x:Name="StackCamposBusqueda">
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                    x:Name="lblTipo"
-                    Text="Tipo de buje"  
-                    Margin="13,8,78,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Picker 
-                    x:Name="pckTipoBujes"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Start"
-                    Margin="0,0,13,0"
-                    Title="Seleccione tipo de buje"                  
-                />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                    x:Name="lblDiamExtDim"
-                    Text="Ø Exterior"  
-                    Margin="13,0,35,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtDiamExtDesdeDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Keyboard="Telephone"  
-                     Unfocused="txtDiamExtDesdeDim_Unfocused"
-                     TextChanged="txtDiamExtDesdeDim_TextChanged"
-                />
-                    <Label x:Name="HastaDiamExt" Text="Hasta"/>
-                    <Entry x:Name="txtDiamExtHastaDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"
-                     Margin="0,0,13,0"
-                     Keyboard="Telephone" 
-                     Unfocused="txtDiamExtDesdeDim_Unfocused"
-                     TextChanged="txtDiamExtHastaDim_TextChanged"                     
-                />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                    x:Name="lblDiamIntDim"
-                    Text="Ø Interior"  
-                    Margin="13,0,37,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtDiamIntDesdeDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Keyboard="Telephone"  
-                     Unfocused="txtDiamIntDesdeDim_Unfocused"
-                     TextChanged="txtDiamIntDesdeDim_TextChanged"
-                />
-                    <Label x:Name="HastaDiamInt" Text="Hasta"/>
-                    <Entry x:Name="txtDiamIntHastaDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Margin="0,0,13,0"
-                     Keyboard="Telephone"
-                     Unfocused="txtDiamIntDesdeDim_Unfocused"
-                     TextChanged="txtDiamIntHastaDim_TextChanged"
-                     />
-                </StackLayout>
-                <StackLayout x:Name="StackLargo" Orientation="Horizontal">
-                    <Label
-                    x:Name="lblLargoDim"
-                    Text="Largo"  
-                    Margin="13,0,59,0"
-                    HorizontalTextAlignment="Start"
-                />
-                    <Entry x:Name="txtLargoDesdeDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Keyboard="Telephone"  
-                     Unfocused="txtLargoDesdeDim_Unfocused"
-                     TextChanged="txtLargoDesdeDim_TextChanged"
-                />
-                    <Label x:Name="HastaLargo" Text="Hasta"/>
-                    <Entry x:Name="txtLargoHastaDim"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"  
-                     Keyboard="Telephone"  
-                     Unfocused="txtLargoDesdeDim_Unfocused"
-                     TextChanged="txtLargoHastaDim_TextChanged"
-                     Margin="0,0,13,0"
-                />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button x:Name="btnBuscarBujes"
-                    Text="BUSCAR"
-                    FontAttributes="Bold"
-                    TextColor="Black"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="8,0"
-                    Clicked="btnBuscarBujes_Clicked"
-                   >
-                        <Button.Image>
-                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_search.png">
-                            </OnPlatform>
-                        </Button.Image>
-                    </Button>
-                    <Button x:Name="btnLimpiarBujes"
-                    Text="LIMPIAR"
-                    FontAttributes="Bold"
-                    TextColor="Black"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="8,0"
-                    Clicked="btnLimpiarBujes_Clicked">
-                        <Button.Image>
-                            <OnPlatform x:TypeArguments="FileImageSource" Android="ic_clear.png">
-                            </OnPlatform>
-                        </Button.Image>
-                    </Button>
-                </StackLayout>
-            </StackLayout>
-            <Button x:Name="btnNuevaBusqueda"
-                    Text="NUEVA BUSQUEDA"
-                    FontAttributes="Bold"
-                    TextColor="Black"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="8,0,8,0"
-                    Clicked="btnNuevaBusqueda_Clicked"
-                  >
-                <Button.Image>
-                    <OnPlatform x:TypeArguments="FileImageSource" Android="ic_new_search.png">
-                    </OnPlatform>
-                </Button.Image>
-            </Button>
             <BoxView Margin="8,0,8,0" HeightRequest="1" BackgroundColor="DarkBlue"/>
             <StackLayout x:Name="slLoad" Orientation="Vertical">
                 <ActivityIndicator x:Name="Cargando"
@@ -178,7 +58,7 @@
                                     </Grid.ColumnDefinitions>
                                     <BoxView Grid.ColumnSpan="7" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
                                     <Label Grid.ColumnSpan="2" Text="{Binding codigo}" Margin="8,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="Start"></Label>
-                                    <Label Grid.Column="6" Grid.Row="0" Text="Buje" Margin="0,0,8,0" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                                    <Label Grid.Column="5" Grid.Row="0" Text="Buje" Margin="0,0,8,0" HorizontalTextAlignment="End" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
                                     <Image Grid.Column="1" Grid.Row="1" Source="{Binding img_diam_ext}" HorizontalOptions="Center" VerticalOptions="Center" Margin="2,0,0,0"/>
                                     <Label Grid.Column="1" Grid.Row="2" Text="{Binding diametro_exterior}" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalOptions="Start" VerticalTextAlignment="Start"/>
                                     <Image Grid.Column="3" Grid.Row="1" Source="{Binding img_diam_int}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>

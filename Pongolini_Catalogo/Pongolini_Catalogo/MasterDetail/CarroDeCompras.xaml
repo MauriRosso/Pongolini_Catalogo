@@ -51,7 +51,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Button x:Name="btnRealizarPedido"
-                    Text="REALIZAR PEDIDO"
+                    Text="PEDIR COTIZACIÓN"
                     FontAttributes="Bold"
                     TextColor="White"
                     BackgroundColor="DarkBlue"

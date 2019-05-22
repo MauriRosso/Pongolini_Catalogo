@@ -25,11 +25,41 @@ namespace Pongolini_Catalogo.MasterDetail
             CargarPickerProducto();
             CargarPickerMarca();
             CargarPickerTipoAplicacion();
+            CargarTextoLabels();
             btnNuevaBusqueda.IsVisible = false;
             Cargando.IsRunning = true;
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
             CargarCarrito();
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                this.Title = "Applications";
+                lblProducto.Text = "Product";
+                pckProducto.Title = "Select product";
+                pckProducto.Items.Clear();
+                pckProducto.Items.Add("Valve guides");
+                pckProducto.Items.Add("Valve seats");
+                pckProducto.SelectedIndex = 0;
+                lblMotor.Text = "Engine";
+                lblMarca.Text = "Brand";
+                lblTipoAplicacion.Text = "Application type";
+                pckTipoAplicacion.Title = "Select application type";
+                pckTipoAplicacion.Items.Clear();
+                pckTipoAplicacion.Items.Add("[ All ]");
+                pckTipoAplicacion.Items.Add("Admission");
+                pckTipoAplicacion.Items.Add("Escape");
+                pckTipoAplicacion.Items.Add("Admission and escape");
+                pckTipoAplicacion.SelectedIndex = 0;
+                btnBuscarAplicaciones.Text = "Search";
+                btnLimpiarAplicaciones.Text = "Clear all";
+                btnNuevaBusqueda.Text = "New search";
+                var Cargando = this.FindByName<Label>("lblCargando");
+                Cargando.Text = "Loading..";
+            }
         }
 
         private void CargarCarrito()
@@ -55,7 +85,14 @@ namespace Pongolini_Catalogo.MasterDetail
 
         public void CargarPickerMarca()
         {
-            pckMarca.Items.Add("[ Todos ]");
+            if (App.Idioma == "ES")
+            {
+                pckMarca.Items.Add("[ Todos ]");
+            }
+            else
+            {
+                pckMarca.Items.Add("[ All ]");
+            }
             pckMarca.Items.Add("AGRALE");
             pckMarca.Items.Add("ALCO");
             pckMarca.Items.Add("ALFA ROMEO");
@@ -203,16 +240,16 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMotorGuias();
             }
-            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]" && pckMarca.SelectedItem.ToString() != "[ All ]")
             {
                 BusquedaMarcaGuias();
             }
-            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() != "[ All ]")
             {
                 BusquedaTipoAplicacionGuias();
             }
 
-            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]")
+            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && (pckMarca.SelectedItem.ToString() == "[ Todos ]" || pckMarca.SelectedItem.ToString() == "[ All ]") && (pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" || pckTipoAplicacion.SelectedItem.ToString() == "[ All ]"))
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
@@ -228,6 +265,13 @@ namespace Pongolini_Catalogo.MasterDetail
             if (ListaDatos_Final.Count() == 0)
             {
                 DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+            }
+            else
+            {
+                //var ProductoGrilla = this.FindByName<Label>("lblProductoGrilla");
+                //ProductoGrilla.Text = "Product";
+                //var MotorGrilla = this.FindByName<Label>("lblMotorGrilla");
+                //MotorGrilla.Text = "Engine";
             }
             ListViewAplicaciones.ItemsSource = null;
             ListViewAplicaciones.ItemsSource = ListaDatos_Final;
@@ -256,16 +300,16 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaMotorAsientos();
             }
-            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]" && pckMarca.SelectedItem.ToString() != "[ All ]")
             {
                 BusquedaMarcaAsientos();
             }
-            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() != "[ All ]")
             {
                 BusquedaTipoAplicacionAsientos();
             }
 
-            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && pckMarca.SelectedItem.ToString() == "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]")
+            if ((txtNOriginal.Text == null || txtNOriginal.Text == "") && (txtMotor.Text == null || txtMotor.Text == "") && (pckMarca.SelectedItem.ToString() == "[ Todos ]"  || pckMarca.SelectedItem.ToString() == "[ All ]") && (pckTipoAplicacion.SelectedItem.ToString() == "[ Todos ]" || pckTipoAplicacion.SelectedItem.ToString() == "[ All ]"))
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalAsientos)
@@ -284,6 +328,13 @@ namespace Pongolini_Catalogo.MasterDetail
             if (ListaDatos_Final.Count() == 0)
             {
                 DisplayAlert("Error", "No se encontró ningún elemento con los parámetros especificados.", "OK");
+            }
+            else
+            {
+                //var ProductoGrilla = this.FindByName<Label>("lblProductoGrilla");
+                //ProductoGrilla.Text = "Product";
+                //var MotorGrilla = this.FindByName<Label>("lblMotorGrilla");
+                //MotorGrilla.Text = "Engine";
             }
             ListViewAplicaciones.ItemsSource = null;
             ListViewAplicaciones.ItemsSource = ListaDatos_Final;
@@ -316,7 +367,14 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             if (!ConexionRevisada()) //El dispositivo no soporta el plugin, no puedo controlarlo.
             {
-                await DisplayAlert("Estado de la conexión", "No hemos podido comprobar el estado de tu conexión a internet. Por favor, asegúrate de estar conectado a la red antes de realizar una búsqueda.", "OK");
+                if (App.Idioma == "ES")
+                {
+                    await DisplayAlert("Estado de la conexión", "No hemos podido comprobar el estado de tu conexión a internet. Por favor, asegúrate de estar conectado a la red antes de realizar una búsqueda.", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Connection state", "We have not been able to check the status of your internet connection. Please make sure you are connected to the network before performing a search.", "OK");
+                }
             }
             if (TieneConexion())
             {
@@ -324,7 +382,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 OcultarCamposAplicaciones();
                 ListViewAplicaciones.ItemsSource = null;
                 ListViewAplicaciones.ItemsSource = ListaDatos_Final;
-                if (pckProducto.SelectedItem.ToString() == "Guías de válvulas")
+                if (pckProducto.SelectedItem.ToString() == "Guías de válvulas" || pckProducto.SelectedItem.ToString() == "Valve guides")
                 {
                     productoElegido = "Guías";
                     ObtenerGuias();
@@ -337,7 +395,14 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else
             {
-                await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy debil. Por favor, reintenta más tarde.", "OK");
+                if (App.Idioma == "ES")
+                {
+                    await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy débil. Por favor, inténtalo más tarde.", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Failed to connect", "You are not connected to the internet or your signal is very weak. Please ty again later.", "OK");
+                }
             }
         }
 
@@ -449,7 +514,7 @@ namespace Pongolini_Catalogo.MasterDetail
         public void BusquedaTipoAplicacionAsientos()
         {
             string adm_esc = string.Empty;
-            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión" || pckTipoAplicacion.SelectedItem.ToString() == "Admission")
             {
                 adm_esc = "ADM";
             }
@@ -479,7 +544,7 @@ namespace Pongolini_Catalogo.MasterDetail
         public void BusquedaTipoAplicacionGuias()
         {
             string adm_esc = string.Empty;
-            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+            if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión" || pckTipoAplicacion.SelectedItem.ToString() == "Admission")
             {
                 adm_esc = "ADM";
             }
@@ -517,11 +582,11 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 CP += 1;
             }
-            if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+            if (pckMarca.SelectedItem.ToString() != "[ Todos ]" && pckMarca.SelectedItem.ToString() != "[ All ]")
             {
                 CP += 1;
             }
-            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+            if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() != "[ All ]")
             {
                 CP += 1;
             }
@@ -554,17 +619,17 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                     }
                 }
-                if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+                if (pckMarca.SelectedItem.ToString() != "[ Todos ]" && pckMarca.SelectedItem.ToString() != "[ All ]")
                 {
                     if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                     {
                         coincidencias += 1;
                     }
                 }
-                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() != "[ All ]")
                 {
                     string adm_esc = string.Empty;
-                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión" || pckTipoAplicacion.SelectedItem.ToString() == "Admission")
                     {
                         adm_esc = "ADM";
                     }
@@ -618,17 +683,17 @@ namespace Pongolini_Catalogo.MasterDetail
                         }
                     }
                 }
-                if (pckMarca.SelectedItem.ToString() != "[ Todos ]")
+                if (pckMarca.SelectedItem.ToString() != "[ Todos ]" && pckMarca.SelectedItem.ToString() != "[ All ]")
                 {
                     if (item.marca_modelo == pckMarca.SelectedItem.ToString())
                     {
                         coincidencias += 1;
                     }
                 }
-                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]")
+                if (pckTipoAplicacion.SelectedItem.ToString() != "[ Todos ]" && pckTipoAplicacion.SelectedItem.ToString() != "[ All ]")
                 {
                     string adm_esc = string.Empty;
-                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión")
+                    if (pckTipoAplicacion.SelectedItem.ToString() == "Admisión" || pckTipoAplicacion.SelectedItem.ToString() == "Admission")
                     {
                         adm_esc = "ADM";
                     }

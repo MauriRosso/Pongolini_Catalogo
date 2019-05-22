@@ -21,8 +21,9 @@ C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstand
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.csproj.CoreCompileInputs.cache
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.AssemblyInfoInputs.cache
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.AssemblyInfo.cs
-C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\XamlC.stamp
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.dll
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.pdb
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\MasterDetail\CarroDeCompras.xaml.g.cs
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\PopupModalSERIE6000.xaml.g.cs
 C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\Pongolini_Catalogo.csprojAssemblyReference.cache
+C:\Pongolini_Catalogo\Pongolini_Catalogo\Pongolini_Catalogo\obj\Release\netstandard2.0\XamlC.stamp

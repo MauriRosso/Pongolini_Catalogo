@@ -2,21 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pongolini_Catalogo.MasterDetail.Inicio"
-             Title="Pongolini Catálogo"
+             Title="300 INDY"
+             BackgroundImage="Guias_Asientos_ok.jpg"             
              >
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="imgCarro" Icon="ic_cart.png" Priority="0" Order="Primary" Activated="imgCarro_Activated" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ScrollView>
             <StackLayout x:Name="stackPrincipal" BackgroundColor="DarkGray"
                      Orientation="Vertical">
-                <AbsoluteLayout x:Name="absolutePrincipal" BackgroundColor="DarkGray" Margin="0,0,0,-65">
-                    <Image Source="Guias_Asientos.jpg"
-                       Aspect="AspectFit" Margin="0,0,0,0"/>
-                    <Frame  BackgroundColor="DimGray"
+            <AbsoluteLayout x:Name="absolutePrincipal" Margin="0,0,0,0" BackgroundColor="SlateGray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <RelativeLayout>
+                    <Image Source="Guias_Asientos_ok.jpg"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                           Aspect="AspectFill"/>
+                </RelativeLayout>
+                <Frame  BackgroundColor="SlateGray"
                             OutlineColor="Transparent"
-                            CornerRadius="7"
+                            CornerRadius="5"
                             Opacity="0.25"   
                             BorderColor="White"
                             HasShadow="False"
@@ -26,7 +30,7 @@
                             AbsoluteLayout.LayoutFlags="All"
                            >
                     </Frame>
-                    <Label Text="Buscar Guías y Asientos por"
+                    <Label x:Name="lblBuscarGuiasyAsientosPor" Text="Buscar Guías y Asientos por"
                                             FontSize='16'
                                             FontAttributes="Bold"
                                             TextColor="White"
@@ -34,12 +38,12 @@
                                             AbsoluteLayout.LayoutFlags="All"
                            HorizontalTextAlignment="Center">
                     </Label>
-                    <Frame x:Name="frameAplicaciones" BackgroundColor="#333333"
+                <Frame x:Name="frameAplicaciones" BackgroundColor="SlateGray"
                             OutlineColor="Transparent"
                             HeightRequest="20"
-                            CornerRadius="7"
+                            CornerRadius="5"
                             Padding="10,2"
-                            Opacity="0.4"   
+                            Opacity="0.6"   
                             BorderColor="White"                           
                             HasShadow="False"
                             AbsoluteLayout.LayoutBounds="0,0.09,0.50,0.12"
@@ -73,10 +77,10 @@
                     </StackLayout>
 
 
-                    <Frame BackgroundColor="DarkBlue"
+                <Frame BackgroundColor="SlateGray"
                             OutlineColor="White"
                             HeightRequest="70"
-                            CornerRadius="7"
+                            CornerRadius="5"
                             Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
@@ -95,7 +99,7 @@
                                Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="INTERCAMBIOS"
+                        <Label x:Name="lblIntercambios" Text="INTERCAMBIOS"
                        FontSize='17'
                        TextColor="White">
                         </Label>
@@ -104,10 +108,10 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
 
-                    <Frame BackgroundColor="#1A237E"
+                <Frame BackgroundColor="SlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="7"
+                   CornerRadius="5"
                    Padding="10,2"
                            Opacity="0.6"
                                HasShadow="False"
@@ -126,7 +130,7 @@
                                Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="DIMENSIONES"
+                        <Label x:Name="lblDimensiones" Text="DIMENSIONES"
                        FontSize='17'
                        TextColor="White">
                         </Label>
@@ -135,10 +139,10 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
 
-                    <Frame BackgroundColor="LightGray"
+                <Frame BackgroundColor="SlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="7"
+                   CornerRadius="5"
                    Padding="23,2"
                            Opacity="0.6"
                           HasShadow="False"   
@@ -157,7 +161,7 @@
                                Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="#300INDY"
+                        <Label x:Name="lbl300Indy" Text="#300INDY"
                        FontSize='17'
                        TextColor="White">
                         </Label>
@@ -176,7 +180,7 @@
                             AbsoluteLayout.LayoutFlags="All"
                            >
                     </Frame>
-                    <Label Text="Conocé nuestros nuevos productos"
+                    <Label x:Name="lblConoceNuestrosNuevosProductos" Text="Conocé nuestros nuevos productos"
                                             FontSize='16'
                                             FontAttributes="Bold"
                                             TextColor="White"
@@ -187,7 +191,7 @@
                     <Frame BackgroundColor="LightSlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="7"
+                   CornerRadius="5"
                    Padding="10,2"
                            Opacity="0.6"
                         HasShadow="False"       
@@ -206,7 +210,7 @@
                                Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="SERIE 6000"
+                        <Label x:Name="lblSerie6000" Text="SERIE 6000"
                                 FontSize='17'
                                 TextColor="White">
                         </Label>
@@ -217,7 +221,7 @@
                     <Frame BackgroundColor="SlateGray"
                    OutlineColor="White"
                    HeightRequest="70"
-                   CornerRadius="7"
+                   CornerRadius="5"
                    Padding="10,2"
                            Opacity="0.6"
                            HasShadow="False"
@@ -236,7 +240,7 @@
                                Margin="0,3,0,-3">
 
                         </Image>
-                        <Label Text="BUJES"
+                        <Label x:Name="lblBujes" Text="BUJES"
                                 FontSize='17'
                                 TextColor="White">
                         </Label>
@@ -246,6 +250,5 @@
                     </StackLayout>
                 </AbsoluteLayout>
             </StackLayout>
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

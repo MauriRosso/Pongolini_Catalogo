@@ -21,7 +21,7 @@ namespace Pongolini_Catalogo.MasterDetail
 		{
 			InitializeComponent ();
             //ListViewPedidos.ItemsSource = pv.Pedidos;
-            lblSinPedidos.Text = "Todavía no has realizado ningún pedido. Tus pedidos realizados aparecerán aquí.";
+            CargarTextoLabels();
             if (App.ListaGlobalProductos.Count > 0)
             {
                 CargarListaCarrito();
@@ -32,6 +32,22 @@ namespace Pongolini_Catalogo.MasterDetail
             else
             {
                 CarroVacio();
+            }
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                lblSinPedidos.Text = "You have not made any order yet. You orders will appear here";
+                Title = "My orders";
+                btnRealizarPedido.Text = "Ask for quote";
+                btnVaciarCarrito.Text = "Empty cart";
+                
+            }
+            else
+            {
+                lblSinPedidos.Text = "Todavía no has realizado ningún pedido. Tus pedidos realizados aparecerán aquí.";
             }
         }
 
@@ -80,38 +96,82 @@ namespace Pongolini_Catalogo.MasterDetail
 
         private async void btnVaciarCarrito_Clicked(object sender, EventArgs e)
         {
-            var respuesta = await DisplayAlert("Vaciar carrito", "¿Está seguro que desea vaciar el carrito de pedidos?", "SI", "NO");
-            if (respuesta == true)
+            if (App.Idioma == "ES")
             {
-                App.ListaGlobalProductos.Clear();
-                //ListViewCarrito.ItemsSource = null;
-                CarroVacio();
+                var respuesta = await DisplayAlert("Vaciar carrito", "¿Está seguro que desea vaciar el carrito de pedidos?", "SI", "NO");
+                if (respuesta == true)
+                {
+                    App.ListaGlobalProductos.Clear();
+                    ListaDatos_Final.Clear();
+                    ListViewCarrito.ItemsSource = null;
+                    ListViewCarrito.ItemsSource = ListaDatos_Final;
+                    CarroVacio();
+                }
             }
+            else
+            {
+                var respuesta = await DisplayAlert("Empty cart", "Are you sure you want to empty the order cart?", "YES", "NO");
+                if (respuesta == true)
+                {
+                    App.ListaGlobalProductos.Clear();
+                    ListaDatos_Final.Clear();
+                    ListViewCarrito.ItemsSource = null;
+                    ListViewCarrito.ItemsSource = ListaDatos_Final;
+                    CarroVacio();
+                }
+            }            
         }
 
         private async void btnBorrarProducto_Clicked(object sender, EventArgs e)
         {
-            var respuesta = await DisplayAlert("Quitar producto", "¿Está seguro que desea quitar el producto seleccionado del pedido?", "SI", "NO");
-            if (respuesta == true)
+            if (App.Idioma == "ES")
             {
-                var button = sender as Button;
-                var pedido = button?.BindingContext as CarroViewModel;
-                //Borro el producto
-
-                ListaDatos_Final.Remove(ListaDatos_Final.Find(x => x.numero_300indy == pedido.numero_300indy));
-                App.ListaGlobalProductos.Remove(App.ListaGlobalProductos.Find(x => x.numero_300indy == pedido.numero_300indy));
-
-                //var vm = BindingContext as PedidoViewModel;
-                //vm?.RemoveCommand.Execute(pedido);
-
-                if (App.ListaGlobalProductos.Count == 0)
+                var respuesta = await DisplayAlert("Quitar producto", "¿Está seguro que desea quitar el producto seleccionado del pedido?", "SI", "NO");
+                if (respuesta == true)
                 {
-                    CarroVacio();
+                    var button = sender as Button;
+                    var pedido = button?.BindingContext as CarroViewModel;
+                    //Borro el producto
+
+                    ListaDatos_Final.Remove(ListaDatos_Final.Find(x => x.numero_300indy == pedido.numero_300indy));
+                    App.ListaGlobalProductos.Remove(App.ListaGlobalProductos.Find(x => x.numero_300indy == pedido.numero_300indy));
+
+                    //var vm = BindingContext as PedidoViewModel;
+                    //vm?.RemoveCommand.Execute(pedido);
+
+                    if (App.ListaGlobalProductos.Count == 0)
+                    {
+                        CarroVacio();
+                    }
+                    ListViewCarrito.ItemsSource = null;
+                    ListViewCarrito.ItemsSource = ListaDatos_Final;
+                    //ListViewPedidos.ItemsSource = vm.Pedidos;
                 }
-                ListViewCarrito.ItemsSource = null;
-                ListViewCarrito.ItemsSource = ListaDatos_Final;
-                //ListViewPedidos.ItemsSource = vm.Pedidos;
             }
+            else
+            {
+                var respuesta = await DisplayAlert("Remove product", "Are you sure you want to remove the selected product from the order?", "YES", "NO");
+                if (respuesta == true)
+                {
+                    var button = sender as Button;
+                    var pedido = button?.BindingContext as CarroViewModel;
+                    //Borro el producto
+
+                    ListaDatos_Final.Remove(ListaDatos_Final.Find(x => x.numero_300indy == pedido.numero_300indy));
+                    App.ListaGlobalProductos.Remove(App.ListaGlobalProductos.Find(x => x.numero_300indy == pedido.numero_300indy));
+
+                    //var vm = BindingContext as PedidoViewModel;
+                    //vm?.RemoveCommand.Execute(pedido);
+
+                    if (App.ListaGlobalProductos.Count == 0)
+                    {
+                        CarroVacio();
+                    }
+                    ListViewCarrito.ItemsSource = null;
+                    ListViewCarrito.ItemsSource = ListaDatos_Final;                    
+                    //ListViewPedidos.ItemsSource = vm.Pedidos;
+                }
+            }           
         }
 
         //private void ListViewCarrito_ItemSelected(object sender, SelectedItemChangedEventArgs e)

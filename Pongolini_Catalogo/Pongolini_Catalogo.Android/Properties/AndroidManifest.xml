@@ -8,7 +8,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Pongolini Catalogo.Android" android:icon="@mipmap/ic_pongolini">
+	<application android:label="300 INDY" android:icon="@mipmap/ic_pongolini">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDbrGtywRDxtgQLzjTRkTypoc1XdtW6C8k" />
 	</application>
 </manifest>
