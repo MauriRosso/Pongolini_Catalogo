@@ -1,20 +1,19 @@
 -OK- dejar bujes igual que serie 6000 (sin filtros + info)
 
-Solicitud de cotizacion (popup confirmar pedido)
+-OK- Solicitud de cotizacion (popup confirmar pedido)
 cambiar numero (poner prefijo)
 
 Idioma
 
-pantalla inicio:
-cambiar imagen recibida por mail
-Aberaldo pongolini SRL Catalogo
+-OK- pantalla inicio: cambiar imagen recibida por mail
+-OK- Aberaldo pongolini SRL Catalogo
 
 Intercambios:
-cambiar intercambio por codigo (sacar leyenda)
+-OK- cambiar intercambio por codigo (sacar leyenda)
 
 -OK- nombre aplicacion, barra de navegacion: 300-INDY
 
-cambiar de lado buscar y limpiar
+-OK- cambiar de lado buscar y limpiar
 
 
 
@@ -22,7 +21,7 @@ Dimensiones: poner asientos semi terminados solo cuando existan.  Pone flecha pa
 
 Tanto en guias como asientos poner en hasta + 2mm
 
-dejar un solo cmapo de busqueda en angulo (dimensiones)
+dejar un solo campo de busqueda en angulo (dimensiones)
 
 Problema en dimensiones (altura con coma salio)
 

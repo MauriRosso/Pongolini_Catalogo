@@ -25,6 +25,7 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
             CargarCarrito();
+            CargarTextoLabels();
         }
 
         private void CargarTextoLabels()

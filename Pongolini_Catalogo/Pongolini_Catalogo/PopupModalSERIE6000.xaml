@@ -7,7 +7,7 @@
                  BackgroundColor="White"
                  HorizontalOptions="Center"
                  VerticalOptions="Center">
-            <Label Text="La línea 6000 es la solución ideal para el reparador de cabezas de cilindros con problemas de sobremedidas. Están construidos en aceros de altas aleaciones de cromo, niquel y molibdeno. Tratamientos térmicos que obtienen una dureza final de 38-44 HRC."
+            <Label x:Name="lblPopUp" Text="La línea 6000 es la solución ideal para el reparador de cabezas de cilindros con problemas de sobremedidas. Están construidos en aceros de altas aleaciones de cromo, niquel y molibdeno. Tratamientos térmicos que obtienen una dureza final de 38-44 HRC."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    TextColor="DarkBlue" FontSize="20" Margin="15,15,15,15" HorizontalTextAlignment="Center"/>

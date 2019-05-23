@@ -35,6 +35,7 @@ namespace Pongolini_Catalogo.MasterDetail
             lblSemiTerminados.IsVisible = false;
             lblNoHaySemiTerminados.IsVisible = false;
             ListViewDimensionesSERIE6000.IsVisible = false;
+            CargarTextoLabels();
         }
 
         private void CargarTextoLabels()
@@ -48,7 +49,29 @@ namespace Pongolini_Catalogo.MasterDetail
                 pckProductoDim.Items.Add("Valve guides");
                 pckProductoDim.Items.Add("Valve seats");
                 pckProductoDim.SelectedIndex = 0;
+                lblDiamExtDim.Text = "Exterior diameter";
+                lblDiamIntDim.Text = "Inside diameter";
+                lblAnguloDim.Text = "Angle";
+                lblAltoDim.Text = "Height";
+                pckMaterialDim.Title = "Select material";
+                pckMaterialDim.Items.Clear();
+                pckMaterialDim.Items.Add("[ All ]");
+                pckMaterialDim.Items.Add("Gray fundition");
+                pckMaterialDim.Items.Add("Bronze");
+                pckMaterialDim.SelectedIndex = 0;
+                btnBuscarDimensiones.Text = "SEARCH";
+                btnLimpiarDimensiones.Text = "CLEAN";
+                btnNuevaBusqueda.Text = "NEW SEARCH";
+                lblCargando.Text = "Loading..";
+                lblSemiTerminados.Text = "SEMI-FINISHED SEATS";
+                lblNoHaySemiTerminados.Text = "No semi-finished seats have been found with the established parameters";
+                HastaAlto.Text = "To";
+                HastaAngulo.Text = "To";
+                HastaDiamExt.Text = "To";
+                HastaDiamInt.Text = "To";
+                HastaLargo.Text = "To";
             }
+
         }
 
         private void CargarCarrito()
@@ -165,12 +188,12 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 BusquedaLargo();
             }
-            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
+            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]" && pckMaterialDim.SelectedItem.ToString() != "[ All ]")
             {
                 BusquedaMaterial();
             }
 
-            if ((txtDiamExtDesdeDim.Text == null || txtDiamExtDesdeDim.Text == "") && (txtDiamIntDesdeDim.Text == null || txtDiamIntDesdeDim.Text == "") && (txtLargoDesdeDim.Text == null || txtLargoDesdeDim.Text == "") && pckMaterialDim.SelectedItem.ToString() == "[ Todos ]")
+            if ((txtDiamExtDesdeDim.Text == null || txtDiamExtDesdeDim.Text == "") && (txtDiamIntDesdeDim.Text == null || txtDiamIntDesdeDim.Text == "") && (txtLargoDesdeDim.Text == null || txtLargoDesdeDim.Text == "") && (pckMaterialDim.SelectedItem.ToString() == "[ Todos ]" || pckMaterialDim.SelectedItem.ToString() == "[ All ]"))
             {
                 //Mostrar TODOS los datos.
                 foreach (var item in App.ListaGlobalGuias)
@@ -282,13 +305,13 @@ namespace Pongolini_Catalogo.MasterDetail
         private void BusquedaMaterial()
         {
             string mat = string.Empty;
-            if (pckMaterialDim.SelectedItem.ToString() == "Fundición gris")
+            if (pckMaterialDim.SelectedIndex == 1) //Fundicion gris
             {
                 mat = "FG";
             }
             else
             {
-                if (pckMaterialDim.SelectedItem.ToString() == "Bronce")
+                if (pckMaterialDim.SelectedIndex == 2) //Bronce
                 {
                     mat = "B";
                 }
@@ -356,16 +379,16 @@ namespace Pongolini_Catalogo.MasterDetail
                         coincidencias += 1;
                     }
                 }
-                if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
+                if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]" && pckMaterialDim.SelectedItem.ToString() != "[ All ]")
                 {
                     string mat = string.Empty;
-                    if (pckMaterialDim.SelectedItem.ToString() == "Fundición gris")
+                    if (pckMaterialDim.SelectedIndex == 1) //FG
                     {
                         mat = "FG";
                     }
                     else
                     {
-                        if (pckMaterialDim.SelectedItem.ToString() == "Bronce")
+                        if (pckMaterialDim.SelectedIndex == 2) //B
                         {
                             mat = "B";
                         }
@@ -538,7 +561,7 @@ namespace Pongolini_Catalogo.MasterDetail
             {
                 CP += 1;
             }
-            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]")
+            if (pckMaterialDim.SelectedItem.ToString() != "[ Todos ]" && pckMaterialDim.SelectedItem.ToString() != "[ All ]")
             {
                 CP += 1;
             }
@@ -608,7 +631,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 ListViewDimensiones.ItemsSource = ListaDatos_Final;
                 ListViewDimensionesSERIE6000.ItemsSource = null;
                 ListViewDimensionesSERIE6000.ItemsSource = ListaDatos_FinalSERIE6000;
-                if (pckProductoDim.SelectedItem.ToString() == "Guías de válvulas")
+                if (pckProductoDim.SelectedIndex == 0)
                 {
                     productoElegido = "Guías";
                     ObtenerGuias();
@@ -621,7 +644,14 @@ namespace Pongolini_Catalogo.MasterDetail
             }
             else
             {
-                await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy debil. Por favor, reintenta más tarde.", "OK");
+                if (App.Idioma == "ES")
+                {
+                    await DisplayAlert("Error de conexión", "No estás conectado a internet o tu señal es muy débil. Por favor, inténtalo más tarde.", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Failed to connect", "You are not connected to the internet or your signal is very weak. Please ty again later.", "OK");
+                }
             }
 
         }

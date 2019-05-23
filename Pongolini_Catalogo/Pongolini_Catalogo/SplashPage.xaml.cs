@@ -22,6 +22,8 @@ namespace Pongolini_Catalogo
             this.BackgroundColor = Color.FromHex("#1A237E");
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
+            pbLoading.IsVisible = false;
+            pbLoading.IsRunning = false;
 
         }
 
@@ -38,10 +40,10 @@ namespace Pongolini_Catalogo
             lblEspanol.IsVisible = false;
             lblEnglish.IsVisible = false;
 
-            SplashImage.Opacity = 0;
+            SplashImage.Opacity = 1;
             SplashName.Opacity = 0;
 
-            SplashImage.FadeTo(1, 1000);
+            //SplashImage.FadeTo(1, 1000);
             SplashName.FadeTo(1, 1000);
             SplashImage.TranslateTo(0, -25, 2000);
             await SplashName.TranslateTo(0, 15, 2000);
@@ -56,25 +58,13 @@ namespace Pongolini_Catalogo
             btnAcceder.IsVisible = true;
             lblEspanol.IsVisible = true;
             lblEnglish.IsVisible = true;
-            slIdiomas.FadeTo(1, 2000);
-
-            //slIdiomas.TranslateTo(0, 100, 1000);
-
-            //await lblSeleccioneIdioma.TranslateTo(0, 50, 0);
-            //imgEn.TranslateTo(0, 100, 0);
-            //imgEs.TranslateTo(0, 100, 0);
-            //switchEN.TranslateTo(0, 100, 0);
-            //switchES.TranslateTo(0, 100, 0);
-            //lblEspanol.TranslateTo(0, 100, 0);
-            //lblEnglish.TranslateTo(0, 100, 0);
-            //btnAcceder.TranslateTo(0, 100, 0);
-
-
-
+            
         }
 
         private void btnAcceder_Clicked(object sender, EventArgs e)
         {
+            pbLoading.IsVisible = true;
+            pbLoading.IsRunning = true;
             if (ES_Activado)
             {
                 App.Idioma = "ES";
@@ -84,6 +74,7 @@ namespace Pongolini_Catalogo
                 App.Idioma = "EN";
             }
             Application.Current.MainPage = new HomePage();
+
         }
 
         private void Switch_Idioma(object sender, EventArgs e)

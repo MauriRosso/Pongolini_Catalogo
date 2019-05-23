@@ -25,8 +25,19 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
             CargarCarrito();
+            CargarTextoLabels();
         }
 
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "300 INDY code";
+                lblProducto.Text = "Product";
+                txtNO300Indy.Placeholder = "Enter 300 INDY code";
+                btnBuscar300Indy.Text = "SEARCH";
+            }
+        }
         private void CargarCarrito()
         {
             int cant_prod = 0;

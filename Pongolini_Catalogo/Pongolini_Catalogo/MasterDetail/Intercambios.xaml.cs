@@ -36,8 +36,34 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
             CargarCarrito();
+            CargarTextoLabels();
         }
 
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "EXCHANGES";
+                lblTipoProducto.Text = "Product";
+                pckTipoProducto.Title = "Select product";
+                pckTipoProducto.Items.Clear();
+                pckTipoProducto.Items.Add("Valve guides");
+                pckTipoProducto.Items.Add("Valve seats");
+                pckTipoProducto.SelectedIndex = 0;
+                lblFabricante.Text = "Producer";
+                pckFabricante.Items.Clear();
+                pckFabricante.Items.Add("[ All ]");
+                pckFabricante.Items.Add("RIOSULENSE");
+                pckFabricante.Items.Add("MAHLE");
+                pckFabricante.SelectedIndex = 0;
+                lblIntercambio.Text = "Code";
+                lblCargando.Text = "Loading..";
+                lblFabricanteGrilla.Text = "PRODUCER";
+                lblIntercambioGrilla.Text = "EXCHANGE";
+                btnBuscar.Text = "SEARCH";
+                
+            }
+        }
         private void CargarCarrito()
         {
             int cant_prod = 0;
@@ -101,7 +127,6 @@ namespace Pongolini_Catalogo.MasterDetail
             pckTipoProducto.Items.Add("Asientos de válvulas");
             pckTipoProducto.SelectedIndex = 0;
         }
-
 
         public async void ObtenerAsientos()
         {

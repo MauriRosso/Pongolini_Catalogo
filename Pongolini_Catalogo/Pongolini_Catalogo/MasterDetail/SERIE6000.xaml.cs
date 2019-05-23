@@ -25,8 +25,17 @@ namespace Pongolini_Catalogo.MasterDetail
             Cargando.IsVisible = false;
             lblCargando.IsVisible = false;
             CargarCarrito();
+            CargarTextoLabels();
         }
-
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "SERIES 6000";
+                lblAsientosSemiTerminados.Text = "SEMI-FINISHED SEATS";
+                lblCargando.Text = "Loading..";
+            }
+        }
         protected override void OnAppearing()
         {
             if (!ConexionRevisada()) //El dispositivo no soporta el plugin, no puedo controlarlo.

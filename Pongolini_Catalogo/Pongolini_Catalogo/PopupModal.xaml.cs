@@ -30,12 +30,29 @@ namespace Pongolini_Catalogo
         {
             es_envio = true;
             InitializeComponent();
-            foreach (var item in listaCarro)
+            if (App.Idioma == "ES")
             {
-                Mensaje += "PRODUCTO: " + item.producto + "\n" +
-                           "N° 300INDY: " + item.numero_300indy + "\n" +
-                           "UNIDADES SOLICITADAS: " + item.cantidad + "\n" + "________________________________" + "\n";
+                foreach (var item in listaCarro)
+                {
+                    Mensaje += "PRODUCTO: " + item.producto + "\n" +
+                               "N° 300INDY: " + item.numero_300indy + "\n" +
+                               "UNIDADES SOLICITADAS: " + item.cantidad + "\n" + "________________________________" + "\n";
 
+                }
+                lblTitulo.Text = "Solicitud de cotización";
+                btnConfirmar.Text = "SOLICITAR";
+            }
+            else
+            {
+                foreach (var item in listaCarro)
+                {
+                    Mensaje += "PRODUCT: " + item.producto + "\n" +
+                               "300INDY NUMBER: " + item.numero_300indy + "\n" +
+                               "REQUESTED UNITS: " + item.cantidad + "\n" + "________________________________" + "\n";
+
+                }
+                lblTitulo.Text = "Request for quotation";
+                btnConfirmar.Text = "REQUEST";
             }
             lblNombre.IsVisible = true;
             txtNombre.IsVisible = true;
@@ -49,8 +66,6 @@ namespace Pongolini_Catalogo
             txtCodigoPostal.IsVisible = true;
             lblCantUni.IsVisible = false;
             txtCantUni.IsVisible = false;
-            lblTitulo.Text = "Confirmar pedido";
-            btnConfirmar.Text = "REALIZAR PEDIDO";
         }
 
         public PopupModal(string prod, string num300indy, string largo, string diamext, string diamint)
@@ -74,23 +89,47 @@ namespace Pongolini_Catalogo
             txtCodigoPostal.IsVisible = false;
             lblCantUni.IsVisible = true;
             txtCantUni.IsVisible = true;
-            lblTitulo.Text = "Unidades solicitadas";
-            btnConfirmar.Text = "AGREGAR AL CARRITO";
+            if (App.Idioma == "ES")
+            {
+                lblTitulo.Text = "Unidades solicitadas";
+                btnConfirmar.Text = "AGREGAR AL CARRITO";
+            }
+            else
+            {
+                lblTitulo.Text = "Requested units";
+                btnConfirmar.Text = "ADD TO CART";
+            }
         }
 
         private async void EnviarElMail()
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrEmpty(txtCodigoPostal.Text)) //Controlar que todos los campos hayan sidos RELLENADOS.
             {
-                DisplayAlert("Error", "Rellene todos los campos antes de continuar.", "OK");
+                if (App.Idioma == "ES")
+                {
+                    DisplayAlert("Error", "Rellene todos los campos antes de continuar.", "OK");
+                }
+                else
+                {
+                    DisplayAlert("Error", "Fill in all the fields before continuing", "OK");
+                }
             }
             else
             {
-                await DisplayAlert("Realizar pedido", "Serás redirigido a tu aplicación de correo para finalizar el pedido.", "OK");
+                if (App.Idioma == "ES")
+                {
+                    await DisplayAlert("Realizar pedido", "Serás redirigido a tu aplicación de correo para finalizar el pedido.", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Request quote", "You will be redirected to your email application to finalize the order", "OK");
+                }
                 var emailMessenger = CrossMessaging.Current.EmailMessenger;
                 if (emailMessenger.CanSendEmail)
                 {
-                    var email = new EmailMessageBuilder()
+                    if (App.Idioma == "ES")
+                    {
+                        var email = new EmailMessageBuilder()
                         .To("comercial@pongolini.com") //Colocar mail de pongolini.
                         .Subject("PEDIDO REALIZADO - Pongolini catálogo app")
                         .Body("Hola, deseo realizar el siguiente pedido: \n" +
@@ -105,12 +144,39 @@ namespace Pongolini_Catalogo
                               Mensaje + "\n" + "\n" +
                            "Espero respuesta para confirmar la compra, saludos.")
                         .Build();
+                        emailMessenger.SendEmail(email);
+                    }
+                    else
+                    {
+                        var email = new EmailMessageBuilder()
+                        .To("comercial@pongolini.com") //Colocar mail de pongolini.
+                        .Subject("ORDER PLACED - Pongolini catálogo app")
+                        .Body("Hi, I wish to make the next order: \n" +
+                        "------------------------------------" + "\n" +
+                           "APPLICANT DETAILS" + "\n" +
+                           "Name: " + txtNombre.Text + "\n" +
+                           "Surname: " + txtApellido.Text + "\n" +
+                           "Phone: " + txtTelefono.Text + "\n" +
+                           "Address: " + txtDireccion.Text + "\n" +
+                           "Postal code: " + txtCodigoPostal.Text + "\n" +
+                           "------------------------------------" + "\n" +
+                              Mensaje + "\n" + "\n" +
+                           "I wait for an answer to confirm the purchase.")
+                        .Build();
+                        emailMessenger.SendEmail(email);
 
-                    emailMessenger.SendEmail(email);
+                    }
                 }
                 else
                 {
-                    DisplayAlert("Error", "No puedes enviar e-mails en este momento. Por favor, intente más tarde.", "OK");
+                    if (App.Idioma == "ES")
+                    {
+                        DisplayAlert("Error", "No puedes enviar e-mails en este momento. Por favor, intente más tarde.", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Error", "You can not send emails at this time. Please try later.", "OK");
+                    }
                 }
             }
         }
@@ -131,7 +197,14 @@ namespace Pongolini_Catalogo
                 }
                 else
                 {
-                    DisplayAlert("Error", "Rellene el campo para continuar.", "OK");
+                    if (App.Idioma == "ES")
+                    {
+                        DisplayAlert("Error", "Rellene el campo para continuar.", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Error", "Fill in the field to continue.", "OK");
+                    }
                 }
             }
         }

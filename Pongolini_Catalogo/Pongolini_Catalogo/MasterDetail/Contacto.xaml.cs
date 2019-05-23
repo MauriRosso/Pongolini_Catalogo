@@ -40,7 +40,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 btnEnviarMail.Text = "Send e-mail";
                 lblEmpresa.Text = "COMPANY";
                 lblDireccion.Text = "Ramón Casabella 985 - Postcode:2300";
-                lblTelefono.Text = "PHONE: +54 3492 504045/46/47";
+                lblTelefono.Text = "PHONE: ";
                 lblHorarios.Text = "SCHEDULES";
                 lblHorariosDetalle.Text = "Monday to Friday from 8 a.m. to 6:30 p.m.";
                 lblDiasAbiertos.Text = "Saturday and Sunday: closed";

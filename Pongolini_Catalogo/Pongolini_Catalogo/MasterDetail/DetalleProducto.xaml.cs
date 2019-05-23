@@ -154,6 +154,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 {
                     lblmaterial_angulo.Text = "Angle";
                 }
+                lblForma.Text = "Form";
                 lblIntercambios.Text = "EXCHANGES";
                 lblAplicaciones.Text = "APPLICATIONS";
                 btnRealizarPedido.Text = "ADD TO CART";

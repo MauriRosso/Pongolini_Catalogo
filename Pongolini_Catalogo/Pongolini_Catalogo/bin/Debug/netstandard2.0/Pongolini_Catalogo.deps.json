@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "1a5a12a03f357541750e77a526e5fc85cf0051ad"
+    "signature": "20a7a6f6372f23f6aa069b4f750a3b6bf615957b"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,7 +16,7 @@
           "System.Configuration.ConfigurationManager": "4.5.0",
           "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugins.Messaging": "5.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xamarin.Forms": "4.0.0.425677",
           "Xamarin.Forms.Maps": "3.1.0.697729"
         },
         "runtime": {
@@ -47,7 +47,7 @@
       },
       "Rg.Plugins.Popup/1.1.5.188": {
         "dependencies": {
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "4.0.0.425677"
         },
         "runtime": {
           "lib/netstandard1.0/Rg.Plugins.Popup.dll": {
@@ -176,7 +176,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/4.0.0.425677": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -194,7 +194,7 @@
       },
       "Xamarin.Forms.Maps/3.1.0.697729": {
         "dependencies": {
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "4.0.0.425677"
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Maps.Design.dll": {
@@ -232,42 +232,42 @@
     "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
     "Plugin.Permissions/4.0.4-beta": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dgXSRgR2l5XuebzgdknYhgy3PatKGKhbtm4z53eM1TYuC2TYHmPhjJJ6C0MMWjajEELv5scdl+IKJWGvtPVNlQ==",
+      "sha512": "sha512-yrBxbRNhR0Dav1C52YrJvSz6TCNbBvAIf6EnSdAgTySUg8hbK2qLKj/vmT6MppzhJGWvvi9+ivHU1yiOgSP/Ew==",
       "path": "plugin.permissions/4.0.4-beta",
       "hashPath": "plugin.permissions.4.0.4-beta.nupkg.sha512"
     },
     "Rg.Plugins.Popup/1.1.5.188": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3z5Q6Bdvhi8J2e5Cj0lEQ3rseZXXYTCFd3FjWjDlRbBnJ2vtNPRui5DE8bwWjA2PiDyK+GNj/bhvy+enEzISBA==",
+      "sha512": "sha512-PE7uHJ/LuI5pSO1HpgjJ+v2KhNfftzqt/L1AoGH/5mX0fP7pcW6lG4FbUHuCFKolrzJfLLotuuET+hfN50Whpg==",
       "path": "rg.plugins.popup/1.1.5.188",
       "hashPath": "rg.plugins.popup.1.1.5.188.nupkg.sha512"
     },
     "System.Buffers/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ii2bedd4HVzddupdU35n3ygohUPlNn7MDimBOYcwWNce2NizQ1fCSaQJY1Tzv80aMqOGpVcU4wZr/Xe50xcTwg==",
+      "sha512": "sha512-AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
       "path": "system.buffers/4.4.0",
       "hashPath": "system.buffers.4.4.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+2SYYKwbN0n+9SrBanflZdaVleFkytEfTNzOu+f3SK0vROMMrorpw1UJyHJQ1ZooughRxPmLj8Fh5N2tSe7sdA==",
+      "sha512": "sha512-UIFvaFfuKhLr9u5tWMxmVoDPkFeD+Qv8gUuap4aZgVGYSYMdERck4OhLN/2gulAc0nYTEigWXSJNNWshrmxnng==",
       "path": "system.configuration.configurationmanager/4.5.0",
       "hashPath": "system.configuration.configurationmanager.4.5.0.nupkg.sha512"
     },
     "System.Memory/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ULODiqdq81e9YfQS/GL4P5zgek90jyPykAV4t1Sp4sjID3/Ebi18lbvOKm+81biHR5a5FdFRXSU/JVc6nxr/7A==",
+      "sha512": "sha512-m0psCSpUxTGfvwyO0i03ajXVhgBqyXlibXz0Mo1dtKGjaHrXFLnuQ8rNBTmWRqbfRjr4eC6Wah4X5FfuFDu5og==",
       "path": "system.memory/4.5.0",
       "hashPath": "system.memory.4.5.0.nupkg.sha512"
     },
@@ -281,63 +281,63 @@
     "System.Runtime.CompilerServices.Unsafe/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kUM0JPMHfdteeGm/r9/tdlsddPV1PUkAzcgUtcU7LXn5ZYKoXUyrPp9OarBCy3JRS5nk7Btwd+XMMEqhSzruNA==",
+      "sha512": "sha512-YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
       "path": "system.runtime.compilerservices.unsafe/4.5.0",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
     },
     "System.Security.AccessControl/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6RQtcT+TyDgLUFsAnmmdfRRGdLYKxSZGkSPOd052tvYFxOTMaQb6ANlwhGqZtNO52PosaCoXu7uatFneujAxmA==",
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
       "path": "system.security.accesscontrol/4.5.0",
       "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-s/MFK8BvgtejZj5a8qAPDXEGBtWkpFX98qwQP/wqVa9CgIC7LrKHxDFdlN5x6afGAb0ZVBVGIZlCdBLnO2QjZw==",
+      "sha512": "sha512-wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
       "path": "system.security.cryptography.protecteddata/4.5.0",
       "hashPath": "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512"
     },
     "System.Security.Permissions/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-O+e9qamSTJ4YOJCpnLgsf9FTGfsxJv2On1OdYkhmd/XA5AYRvUatkz7Rp3dS9XR7rhVuklnjST1dRoMK7N4cGw==",
+      "sha512": "sha512-9gdyuARhUR7H+p5CjyUB/zPk7/Xut3wUSP8NJQB6iZr8L3XUXTMdoLeVAg9N4rqF8oIpE7MpdqHdDHQ7XgJe0g==",
       "path": "system.security.permissions/4.5.0",
       "hashPath": "system.security.permissions.4.5.0.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hs2zF4tOQ3V4iQttVnLrnR/i8AOrrAgu2Gmp4/jNaE/+5hiZWDj20FK/m/OW3Itdi9XDvqf55WzHkiWYtOSUNg==",
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
       "path": "system.security.principal.windows/4.5.0",
       "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
     },
     "Xam.Plugin.Connectivity/4.0.0.190-beta": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tDxs/D2VH+6edGlGZunu34GAcuYE6SM0j5DetAqBiaqQHMnoPYq4wH+H9xZVioRLEA1uo1JpPzXcJn+Ld1l/CQ==",
+      "sha512": "sha512-p9PofTKArw6wHg45GpRRE+xDioJGOSAgA+X+E+vUf1CFZmTzeOO3YCmFdP7/W8x6f85Z50zugXGoszEGJx4QSg==",
       "path": "xam.plugin.connectivity/4.0.0.190-beta",
       "hashPath": "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512"
     },
     "Xam.Plugins.Messaging/5.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-usjiQldDRyK28EVW7DJ8gfzuRBFgIJZbWvQMn6H1oGsBU28Et7WirLQLGt4U7H6DyXSCyfLIqZgRlgXbhp5fLg==",
+      "sha512": "sha512-oTBg4tZjkkLHuUuXaybC/pwi0SugrJeyZ7Nq60IAxBliO7FMYaPq9mmmPQvCAEwEhtWaZAjbBzwG/I71CcQrmA==",
       "path": "xam.plugins.messaging/5.2.0",
       "hashPath": "xam.plugins.messaging.5.2.0.nupkg.sha512"
     },
-    "Xamarin.Forms/3.1.0.697729": {
+    "Xamarin.Forms/4.0.0.425677": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
-      "path": "xamarin.forms/3.1.0.697729",
-      "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
+      "sha512": "sha512-drwO/MimaMUnmvkULASYjU5MRciVIJyiLxD3ihFq8P+DWynQZ2NLNej0Vrs3k2L7UdmqvcgCxEJdfT7uFl2KVg==",
+      "path": "xamarin.forms/4.0.0.425677",
+      "hashPath": "xamarin.forms.4.0.0.425677.nupkg.sha512"
     },
     "Xamarin.Forms.Maps/3.1.0.697729": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WySTPEbjx31ytOvATUpu+5tXCA+X6CbMJ6yunCZqWXwD6oGgyzb91jIq9GT9sMO/+h+J3gIAvUlDHZVnpkd1ZQ==",
+      "sha512": "sha512-lUPoZkvCoUhXfmZuTkriTuuBrmO+Zh1y8K2m9vP4V+g2HHWqfIwJm5jyWU0HNmxk7NDIvS2cACc83MY7RLljBg==",
       "path": "xamarin.forms.maps/3.1.0.697729",
       "hashPath": "xamarin.forms.maps.3.1.0.697729.nupkg.sha512"
     }

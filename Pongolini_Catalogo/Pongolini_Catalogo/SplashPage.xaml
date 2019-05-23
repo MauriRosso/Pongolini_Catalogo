@@ -4,8 +4,12 @@
              x:Class="Pongolini_Catalogo.SplashPage">
     <ContentPage.Content>
         <StackLayout x:Name="sl" VerticalOptions="Center">
+            <Label Text="sssssssssssssssssss" TextColor="#1A237E"/>
+            <Label Text="sssssssssssssssssss" TextColor="#1A237E"/>
+            <Label Text="sssssssssssssssssss" TextColor="#1A237E"/>
+
             <Image x:Name="SplashImage"
-                   Source="Pongolini_Final.png"
+                   Source="Logo_Inicio.png"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Aspect="AspectFit"></Image>
@@ -54,8 +58,11 @@
                     Margin="8,0,8,0"
                     Text="Acceder"
                     Clicked="btnAcceder_Clicked"
-                    VerticalOptions="EndAndExpand">
+                    VerticalOptions="Center">
                 </Button>
+                <ActivityIndicator x:Name="pbLoading" Color="White">
+
+                </ActivityIndicator>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
