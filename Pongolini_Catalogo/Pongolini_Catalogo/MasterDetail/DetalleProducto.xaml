@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="DETALLE"
+                <Label x:Name="lblDetalle" Text="DETALLE"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -24,7 +24,7 @@
                 <Label x:Name="lblTipoProducto"
                        HorizontalOptions="Start"
                        Margin="8,4,8,4"/>
-                <Label Text="ATRIBUTOS"
+                <Label x:Name="lblAtributos" Text="ATRIBUTOS"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -68,7 +68,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label x:Name="lblDiametroInterior" Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                         <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamint" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
@@ -82,7 +82,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label x:Name="lblLargo" Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                         <Label Grid.Column="1" Grid.Row="0" x:Name="lbllargo" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
@@ -110,11 +110,11 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" x:Name="lblforma" Text="Forma" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
+                        <Label Grid.Column="0" Grid.Row="0" x:Name="lblForma" Text="Forma" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
                         <Image Grid.Column="1" Grid.Row="0" x:Name="imgforma" Aspect="AspectFit" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
-                <Label Text="INTERCAMBIOS"
+                <Label x:Name="lblIntercambios" Text="INTERCAMBIOS"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -144,7 +144,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" x:Name="lblintercambio_Mahle" Text="MAHLE" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label x:Name="lblIntercambio_Mahle" Grid.Column="0" Grid.Row="0" Text="MAHLE" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                         <Label Grid.Column="1" Grid.Row="0" x:Name="lblinter_Mahle" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
@@ -158,11 +158,11 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Grid.Row="0" x:Name="lblintercambio_Riosulense" Text="RIOSULENSE" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                        <Label Grid.Column="0" Grid.Row="0" x:Name="lblIntercambio_Riosulense" Text="RIOSULENSE" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                         <Label Grid.Column="1" Grid.Row="0" x:Name="lblinter_Riosulense" Margin="8,0,8,0" HorizontalOptions="Center"/>
                     </Grid>
                 </StackLayout>
-                <Label Text="APLICACIONES"
+                <Label x:Name="lblAplicaciones" Text="APLICACIONES"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -190,9 +190,9 @@
                                         </Grid.ColumnDefinitions>
                                         <BoxView Grid.ColumnSpan="2" Grid.Row="0" HeightRequest="8" Color="DarkBlue" />
                                         <Label Grid.ColumnSpan="2" Text="{Binding marca_modelo}" Margin="0,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
-                                        <Label Grid.Column="0" Grid.Row="1" Text="Producto" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
-                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                        <Label Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                        <Label x:Name="lblProductoGrilla" Grid.Column="0" Grid.Row="1" Text="Producto" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                        <Label x:Name="lblProductoDetalleGrilla" Grid.Column="1" Grid.Row="1" Text="{Binding producto}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label x:Name="lblMotorGrilla" Grid.Column="0" Grid.Row="2" Text="Motor" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                         <Label Grid.Column="1" Grid.Row="2" Text="{Binding motor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                                         <Label Grid.Column="0" Grid.Row="3" Text="Adm/Esc" Margin="13,0,0,0" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
                                         <Label Grid.Column="1" Grid.Row="3" Text="{Binding admision_escape}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>

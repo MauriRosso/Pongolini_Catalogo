@@ -11,7 +11,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="#1A237E">
                 <Image Source="Pongolini_Final.png"></Image>
-                <Label TextColor="WhiteSmoke" Margin="12,0,0,0" HorizontalTextAlignment="Center" Text="Desde 1955, fabricando guías y asientos de válvulas
+                <Label x:Name="lblLeyendaEmpresa" TextColor="WhiteSmoke" Margin="12,0,0,0" HorizontalTextAlignment="Center" Text="Desde 1955, fabricando guías y asientos de válvulas
                        300 INDY, bajo los más altos estándares de calidad, para los modernos y exigentes motores del mercado internacional."></Label>
 
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
@@ -59,24 +59,24 @@
                     <!--<maps:Map x:Name="Mapa" WidthRequest="300" HeightRequest="280" MapType="Street"/>-->
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
-                    <Label Text="EMPRESA" Margin="12,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="20"></Label>
-                    <Label Text="Ramón Casabella 985 - C.P:2300" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
-                    <Label Text="Rafaela, Santa Fe, Argentina" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
+                    <Label x:Name="lblEmpresa" Text="EMPRESA" Margin="12,0,0,0" TextColor="White" FontAttributes="Bold" FontSize="20"></Label>
+                    <Label x:Name="lblDireccion" Text="Ramón Casabella 985 - C.P:2300" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
+                    <Label x:Name="lblUbicacion" Text="Rafaela, Santa Fe, Argentina" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="TEL:" FontAttributes="Bold" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
+                        <Label x:Name="lblTelefono" Text="TEL:" FontAttributes="Bold" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
                         <Label Text="+54 3492 504045/46/47" TextColor="WhiteSmoke"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="FAX:" TextColor="WhiteSmoke" FontAttributes="Bold" Margin="12,0,0,0"></Label>
+                        <Label x:Name="lblFax" Text="FAX:" TextColor="WhiteSmoke" FontAttributes="Bold" Margin="12,0,0,0"></Label>
                         <Label Text="+54 3492 420941 / 433752" TextColor="WhiteSmoke"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="E-MAIL:" TextColor="WhiteSmoke" FontAttributes="Bold" Margin="12,0,0,0"></Label>
+                        <Label x:Name="lblEmail" Text="E-MAIL:" TextColor="WhiteSmoke" FontAttributes="Bold" Margin="12,0,0,0"></Label>
                         <Label Text="comercial@pongolini.com" TextColor="WhiteSmoke"></Label>
                     </StackLayout>
-                    <Label Text="HORARIOS" Margin="12,20,0,0" TextColor="White" FontAttributes="Bold" FontSize="20"></Label>
-                    <Label Text="De lunes a viernes: 8 a 17 hs" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
-                    <Label Text="Sábados y domingos: cerrado" TextColor="WhiteSmoke" Margin="12,0,0,20"></Label>
+                    <Label x:Name="lblHorarios" Text="HORARIOS" Margin="12,20,0,0" TextColor="White" FontAttributes="Bold" FontSize="20"></Label>
+                    <Label x:Name="lblHorariosDetalle" Text="De lunes a viernes: 8 a 18:30 hs" TextColor="WhiteSmoke" Margin="12,0,0,0"></Label>
+                    <Label x:Name="lblDiasAbiertos" Text="Sábados y domingos: cerrado" TextColor="WhiteSmoke" Margin="12,0,0,20"></Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

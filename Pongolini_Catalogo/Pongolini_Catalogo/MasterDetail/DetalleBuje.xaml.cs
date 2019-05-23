@@ -31,7 +31,24 @@ namespace Pongolini_Catalogo.MasterDetail
             lblmat.Text = (buje.codigo[1].ToString() == "T") ? "Templado" : "Gris aleada";
             lbltipoapl.Text = buje.codigo[1].ToString() == "T" ? "ENG. DIESEL-GNC" : "ENG. NAFTERO";
             lbldur.Text = buje.codigo[1].ToString() == "T" ? "310-350 HB" : "200-240 HB";
+            CargarTextoLabels();
             CargarCarrito();
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "Product detail";
+                lblDetalle.Text = "DETAIL";
+                lblTipoProducto.Text = "BUSHING";
+                lblAtributos.Text = "ATTRIBUTES";
+                lblDiamIntGrilla.Text = "Ø Inside (mm)";
+                lblLargoGrilla.Text = "Long (mm)";
+                lblTipoAplicacion.Text = "Application type";
+                lblDureza.Text = "Hardness";
+                btnRealizarPedido.Text = "ADD TO CART";
+            }
         }
 
         private void CargarCarrito()

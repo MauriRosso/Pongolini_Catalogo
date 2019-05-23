@@ -98,7 +98,7 @@ namespace Pongolini_Catalogo.MasterDetail
                 lbllargo.Text = asiento.largo.ToString();
                 lblmaterial_angulo.Text = "Angulo";
                 lblmat_ang.Text = asiento.angulo;
-                lblforma.IsVisible = false;
+                lblForma.IsVisible = false;
                 bxUltimo.IsVisible = false;
 
                 if (asiento.marca_modelo != "ADAPTACIONES")
@@ -129,6 +129,34 @@ namespace Pongolini_Catalogo.MasterDetail
                 }
                 ListViewAplicaciones.ItemsSource = null;
                 ListViewAplicaciones.ItemsSource = ListaDatos_Final;
+            }
+            CargarTextoLabels();
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "Product detail";
+                lblDetalle.Text = "DETAIL";
+                if (lblTipoProducto.Text == "GUÍA")
+                {
+                    lblTipoProducto.Text = "GUIDE";
+                }
+                else
+                {
+                    lblTipoProducto.Text = "SEAT";
+                }
+                lblAtributos.Text = "ATTRIBUTES";
+                lblDiametroInterior.Text = "Ø Inside (mm)";
+                lblLargo.Text = "Long (mm)";
+                if (lblmaterial_angulo.Text == "Angulo")
+                {
+                    lblmaterial_angulo.Text = "Angle";
+                }
+                lblIntercambios.Text = "EXCHANGES";
+                lblAplicaciones.Text = "APPLICATIONS";
+                btnRealizarPedido.Text = "ADD TO CART";
             }
         }
 

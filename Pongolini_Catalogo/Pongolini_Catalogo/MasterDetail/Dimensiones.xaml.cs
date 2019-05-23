@@ -37,6 +37,20 @@ namespace Pongolini_Catalogo.MasterDetail
             ListViewDimensionesSERIE6000.IsVisible = false;
         }
 
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "DIMENSIONS";
+                lblProductoDim.Text = "Product";
+                pckProductoDim.Title = "Select product";
+                pckProductoDim.Items.Clear();
+                pckProductoDim.Items.Add("Valve guides");
+                pckProductoDim.Items.Add("Valve seats");
+                pckProductoDim.SelectedIndex = 0;
+            }
+        }
+
         private void CargarCarrito()
         {
             int cant_prod = 0;

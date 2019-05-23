@@ -10,7 +10,7 @@
         <StackLayout>
             <ScrollView>
                 <StackLayout>
-                    <Label Text="DETALLE"
+                    <Label x:Name="lblDetalle" Text="DETALLE"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -25,7 +25,7 @@
                     <Label x:Name="lblTipoProducto"
                        HorizontalOptions="Start"
                        Margin="8,4,8,4"/>
-                    <Label Text="ATRIBUTOS"
+                    <Label x:Name="lblAtributos" Text="ATRIBUTOS"
                        TextColor="DarkBlue"
                        FontAttributes="Bold"
                        FontSize="Small"
@@ -41,7 +41,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" Text="Ø Exterior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label x:Name="lblDiamExtGrilla" Grid.Column="0" Grid.Row="0" Text="Ø Exterior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamext"  Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>
@@ -55,7 +55,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label x:Name="lblDiamIntGrilla" Grid.Column="0" Grid.Row="0" Text="Ø Interior (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lbldiamint" Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>
@@ -69,7 +69,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label x:Name="lblLargoGrilla" Grid.Column="0" Grid.Row="0" Text="Largo (mm)" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lbllargo" Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>
@@ -83,7 +83,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" x:Name="lblmaterial" Text="Material" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
+                            <Label x:Name="lblMaterial" Grid.Column="0" Grid.Row="0" Text="Material" Margin="8,0,8,0" HorizontalOptions="Start" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lblmat" Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>
@@ -97,7 +97,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" x:Name="lbltipoaplicacion" Text="Tipo aplicación" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
+                            <Label x:Name="lblTipoAplicacion" Grid.Column="0" Grid.Row="0" Text="Tipo aplicación" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lbltipoapl" Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>
@@ -111,7 +111,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" x:Name="lbldureza" Text="Dureza" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
+                            <Label x:Name="lblDureza" Grid.Column="0" Grid.Row="0" Text="Dureza" Margin="8,0,8,0" HorizontalOptions="Start" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="Gray"/>
                             <Label Grid.Column="1" Grid.Row="0" x:Name="lbldur" Margin="8,0,8,0" HorizontalOptions="Center"/>
                         </Grid>
                     </StackLayout>

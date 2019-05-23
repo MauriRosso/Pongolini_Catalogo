@@ -20,6 +20,7 @@ namespace Pongolini_Catalogo.MasterDetail
 		public Contacto ()
 		{
 			InitializeComponent ();
+            CargarTextoLabels();
             CargarCarrito();
 		}
 
@@ -27,6 +28,23 @@ namespace Pongolini_Catalogo.MasterDetail
         {
             base.OnAppearing();
             //CargarMapa();
+        }
+
+        private void CargarTextoLabels()
+        {
+            if (App.Idioma != "ES")
+            {
+                Title = "CONTACT";
+                lblLeyendaEmpresa.Text = "Since 1955 manufacturing guides and valve seats 300 indy, under the highest standars of quality, for the modern and demanding engines of the international market";
+                btnLlamar.Text = "Call the company";
+                btnEnviarMail.Text = "Send e-mail";
+                lblEmpresa.Text = "COMPANY";
+                lblDireccion.Text = "Ramón Casabella 985 - Postcode:2300";
+                lblTelefono.Text = "PHONE: +54 3492 504045/46/47";
+                lblHorarios.Text = "SCHEDULES";
+                lblHorariosDetalle.Text = "Monday to Friday from 8 a.m. to 6:30 p.m.";
+                lblDiasAbiertos.Text = "Saturday and Sunday: closed";
+            }
         }
 
         private void CargarCarrito()
